@@ -1,0 +1,269 @@
+/* Genel Ayarlar ve Reset */
+:root {
+    --primary-color: #3f51b5; /* Mor Mavi */
+    --secondary-color: #ff9800; /* Turuncu Vurgu */
+    --text-dark: #333;
+    --text-light: #fff;
+    --bg-light: #f9f9f9;
+    --bg-alternate: #f0f0f0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+}
+
+/* Kapsayıcı */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+/* Başlık ve CTA (Hero) Bölümü */
+.hero {
+    background: linear-gradient(135deg, #4456c8, #7a6ac9);
+    color: var(--text-light);
+    padding: 60px 0 80px;
+    text-align: center;
+}
+
+.hero .logo {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.hero .tagline {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.hero .main-title {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
+    padding: 15px 35px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+    background-color: #ffb74d;
+    transform: translateY(-2px);
+}
+
+/* Seksiyonlar */
+.section {
+    padding: 60px 0;
+}
+
+.section.alternate-bg {
+    background-color: var(--bg-alternate);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+}
+
+.subtitle {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Özellikler Grid */
+.feature-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    flex-basis: calc(33.333% - 20px);
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card i {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.feature-card h4 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Nasıl Çalışır (Adımlar) */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.step-card {
+    position: relative;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    border-left: 5px solid var(--primary-color);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+.step-number {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.step-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+/* Kıyaslama Tablosu */
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.comparison-table th, .comparison-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.comparison-table th {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+.comparison-table tr:nth-child(even) {
+    background-color: #f7f7f7;
+}
+
+.comparison-table td:first-child {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.highlight-yes {
+    color: green;
+    font-weight: 700;
+}
+
+.highlight-no {
+    color: orange;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 25px 0;
+    text-align: center;
+}
+
+.footer .social-links a {
+    color: var(--text-light);
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: opacity 0.3s;
+}
+
+.footer .social-links a:hover {
+    opacity: 0.8;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 900px) {
+    .feature-card {
+        flex-basis: calc(50% - 15px);
+        margin-bottom: 20px;
+    }
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero .main-title {
+        font-size: 2rem;
+    }
+    .feature-card {
+        flex-basis: 100%;
+    }
+    .comparison-table th, .comparison-table td {
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+}
+
+/* CTA Düğmesi Animasyonu (Pulse) */
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 152, 0, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(255, 152, 0, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 152, 0, 0);
+    }
+}
