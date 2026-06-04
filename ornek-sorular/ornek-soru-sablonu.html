@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Örnek soru sayfaları için cevap ve açıklama alanı içeren statik HTML şablonu.">
+    <title>Örnek Soru Şablonu | Ders Materyalleri Kütüphanesi</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav-shell">
+            <a class="brand" href="../index.html" aria-label="Ders Materyalleri Kütüphanesi ana sayfa">
+                <span class="brand-mark" aria-hidden="true">DM</span>
+                <span class="brand-text">Ders Materyalleri</span>
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+                <span class="sr-only">Menüyü aç veya kapat</span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="site-nav" id="site-nav" aria-label="Ana menü">
+                <a href="../index.html">Ana Sayfa</a>
+                <a href="../index.html#dersler">Dersler</a>
+                <a href="../index.html#icerik-turleri">İçerik Türleri</a>
+                <a href="../index.html#kullanim">Kullanım</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container page-header">
+                <nav class="breadcrumb" aria-label="Sayfa yolu">
+                    <a href="../index.html">Ana Sayfa</a>
+                    <span>/</span>
+                    <span>Örnek Soru Şablonu</span>
+                </nav>
+                <p class="eyebrow">Örnek soru</p>
+                <h1>Örnek Soru Başlığı</h1>
+                <p>Bu şablon derslere ait örnek soru sayfalarının aynı düzenle hazırlanması için kullanılır.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container page-layout">
+                <article class="page-card">
+                    <div class="meta-grid" aria-label="Örnek soru bilgileri">
+                        <div class="meta-item"><strong>Ders</strong> Ders adı yazılacak</div>
+                        <div class="meta-item"><strong>Konu</strong> Konu adı yazılacak</div>
+                        <div class="meta-item"><strong>Soru Türü</strong> Klasik / Test / Karma</div>
+                        <div class="meta-item"><strong>Zorluk</strong> Kolay / Orta / Zor</div>
+                    </div>
+
+                    <div class="question-box">
+                        <h2>Sorular</h2>
+                        <ol>
+                            <li>Soru metni buraya yazılacak.</li>
+                            <li>Soru metni buraya yazılacak.</li>
+                            <li>Soru metni buraya yazılacak.</li>
+                        </ol>
+                    </div>
+
+                    <div class="question-box">
+                        <h2>Cevap / Açıklama</h2>
+                        <p>Gerekirse doğru cevap, çözüm yolu veya kısa açıklama bu alana yazılır.</p>
+                    </div>
+                </article>
+
+                <aside class="sidebar-card">
+                    <h2>Şablon notları</h2>
+                    <ul class="template-list">
+                        <li>Gerçek içerik eklendiğinde başlığı değiştirin.</li>
+                        <li>Ders ve konu bilgilerini doldurun.</li>
+                        <li>Soru sayısını ihtiyaca göre artırın.</li>
+                        <li>Ders sayfasındaki Örnek Soru başlığına bağlantı ekleyin.</li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <h2>Ders Materyalleri Kütüphanesi</h2>
+                <p>Örnek soru sayfası şablonu.</p>
+            </div>
+            <nav aria-label="Alt menü">
+                <a href="../index.html">Ana Sayfa</a>
+                <a href="../dersler/ders-sablonu.html">Ders Şablonu</a>
+                <a href="../calisma-kagitlari/calisma-kagidi-sablonu.html">Çalışma Kağıdı</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
