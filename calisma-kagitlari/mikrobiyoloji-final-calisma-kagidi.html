@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Genel Mikrobiyoloji final sınavı için çalışma kağıdı ve sınav odaklı ders notu." />
+  <title>Mikrobiyoloji Final Sınavı | Çalışma Kağıdı ve Ders Notu</title>
+  <style>
+    :root{
+      --bg:#f6f7fb; --card:#ffffff; --ink:#182033; --muted:#667085; --line:#dfe3eb;
+      --brand:#3a63ff; --brand-2:#1032a8; --warm:#fff2d7; --warm-border:#f2bd49;
+      --green:#e8f8ef; --green-border:#49b77a; --red:#fff0f0; --red-border:#ef7b7b;
+      --blue-soft:#eef4ff; --shadow:0 10px 30px rgba(17, 24, 39, .08);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+    body::after{content:"Designed by c0v0lk";position:fixed;right:12px;bottom:10px;z-index:40;padding:5px 9px;color:#475569;background:rgba(255,255,255,.88);border:1px solid rgba(203,213,225,.95);border-radius:999px;box-shadow:0 6px 18px rgba(15,23,42,.08);font-size:11px;font-weight:800;letter-spacing:.02em;pointer-events:none}
+    a{color:var(--brand);text-decoration:none}
+    .site-header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .container{width:min(1160px, calc(100% - 32px));margin:0 auto}
+    .nav-shell{height:66px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--ink)}
+    .brand-mark{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--brand),#7c3aed);color:#fff;display:grid;place-items:center;font-size:14px}
+    .site-nav{display:flex;gap:14px;font-size:14px}.site-nav a{color:var(--muted)}
+    .page-hero{background:radial-gradient(circle at top left,#e8edff 0,#f6f7fb 48%,#fff 100%);border-bottom:1px solid var(--line)}
+    .page-header{padding:44px 0 34px}.breadcrumb{font-size:13px;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap}.eyebrow{letter-spacing:.12em;text-transform:uppercase;color:var(--brand-2);font-weight:800;font-size:13px;margin:20px 0 8px}
+    h1{font-size:clamp(30px,5vw,54px);line-height:1.08;margin:0 0 14px} h2{font-size:27px;line-height:1.2;margin:0 0 10px} h3{font-size:18px;margin:0 0 8px} h4{font-size:16px;margin:16px 0 6px}
+    .lead{font-size:18px;color:#344054;max-width:900px}.action-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+    .button{border:0;border-radius:999px;padding:11px 18px;font-weight:800;cursor:pointer;display:inline-flex;align-items:center;gap:8px}.button-primary{background:var(--brand);color:#fff}.button-secondary{background:#fff;color:var(--brand);border:1px solid var(--line)}
+    .section{padding:30px 0}.page-layout{display:grid;grid-template-columns:270px 1fr;gap:22px;align-items:start}.toc{position:sticky;top:86px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}.toc strong{display:block;margin-bottom:10px}.toc a{display:block;padding:7px 0;color:#344054;border-bottom:1px dashed #edf0f5;font-size:14px}.toc a:last-child{border-bottom:0}
+    .page-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px}.meta-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}.meta-item{background:#f9fafb;border:1px solid var(--line);border-radius:14px;padding:12px}.meta-item strong{display:block;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+    .sheet-student-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:14px 0}.line-field{border:1px solid var(--line);border-radius:14px;padding:10px 12px}.line-field strong{font-size:12px;color:var(--muted);display:block}.line-value{display:block;border-bottom:1px solid #98a2b3;height:26px;margin-top:6px}
+    .sheet-topline,.exam-note{background:var(--blue-soft);border-left:5px solid var(--brand);border-radius:14px;padding:14px 16px;margin:18px 0;color:#1d2b53}.section-intro{color:#475467;margin-top:0}.worksheet-box{border:1px solid var(--line);border-radius:18px;padding:20px;margin:22px 0;background:#fff}.section-badge{display:inline-flex;align-items:center;border-radius:999px;padding:5px 10px;background:#edf2ff;color:#2548c8;font-weight:800;font-size:12px;margin-bottom:10px}.section-badge.warm{background:var(--warm);color:#8a5a00}.section-badge.success{background:var(--green);color:#087443}.section-badge.danger{background:var(--red);color:#b42318}
+    .info-grid,.prompt-grid,.compare-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.triple-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.info-card,.prompt-card,.compare-card,.rubric-card{border:1px solid var(--line);border-radius:16px;background:#fbfcff;padding:16px}.plain-list{margin:8px 0 0;padding-left:20px}.plain-list li{margin:6px 0}.tight li{margin:3px 0}.key-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:10px 0}.key-list span{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 10px;font-size:14px}
+    table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:12px 0;background:#fff}th,td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}th{background:#f1f4fb;text-align:left;font-size:13px;color:#344054}tr:last-child td{border-bottom:0}.small{font-size:14px;color:#475467}.callout{border-radius:16px;padding:14px 16px;margin:14px 0;background:#fff7e6;border:1px solid var(--warm-border)}.callout strong{color:#805200}.danger{background:#fff3f3;border-color:var(--red-border)}.success{background:#f0fbf4;border-color:var(--green-border)}
+    .lined-area{height:130px;background:repeating-linear-gradient(to bottom,#fff 0,#fff 29px,#d0d5dd 30px);border:1px solid var(--line);border-radius:14px;margin-top:10px}.lined-area.compact{height:82px}.lined-area.tall{height:180px}.chapter-title{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}.chapter-title small{font-weight:800;color:var(--muted)}.mini-tag{display:inline-block;border:1px solid #cad5ff;background:#f3f6ff;color:#2548c8;border-radius:999px;padding:3px 8px;font-size:12px;font-weight:800;margin:2px}
+    details{border:1px solid var(--line);border-radius:14px;background:#fff;margin:10px 0;padding:10px 12px}summary{font-weight:800;cursor:pointer}.answer-chip{display:inline-block;border-radius:999px;background:#ebfdf2;border:1px solid #abefc6;color:#087443;padding:4px 10px;font-weight:800;font-size:13px}.footer-note{color:var(--muted);font-size:13px;margin-top:22px;border-top:1px solid var(--line);padding-top:14px}
+    @media (max-width:900px){.page-layout{grid-template-columns:1fr}.toc{position:static}.meta-grid,.sheet-student-row,.info-grid,.prompt-grid,.compare-grid,.triple-grid{grid-template-columns:1fr}.key-list{grid-template-columns:1fr}.site-nav{display:none}.page-card{padding:18px}}
+    @media print{.site-header,.toc,.action-row,body::after{display:none}.page-hero{background:#fff}.section{padding:0}.page-layout{display:block}.page-card{box-shadow:none;border:0;padding:0}.worksheet-box{break-inside:avoid}.button{display:none}body{background:#fff}.container{width:100%;}.line-value{height:22px}}
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav-shell">
+    <a class="brand" href="../dersler/mikrobiyoloji.html"><span class="brand-mark">Mİ</span><span>Mikrobiyoloji Final</span></a>
+    <nav class="site-nav" aria-label="Ana menü"><a href="../dersler/mikrobiyoloji.html">Ders Sayfası</a><a href="#ozet-akis">Akış</a><a href="#kavramlar">Kavramlar</a><a href="#haftalar">Hafta Hafta</a><a href="#son-tekrar">Son Tekrar</a></nav>
+  </div>
+</header>
+<main id="top">
+<section class="page-hero">
+  <div class="container page-header">
+    <nav class="breadcrumb"><a href="../index.html">Ana Sayfa</a><span>/</span><a href="../dersler/mikrobiyoloji.html">Genel Mikrobiyoloji</a><span>/</span><span>Çalışma Kağıdı</span></nav>
+    <p class="eyebrow">Çalışma kağıdı + sınav odaklı ders notu</p>
+    <h1>Mikrobiyoloji Final Sınavı Çalışma Dosyası</h1>
+    <p class="lead">Bu dosya, 1–11. hafta mikrobiyoloji slaytlarının sınavda soru yapılabilecek kavramlarını baştan sona toparlamak için hazırlanmıştır. Anlatım; tanım, kritik ayrım, tablo, ezber değeri yüksek sayısal bilgi ve kısa klasik cevap mantığı üzerine kuruludur.</p>
+    <div class="action-row"><button class="button button-primary" onclick="window.print()">Yazdır / PDF olarak kaydet</button><a class="button button-secondary" href="#son-tekrar">Son tekrar listesine git</a></div>
+  </div>
+</section>
+<section class="section">
+  <div class="container page-layout">
+    <aside class="toc">
+      <strong>İçindekiler</strong>
+      <a href="#kimlik">Çalışma bilgileri</a>
+      <a href="#ozet-akis">Genel sınav akışı</a>
+      <a href="#kavramlar">Temel kavram haritası</a>
+      <a href="#hafta1">1. Hafta: giriş ve tarihçe</a>
+      <a href="#hafta2">2. Hafta: laboratuvar</a>
+      <a href="#hafta3">3. Hafta: sterilizasyon</a>
+      <a href="#hafta4">4. Hafta: gelişme ve hücre</a>
+      <a href="#hafta5">5. Hafta: sınıflandırma ve bakteri</a>
+      <a href="#hafta6">6. Hafta: mikoloji</a>
+      <a href="#hafta7">7. Hafta: viroloji</a>
+      <a href="#hafta8">8. Hafta: protozoa ve algler</a>
+      <a href="#hafta9">9. Hafta: büyüme, genetik, prion</a>
+      <a href="#hafta10">10. Hafta: ekoloji</a>
+      <a href="#hafta11">11. Hafta: bağışıklık ve biyoteknoloji</a>
+      <a href="#son-tekrar">Son tekrar</a>
+      <a href="#not-alani">Boş not alanı</a>
+    </aside>
+    <article class="page-card">
+      <section id="kimlik">
+        <div class="meta-grid">
+          <div class="meta-item"><strong>Ders</strong>Genel Mikrobiyoloji</div>
+          <div class="meta-item"><strong>Kapsam</strong>1–11. hafta final tekrarı</div>
+          <div class="meta-item"><strong>Kullanım</strong>Önce özet, sonra soru provası</div>
+          <div class="meta-item"><strong>Seviye</strong>Sınav odaklı yoğun tekrar</div>
+        </div>
+        <div class="sheet-student-row">
+          <div class="line-field"><strong>Ad Soyad</strong><span class="line-value"></span></div>
+          <div class="line-field"><strong>Numara / Şube</strong><span class="line-value"></span></div>
+          <div class="line-field"><strong>Tarih</strong><span class="line-value"></span></div>
+        </div>
+        <div class="sheet-topline"><strong>Nasıl kullanılmalı?</strong> Önce her haftanın “sınav çekirdeği” bölümünü oku. Sonra tabloları kapatıp kavram ayrımlarını kendin söylemeye çalış. En son “Son tekrar listesi” ile eksik kalan başlıkları işaretle.</div>
+      </section>
+
+      <section class="worksheet-box" id="ozet-akis">
+        <span class="section-badge">Bölüm 1</span>
+        <h2>Final İçin Genel Akış</h2>
+        <p class="section-intro">Dersin final kapsamı birbirinden kopuk değil; mikroorganizmanın ne olduğu ile başlıyor, laboratuvar güvenliği ve steril çalışma mantığına geçiyor, sonra ana mikroorganizma grupları ve ekolojik/bağışıklık-biyoteknoloji bağlantıları ile tamamlanıyor.</p>
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Önce mutlaka bilinmesi gereken omurga</h3>
+            <ol class="plain-list">
+              <li>Mikrobiyoloji tanımı, mikroorganizma grupları ve yararlı/zararlı yönleri.</li>
+              <li>Laboratuvarda kullanılan cihazlar, steril çalışma ve güvenlik kuralları.</li>
+              <li>Sterilizasyon, dezenfeksiyon, antisepsi, asepsi ve pastörizasyon farkları.</li>
+              <li>Prokaryot, ökaryot ve hücre yapısı olmayan etkenlerin ayrımı.</li>
+              <li>Bakteri, fungus, virüs, protozoa ve alglerin temel özellikleri.</li>
+            </ol>
+          </div>
+          <div class="info-card">
+            <h3>Finalde soru yapılması kolay başlıklar</h3>
+            <ul class="plain-list">
+              <li>Tanım farkları: sterilizasyon/dezenfeksiyon/antisepsi/asepsi.</li>
+              <li>Sayısal bilgiler: otoklav, kuru ısı, kaynatma, UHT, pH, aw, sıcaklık grupları.</li>
+              <li>Karşılaştırmalar: bakteri-fungus-virüs; prokaryot-ökaryot; aktif-pasif bağışıklık.</li>
+              <li>Sıralamalar: büyüme eğrisi fazları, virüs taşınma yolları, gen aktarım yolları.</li>
+              <li>Örnekler: Rhizobium, mikoriza, TMV, CMV, Bacillus thuringiensis, Spirulina.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="worksheet-box" id="kavramlar">
+        <span class="section-badge warm">Bölüm 2</span>
+        <h2>Temel Kavram Haritası</h2>
+        <table>
+          <thead><tr><th>Kavram</th><th>Sınavlık kısa tanım</th><th>Karıştırılmaması gereken nokta</th></tr></thead>
+          <tbody>
+            <tr><td>Mikrobiyoloji</td><td>Bakteri, virüs, fungus, alg, protozoa gibi çıplak gözle net görülemeyecek canlıları/etkenleri ve faaliyetlerini inceleyen bilim dalıdır.</td><td>Sadece hastalık yapanları değil; yararlı, endüstriyel, ekolojik ve tarımsal etkileri de inceler.</td></tr>
+            <tr><td>Prokaryot</td><td>Gerçek çekirdeği ve zarlı organelleri olmayan hücre tipidir; bakteriler bu gruptadır.</td><td>DNA vardır ama çekirdek zarı içinde değildir.</td></tr>
+            <tr><td>Ökaryot</td><td>Çekirdeği ve zarlı organelleri bulunan hücre tipidir; funguslar, algler ve protozoalar bu gruptadır.</td><td>Ribozom her iki hücre tipinde de bulunabilir.</td></tr>
+            <tr><td>Virüs</td><td>Hücre yapısı göstermeyen, sadece canlı hücrede çoğalabilen zorunlu parazitik enfeksiyon etkenidir.</td><td>Bakteri değildir; antibiyotiklerden etkilenmez; DNA veya RNA’dan yalnız birini taşır.</td></tr>
+            <tr><td>Sterilizasyon</td><td>Bir madde veya ortamın sporlar dahil tüm canlı mikroorganizmalardan arındırılmasıdır.</td><td>Dezenfeksiyondan daha kapsamlıdır.</td></tr>
+            <tr><td>Dezenfeksiyon</td><td>Cansız ortamdaki hastalık yapıcı mikroorganizmaların ve vejetatif şekillerin öldürülmesidir.</td><td>Bakteri sporları her zaman ölmez.</td></tr>
+            <tr><td>Antisepsi</td><td>Vücut yüzeyi veya yaralardaki patojen mikroorganizmaların yok edilmesidir.</td><td>“El dezenfeksiyonu” yerine “el antisepsisi” daha doğru kullanımdır.</td></tr>
+            <tr><td>Asepsi</td><td>Çalışılan ortamın hastalık yapıcı mikroplardan arındırılmış olmasıdır.</td><td>Bir durum/çalışma prensibi olarak düşünülür.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="worksheet-box" id="haftalar">
+        <span class="section-badge success">Bölüm 3</span>
+        <h2>Hafta Hafta Sınav Odaklı Ders Notu</h2>
+        <p class="section-intro">Aşağıdaki bölümler, her haftanın slayt içeriğini “ne sorulur?” mantığına göre yeniden düzenler.</p>
+      </section>
+
+      <section class="worksheet-box" id="hafta1">
+        <div class="chapter-title"><h2>1. Hafta — Mikrobiyolojiye Giriş, Önemi ve Tarihçe</h2><small>Tanım + yarar/zarar + tarihçe</small></div>
+        <p><strong>Mikrobiyoloji</strong>, mikroorganizmaları inceleyen bilim dalıdır. Kelime kökeni <em>micros</em> “küçük”, <em>bios</em> “hayat”, <em>logos</em> “bilim” şeklinde açıklanır. Mikroorganizmalar; bakteriler, virüsler, funguslar, algler, protozoalar ve bazı küçük metazoaları kapsayacak geniş bir taksonomik dağılıma sahiptir.</p>
+        <div class="callout"><strong>Sınav cümlesi:</strong> Mikroorganizma yalnızca “hastalık yapan canlı” değildir; beslenen, büyüyen, çoğalan, çevresine tepki veren ve ekolojik/teknolojik etkileri olan canlı veya hücresel olmayan etkenleri de kapsayan geniş bir gruptur.</div>
+        <div class="info-grid">
+          <div class="info-card"><h3>Mikroorganizmaların zararları</h3><ul class="plain-list tight"><li>İnsanda grip, tüberküloz, kolera, AIDS, sıtma, dizanteri gibi hastalıklar.</li><li>Hayvanda şap, kuş gribi, kuduz, bruselloz, salmonelloz gibi hastalıklar.</li><li>Bitkilerde hastalık oluşturarak verim ve kalite düşüşü.</li><li>Gıdaları/ürünleri bozma, toksin oluşturma, ekonomik kayıp.</li></ul></div>
+          <div class="info-card"><h3>Mikroorganizmaların yararları</h3><ul class="plain-list tight"><li>Yoğurt, kefir, peynir, ekmek, sirke, boza, şarap gibi fermantasyon ürünleri.</li><li>Antibiyotik, enzim, vitamin, protein, organik asit üretimi.</li><li>Bağırsak mikrobiyotası, vitamin sentezi, kolonizasyon direnci.</li><li>Azot fiksasyonu, mikoriza, biyokontrol, biyogaz, atık su arıtımı.</li></ul></div>
+        </div>
+        <table>
+          <thead><tr><th>Alt dal</th><th>İncelediği grup</th><th>Hatırlatma</th></tr></thead>
+          <tbody><tr><td>Viroloji</td><td>Virüsler</td><td>Hücre yapısı olmayan etkenler.</td></tr><tr><td>Bakteriyoloji</td><td>Bakteriler</td><td>Prokaryot mikroorganizmalar.</td></tr><tr><td>Mikoloji</td><td>Maya ve küfler/funguslar</td><td>Ökaryot, heterotrof, kitinli duvar.</td></tr><tr><td>Fikoloji</td><td>Algler</td><td>Fotosentetik pigmentli canlılar.</td></tr><tr><td>Protozooloji</td><td>Protozoalar</td><td>Tek hücreli ökaryotlar.</td></tr><tr><td>Parazitoloji</td><td>Parazit yapan protozoalar ve diğer parazitler</td><td>Konukçu-parazit ilişkisi önemlidir.</td></tr></tbody>
+        </table>
+        <h3>Tarihçe için kısa ezber</h3>
+        <ul class="plain-list"><li><strong>Hooke:</strong> İlk kez filamentöz fungusları gözlemiş ve çizmiştir.</li><li><strong>Van Leeuwenhoek:</strong> Bakterileri ilk gören araştırmacılardandır.</li><li><strong>Abiyogenez/Spontan generasyon:</strong> Canlıların kendiliğinden oluştuğunu savunan eski görüştür.</li><li><strong>Pasteur:</strong> Fermantasyon, aşılama ve mikroorganizma faaliyetleri açısından kritik katkılar yapmıştır.</li><li><strong>Koch:</strong> Antraks çalışmaları, saf kültür ve hastalık etmeni ilişkisini güçlendiren çalışmalarla önemlidir.</li></ul>
+      </section>
+
+      <section class="worksheet-box" id="hafta2">
+        <div class="chapter-title"><h2>2. Hafta — Mikrobiyoloji Laboratuvarında Cihazlar ve Ekipman</h2><small>Mikroskop + cihaz + güvenlik</small></div>
+        <p>Laboratuvar konusu finalde genellikle “hangi cihaz ne işe yarar?” ve “hangi mikroskop hangi amaçla kullanılır?” şeklinde sorulur. Ayrıca temel laboratuvar kuralları doğrudan doğru/yanlış veya boşluk doldurma sorusu olabilir.</p>
+        <table>
+          <thead><tr><th>Cihaz / ekipman</th><th>Temel kullanım</th><th>Sınavda karışan nokta</th></tr></thead>
+          <tbody>
+            <tr><td>Stereo mikroskop</td><td>Ön hazırlık gerektirmeden yüzey özelliklerini üç boyutlu gösterir; yaklaşık 4X–100X büyütme.</td><td>Işık obje üzerinden yansır; klasik ışık mikroskobu kadar yüksek büyütme vermez.</td></tr>
+            <tr><td>Araştırma / ışık mikroskobu</td><td>Lam üzerinde hazırlanmış materyali inceler; çoğu zaman boyama gerekir.</td><td>Işık materyalden geçerek görüntü oluşturur.</td></tr>
+            <tr><td>İnverted mikroskop</td><td>Materyalin kap içinde ve alt kısımda bulunduğu kültürlerde kullanılır.</td><td>Doku-hücre kültürü ve IVF gibi alanlarda tercih edilir.</td></tr>
+            <tr><td>Floresan mikroskop</td><td>Floresan ışıkla görünür hale gelen yapıların incelenmesi.</td><td>Normal ışıkta seçilemeyen yapılar için kullanılır.</td></tr>
+            <tr><td>Faz kontrast mikroskop</td><td>Boyanmamış canlı hücrelerde ayrıntıyı göstermek için kullanılır.</td><td>Farklı kırılma indislerinden yararlanır; canlı hücre için avantajlıdır.</td></tr>
+            <tr><td>Elektron mikroskop</td><td>Virüsler ve çok küçük yapılar dahil yüksek ayrıntılı inceleme.</td><td>Işık yerine elektron kullanır; maliyet ve hazırlık yüksektir.</td></tr>
+            <tr><td>Steril kabin</td><td>Hijyenik çalışma ortamı sağlamak; hava filtrasyonu ve bazı durumlarda ışıkla sterilizasyon.</td><td>Kontaminasyonu azaltır, çalışma alanını korur.</td></tr>
+            <tr><td>Otoklav</td><td>Basınçlı buharla sterilizasyon; genelde 121 °C, 15–20 dakika.</td><td>Besiyeri, çözelti, cam malzeme, pamuk/bez eşya için kullanılır.</td></tr>
+            <tr><td>Etüv / inkübatör</td><td>Etüv kuru sıcaklık veya inkübasyon amacıyla; inkübatör mikroorganizmaları sabit sıcaklıkta çoğaltmak için.</td><td>“Sterilizasyon etüvü” ile “inkübatör” işlevi ayrılmalıdır.</td></tr>
+            <tr><td>Santrifüj</td><td>Sıvı içindeki partikül/hücre/mikroorganizmayı çöktürmek.</td><td>Bakteriler genelde 4000–5000 rpm, virüsler 50.000–100.000 rpm düzeyinde çöktürülebilir.</td></tr>
+            <tr><td>Bunsen beki</td><td>Alev ile steril çalışma alanı ve ısı ihtiyacı.</td><td>Öze/iğne sterilizasyonunda alev kullanılır.</td></tr>
+          </tbody>
+        </table>
+        <div class="callout danger"><strong>Laboratuvar kuralı:</strong> Laboratuvarda yemek yenmez, içecek içilmez; çalışma bitiminde mikroskop lambaları ve gereksiz ışıklar kapatılır, ortam düzenli bırakılır.</div>
+      </section>
+
+      <section class="worksheet-box" id="hafta3">
+        <div class="chapter-title"><h2>3. Hafta — Sterilizasyon, Dezenfeksiyon, Asepsi ve Antisepsi</h2><small>Sayısal bilgi + yöntem farkı</small></div>
+        <p>Bu konu finalin en net soru çıkarılabilecek alanıdır. Tanım, uygulama yeri ve yöntem-süre-sıcaklık bilgileri birlikte öğrenilmelidir.</p>
+        <table>
+          <thead><tr><th>İşlem</th><th>Tanım</th><th>Uygulama alanı</th><th>Sporlara etkisi</th></tr></thead>
+          <tbody>
+            <tr><td>Sterilizasyon</td><td>Tüm mikroorganizmaların tamamen öldürülmesi/uzaklaştırılması.</td><td>Cansız madde, alet, besiyeri, laboratuvar materyali.</td><td>Sporlar dahil hedeflenir.</td></tr>
+            <tr><td>Dezenfeksiyon</td><td>Cansız ortamdaki patojen mikroorganizmaların öldürülmesi.</td><td>Yüzey, eşya, ortam.</td><td>Bazı sporlar canlı kalabilir.</td></tr>
+            <tr><td>Antisepsi</td><td>Vücut yüzeyi veya yaradaki patojenlerin yok edilmesi.</td><td>El, deri, yara, operasyon bölgesi.</td><td>Spor öldürme hedefi genellikle sterilizasyon kadar kapsamlı değildir.</td></tr>
+            <tr><td>Asepsi</td><td>Hastalık yapıcı mikroplardan arındırılmış çalışma durumu.</td><td>Laboratuvar, ameliyathane, ekim işlemi.</td><td>Kontaminasyonu önleme prensibidir.</td></tr>
+            <tr><td>Pastörizasyon</td><td>Sıvı gıdaların besin değerini bozmadan patojenlerden arındırılması.</td><td>Süt ve süt ürünleri başta olmak üzere sıvı gıdalar.</td><td>Sterilizasyon değildir; bazı mikroorganizmalar kalabilir.</td></tr>
+          </tbody>
+        </table>
+        <h3>Sterilizasyon yöntemleri</h3>
+        <table>
+          <thead><tr><th>Yöntem</th><th>Uygulama</th><th>Sınavlık sayı / not</th></tr></thead>
+          <tbody>
+            <tr><td>Kuru ısı</td><td>Pastör fırını; cam ve metal gibi kuru ısıya dayanıklı malzemeler.</td><td>180 °C 30 dk; 170 °C 1 saat; 160 °C 2–2.5 saat.</td></tr>
+            <tr><td>Kızıl dereceye kadar ısıtma</td><td>Öze ve iğne gibi ekim aletleri.</td><td>Aleve doğrudan sokmadan önce uzaktan organik kalıntı yakılır; sıçrama önlenir.</td></tr>
+            <tr><td>Alevden geçirme</td><td>Cam/metal malzeme dış yüzeyi, tüp/kap ağızları.</td><td>Açma-kapama sırasında kontaminasyon engellenir.</td></tr>
+            <tr><td>Kaynatma</td><td>100 °C kaynar suda bekletme.</td><td>30 dakika; güvenilir sterilizasyon değildir, sporlar kalabilir.</td></tr>
+            <tr><td>Tindalizasyon</td><td>Benmaride aralıklı ısıtma.</td><td>56–100 °C’de 3 gün, her gün 30–60 dk; aralarda 1 gece bekletilir.</td></tr>
+            <tr><td>Basınçlı buhar</td><td>Otoklav.</td><td>Yaklaşık 120–121 °C, 1 atm basınç, 15–45 dk; pratik ve güvenilir.</td></tr>
+            <tr><td>Basınçsız buhar</td><td>Koch kazanı veya gevşek kapatılmış otoklav.</td><td>100 °C’de yarım saat; basınçsız buhar.</td></tr>
+            <tr><td>UHT</td><td>Akım halindeki buhar; süt sterilizasyonu.</td><td>135–150 °C, 1–4 saniye; hızlı ısıtma-soğutma şok etkisi.</td></tr>
+            <tr><td>Süzme / filtrasyon</td><td>Isıya dayanıksız sıvılar.</td><td>Mikropları mekanik süzme ve adsorbsiyonla tutar.</td></tr>
+            <tr><td>Kimyasal sterilizasyon</td><td>Timol, kloroform; gaz olarak etilen oksit, beta propiolakton.</td><td>Timol %1; kloroform %7.5; etilen oksit penetrandır.</td></tr>
+            <tr><td>Işınlarla sterilizasyon</td><td>UV, X ve gama ışınları.</td><td>UV derine işlemez; hava ve dış yüzeylerde kullanılır.</td></tr>
+          </tbody>
+        </table>
+        <div class="callout"><strong>Otoklav kontrolü:</strong> Fiziksel kontrol için maksimal termometre; kimyasal kontrol için renk değiştiren/“steril” yazısı çıkan indikatör bantlar; biyolojik kontrol için genellikle <em>Bacillus stearothermophilus</em> sporları kullanılır.</div>
+        <h3>Dezenfektanların etki mantığı</h3>
+        <ul class="plain-list"><li>Hücre duvarı ve membran geçirgenliğini bozabilirler.</li><li>Proteinleri denatüre edebilir veya enzim aktivitesini bozabilirler.</li><li>DNA replikasyonu/protein sentezi üzerinde etkili olabilirler.</li><li>Dezenfektanın etkisi; konsantrasyon, temas süresi, organik madde varlığı, pH, sıcaklık ve mikroorganizma tipine göre değişir.</li></ul>
+      </section>
+
+      <section class="worksheet-box" id="hafta4">
+        <div class="chapter-title"><h2>4. Hafta — Mikroorganizmaların Gelişmesi, Hücre Yapısı ve Enzimler</h2><small>Gelişme şartları + hücre farkı</small></div>
+        <p>Mikroorganizmaların gelişmesi için besin maddesi, uygun sıcaklık, su, pH ve oksijen durumu gerekir. Bu koşullardan biri uygun değilse gelişme yavaşlar veya durur.</p>
+        <div class="triple-grid">
+          <div class="info-card"><h3>Sıcaklık</h3><p>Düşük sıcaklık gelişmeyi durdurur ama genellikle öldürücü değildir. Yüksek sıcaklık ise belirli sınırdan sonra mikroorganizmaları öldürür.</p></div>
+          <div class="info-card"><h3>Su</h3><p>Mikroorganizmalar serbest suya ihtiyaç duyar. Kurutma, tuzlama ve şekerleme kullanılabilir suyu azaltarak bozulmayı geciktirir.</p></div>
+          <div class="info-card"><h3>pH</h3><p>Çoğu mikroorganizma nötr ve nötre yakın pH’ı sever. Asitli ortam birçok bakteriyi sınırlar; düşük asitli gıdalar daha kolay bozulur.</p></div>
+        </div>
+        <table>
+          <thead><tr><th>Hücre/etken tipi</th><th>Örnek</th><th>Önemli özellik</th></tr></thead>
+          <tbody><tr><td>Prokaryotik mikroorganizmalar</td><td>Bakteriler, arkeler</td><td>Çekirdek zarı yok; zarlı organeller yok; peptidoglikan bakteride önemlidir.</td></tr><tr><td>Ökaryotik mikroorganizmalar</td><td>Funguslar, protozoalar, algler</td><td>Çekirdek, mitokondri, ER, Golgi gibi organeller bulunabilir.</td></tr><tr><td>Hücre yapısı olmayan etkenler</td><td>Virüs, viroid, prion</td><td>Canlı hücre gibi metabolizma yapmaz; konukçuya bağımlı olabilir.</td></tr></tbody>
+        </table>
+        <h3>Organelleri sınav cümlesiyle hatırla</h3>
+        <ul class="plain-list tight"><li><strong>Çekirdek:</strong> Ökaryotlarda DNA’nın bulunduğu, replikasyon ve RNA sentezinin yapıldığı merkezdir.</li><li><strong>Mitokondri:</strong> Enerji üretiminde kritik rol oynayan ökaryotik organeldir; kendi genetik materyaline sahiptir.</li><li><strong>Ribozom:</strong> Protein sentezinin gerçekleştiği yapıdır; prokaryot ve ökaryotlarda bulunur.</li><li><strong>Endoplazmik retikulum:</strong> Molekül taşınması, modifikasyon ve yönlendirme ile ilgilidir; granüllü ER’de ribozom vardır.</li><li><strong>Golgi kompleksi:</strong> Moleküllerin işlenmesi, paketlenmesi ve salgılanmasında önemlidir.</li><li><strong>Plazma membranı:</strong> Seçici geçirgendir; madde alışverişini düzenler.</li></ul>
+        <h3>Enzimler</h3>
+        <p>Enzimler biyolojik katalizörlerdir. Kimyasal reaksiyonları hızlandırır, reaksiyon sonunda harcanmaz ve çoğunlukla özgül substratlarla çalışır. <strong>Ekzoenzimler</strong> hücre dışına salgılanarak büyük molekülleri parçalar; <strong>endoenzimler</strong> hücre içinde görev yapar. Enzim aktivitesi sıcaklık, pH, substrat miktarı ve inhibitörlerden etkilenir.</p>
+        <div class="callout success"><strong>Tarım bağlantısı:</strong> Patojenite enzimleri bitki dokularını parçalayabilir; biyokontrol etmenleri kitinaz gibi enzimlerle patojen hücre duvarına etki edebilir.</div>
+      </section>
+
+      <section class="worksheet-box" id="hafta5">
+        <div class="chapter-title"><h2>5. Hafta — Sınıflandırma, Adlandırma ve Bakteriler</h2><small>Taksonomi + bakteri yapısı</small></div>
+        <h3>Taksonomi ve adlandırma</h3>
+        <p><strong>Taksonomi</strong>, canlıları sınıflandırma bilimidir. Yakınlık derecelerine göre organizmalar takson adı verilen gruplara ayrılır. Sıralama genel olarak alem, şube, sınıf, takım, familya, cins ve tür şeklindedir.</p>
+        <table>
+          <thead><tr><th>Terim</th><th>Anlam</th><th>Örnek / not</th></tr></thead>
+          <tbody><tr><td>Binomial nomenclature</td><td>İkili adlandırma sistemi.</td><td><em>Bacillus subtilis</em>: ilk kelime cins, ikinci kelime tür epitetidir.</td></tr><tr><td>Cins adı</td><td>İlk harfi büyük yazılır.</td><td><em>Bacillus</em></td></tr><tr><td>Tür adı</td><td>Cins + tür epiteti birlikte tür adını oluşturur.</td><td><em>Bacillus subtilis</em></td></tr><tr><td>sp.</td><td>Tek ama türü belirtilmemiş tür.</td><td><em>Puccinia</em> sp.</td></tr><tr><td>spp.</td><td>Birden fazla tür.</td><td><em>Puccinia</em> spp.</td></tr></tbody>
+        </table>
+        <table>
+          <thead><tr><th>Terim</th><th>Ayrım kriteri</th><th>Kısa açıklama</th></tr></thead>
+          <tbody><tr><td>Irk / fizyolojik ırk</td><td>Konukçu bitki reaksiyonu</td><td>Aynı patojen türü içinde farklı çeşitlerde farklı virülens gösteren alt gruplar.</td></tr><tr><td>İzolat</td><td>İzolasyon kaynağı</td><td>Tek bir enfeksiyon kaynağından alınarak laboratuvarda çoğaltılmış patojen örneği.</td></tr><tr><td>Strain / suş</td><td>Genetik veya moleküler özellik</td><td>Tür içinde genetik olarak ayırt edilebilen alt grup.</td></tr></tbody>
+        </table>
+        <h3>Bakteri yapısı ve morfolojisi</h3>
+        <p>Bakteriler prokaryotik canlılardır. Çekirdek zarı ve çekirdekçik yoktur; genetik materyal çift sarmal DNA olarak sitoplazmada belirli bir bölgede yoğunlaşır. Sitoplazmada plasmid denilen küçük dairesel genetik materyaller de bulunabilir.</p>
+        <div class="info-grid">
+          <div class="info-card"><h3>Bakteri hücresinin başlıca yapıları</h3><ul class="plain-list tight"><li><strong>Kapsül:</strong> Koruma sağlar; patojenlerde virülens faktörü olabilir.</li><li><strong>Hücre duvarı:</strong> Şekil ve dayanıklılık verir; peptidoglikan içerir.</li><li><strong>Hücre membranı:</strong> Madde alışverişini düzenler.</li><li><strong>Ribozom:</strong> Protein sentezi.</li><li><strong>Kromozom/plasmid:</strong> Genetik bilgi.</li><li><strong>Flagellum:</strong> Hareket; flagellin proteininden oluşur.</li><li><strong>Pili:</strong> Tutunma ve konjugasyon.</li></ul></div>
+          <div class="info-card"><h3>Morfoloji</h3><ul class="plain-list tight"><li><strong>Kok:</strong> Yuvarlak.</li><li><strong>Basil:</strong> Çubuk.</li><li><strong>Spiral:</strong> Sarmal.</li><li><strong>Vibrio:</strong> Virgül şeklinde.</li><li><strong>Diplokok:</strong> İkili kok.</li><li><strong>Streptokok:</strong> Zincir şeklinde kok.</li><li><strong>Stafilokok:</strong> Üzüm salkımı şeklinde kok.</li></ul></div>
+        </div>
+        <table>
+          <thead><tr><th>Kamçı tipi</th><th>Tanım</th></tr></thead>
+          <tbody><tr><td>Atrik</td><td>Kamçısı olmayan.</td></tr><tr><td>Monotrik</td><td>Bir kutupta tek kamçı.</td></tr><tr><td>Lofotrik</td><td>Bir veya iki kutupta birden fazla kamçı.</td></tr><tr><td>Amfitrik</td><td>Her iki uçta birer kamçı.</td></tr><tr><td>Peritrik</td><td>Hücrenin her yanında kamçı.</td></tr></tbody>
+        </table>
+        <div class="callout"><strong>Fitopatojen bakteriler:</strong> Genellikle çubuk şekilli, çoğu Gram negatif, çoğu kamçılı ve spor oluşturmayan bakterilerdir. Bitkiye doğrudan penetrasyon yapmaz; yara ve doğal açıklıklardan girer. Toksinler nekroz/solgunluk, enzimler yaş çürüklük, hormonlar gal oluşumu gibi belirtilere yol açabilir.</div>
+        <h3>Fitopatojen bakteri belirtileri</h3>
+        <div class="key-list"><span>Yaprak lekesi</span><span>Yanıklık</span><span>Solgunluk</span><span>Yaş çürüklük</span><span>Kanser</span><span>Geriye ölüm</span><span>Taç gali</span><span>Akıntı</span></div>
+      </section>
+
+      <section class="worksheet-box" id="hafta6">
+        <div class="chapter-title"><h2>6. Hafta — Mikoloji: Funguslar, Mayalar ve Küfler</h2><small>Hif + miselyum + üreme</small></div>
+        <p>Funguslar klorofil taşımayan, fotosentez yapmayan, heterotrof, ökaryotik organizmalardır. Doğada organik maddelerin parçalanmasında çok önemli rol oynarlar; ancak insan, hayvan, bitki ve gıdalarda zarar da oluşturabilirler.</p>
+        <table>
+          <thead><tr><th>Özellik</th><th>Funguslarda durum</th><th>Karşılaştırma</th></tr></thead>
+          <tbody><tr><td>Hücre tipi</td><td>Ökaryot</td><td>Bakteriler prokaryottur.</td></tr><tr><td>Beslenme</td><td>Heterotrof, absorbsiyonla beslenir.</td><td>Algler fotosentez yapabilir.</td></tr><tr><td>Hücre duvarı</td><td>Kitin, mannan, β-glukan ve protein/glikoprotein içerir.</td><td>Bakteri duvarında peptidoglikan, bitkide selüloz baskındır.</td></tr><tr><td>Hücre zarı</td><td>Ergosterol içerir.</td><td>İnsanda başlıca sterol kolesteroldür; bazı antifungaller ergosterol üzerinden etki eder.</td></tr><tr><td>Optimum gelişme</td><td>Genelde nemli ortam, pH 6.0–6.8, 25–35 °C.</td><td>Sporlar kuruluğa dirençli olabilir.</td></tr></tbody>
+        </table>
+        <h3>Fungal yapı terimleri</h3>
+        <ul class="plain-list"><li><strong>Thallus:</strong> Fungusun vücudunu oluşturan temel vejetatif yapı.</li><li><strong>Hif:</strong> İpliksi yapı; uçtan uzayarak ve dallanarak büyür.</li><li><strong>Miselyum:</strong> Hiflerin toplu hâli.</li><li><strong>Septalı hif:</strong> Bölmelerle ayrılmış hif; bölmelerde porlar bulunabilir.</li><li><strong>Septasız/coenocytic hif:</strong> Bölmesiz uzanan, çok çekirdekli yapı.</li><li><strong>Rhizomorf:</strong> Kalın hif demetleri; kötü koşullara dayanıklıdır.</li><li><strong>Sklerotium:</strong> Kötü şartlara dayanıklı dinlenme yapısı.</li></ul>
+        <table>
+          <thead><tr><th>Fungus formu</th><th>Özellik</th><th>Sınav notu</th></tr></thead>
+          <tbody><tr><td>Maya</td><td>Tek hücreli; yuvarlak/oval; tomurcuklanarak ürer.</td><td>Kolonileri bakteriye benzer, macunsu olabilir.</td></tr><tr><td>Küf</td><td>Filamentöz; hif ve miselyum oluşturur.</td><td>Sporlanma ve miselyum yapısı önemlidir.</td></tr><tr><td>Dimorfik mantar</td><td>Koşula göre maya veya küf formu.</td><td>Termal dimorfizm: 37 °C/in vivo maya, 25 °C/in vitro küf şeklinde olabilir.</td></tr></tbody>
+        </table>
+        <h3>Faydalı ve zararlı yönler</h3>
+        <div class="info-grid"><div class="info-card"><h3>Faydaları</h3><ul class="plain-list tight"><li>Organik madde parçalanması, humus oluşumu.</li><li>Ekmek, bira, şarap gibi fermantasyonlar.</li><li>Antibiyotik ve enzim üretimi.</li><li>Yemeklik mantarlar.</li><li>Entomopatojen funguslarla biyolojik mücadele.</li></ul></div><div class="info-card"><h3>Zararları</h3><ul class="plain-list tight"><li>İnsan, hayvan ve bitkilerde hastalık.</li><li>Gıda küflenmesi ve bozulması.</li><li>Kereste, deri, tekstil ve kablolarda bozulma.</li><li>Mikotoksin üretimi.</li><li>Zehirli mantarlarla zehirlenme.</li></ul></div></div>
+        <table><thead><tr><th>Mikotoksin</th><th>Üreten etmen / kaynak</th><th>Etki</th></tr></thead><tbody><tr><td>Aflatoksin</td><td><em>Aspergillus flavus</em></td><td>Karaciğer kanseriyle ilişkilidir.</td></tr><tr><td>Ochratoxin</td><td><em>A. ochraceus</em>, <em>Penicillium viridicatum</em></td><td>Böbreklerde atrofi.</td></tr><tr><td>Fumonisin</td><td><em>Fusarium moniliforme</em></td><td>Yemek borusu kanseri, atlarda sinir hastalığı.</td></tr><tr><td>Patulin</td><td>Meyve sularında bazı <em>Penicillium</em> ve <em>Aspergillus</em> türleri.</td><td>Gıda güvenliği açısından önemlidir.</td></tr></tbody></table>
+      </section>
+
+      <section class="worksheet-box" id="hafta7">
+        <div class="chapter-title"><h2>7. Hafta — Viroloji: Virüsler, Viroidler ve Bitki Virüsleri</h2><small>Hücre dışı yapı + taşınma + belirti</small></div>
+        <p>Virüsler normal ışık mikroskobunda görülmeyen, hücre yapısı göstermeyen, canlı hücre içinde çoğalabilen zorunlu parazitlerdir. Virion; nükleik asit ve onu çevreleyen kapsitten oluşur. Bazı virüslerde lipid zarf da bulunabilir.</p>
+        <div class="callout"><strong>Sınav cümlesi:</strong> Virüsler antibiyotiklerden etkilenmez; in vitroda klasik bakteri gibi üretilemez; funguslar gibi koloni oluşturmaz; çoğalmak için konukçu hücrenin hammadde ve enerjisini kullanır.</div>
+        <table>
+          <thead><tr><th>Özellik</th><th>Virüslerde durum</th></tr></thead>
+          <tbody><tr><td>Boyut</td><td>Yaklaşık 0.01–0.2 µm; elektron mikroskobu gerekir.</td></tr><tr><td>Yapı</td><td>DNA veya RNA + protein kapsit; bazıları zarflıdır.</td></tr><tr><td>Nükleik asit</td><td>DNA veya RNA’dan yalnız biri bulunur; ss/ds olabilir.</td></tr><tr><td>Çoğalma</td><td>Canlı hücre içinde; virion veya nükleik asit hücreye girer, sentez sonrası yeni virionlar oluşur.</td></tr><tr><td>Adlandırma</td><td>Eskiden çoğunlukla İngilizce konukçu/hastalık adına göre; ICTV 2024 ile Latinceleştirme vurgulanmıştır.</td></tr></tbody>
+        </table>
+        <h3>Virüs şekilleri</h3>
+        <div class="key-list"><span>Küresel / spherical</span><span>Çubuk / rigid rod</span><span>Esnek çubuk / flexuous rod</span><span>Bacilliform</span><span>Geminate</span><span>İkosahedral</span></div>
+        <h3>Viroid</h3>
+        <p><strong>Viroid</strong>, protein kılıfı olmayan ve yalnızca bulaşıcı nükleik asitten oluşan yapıdır. Moleküler olarak genellikle halkasal tek iplikçikli RNA’dan ibarettir. Konukçuda bodurluk, deformasyon ve sararma gibi belirtiler oluşturabilir. Patateste Potato Spindle Tuber Viroid, turunçgillerde Citrus Exocortis ve krizantemde Hop Stunt örnek verilebilir.</p>
+        <h3>Bitki virüslerinde belirtiler</h3>
+        <table><thead><tr><th>Belirti</th><th>Kısa açıklama</th></tr></thead><tbody><tr><td>Lokal leke</td><td>Bulaşmadan sonra küçük klorotik veya nekrotik lekeler; lokal enfeksiyon.</td></tr><tr><td>Sistemik enfeksiyon</td><td>Mozaik, solgunluk, genel kloroz, cücelik, deformasyon gibi tüm bitkiyi etkileyen belirtiler.</td></tr><tr><td>Kloroz</td><td>Damar açılması/sararması ile başlayıp yaprak yüzeyine yayılabilir.</td></tr><tr><td>Cücelik</td><td>Fotosentez, su-besin taşınması ve hormon dengesinin bozulmasıyla gelişme geriler.</td></tr><tr><td>Mozaik</td><td>Açık-koyu yeşil renk kombinasyonları.</td></tr><tr><td>Halkalı leke</td><td>Yaprak, meyve veya çiçekte tam/yarım daire şeklinde lekeler.</td></tr><tr><td>Deformasyon</td><td>Kabarcık, şişkinlik, tümör, siğil, çalılaşma veya rozetleşme.</td></tr></tbody></table>
+        <h3>Bitki virüslerinin taşınma yolları</h3>
+        <ol class="plain-list"><li><strong>Mekanik taşınma:</strong> Özsu ve yaralarla; TMV, CMV gibi örnekler.</li><li><strong>Aşı ve vejetatif parçalar:</strong> Yumru, soğan, rizom, çelik, fidan materyali.</li><li><strong>Tohum ve polen:</strong> Virüs tohum yüzeyi, endosperm veya embriyoda bulunabilir.</li><li><strong>Vektörlerle taşınma:</strong> Böcek, nematod, akar, parazit bitki ve parazit funguslar.</li></ol>
+        <div class="callout danger"><strong>Mücadele mantığı:</strong> Virüslere karşı doğrudan kimyasal mücadele yoktur. Sağlıklı sertifikalı fide/fidan kullanımı, hastalıklı bitki uzaklaştırma, vektör kontrolü, yabancı ot temizliği, alet dezenfeksiyonu ve dayanıklı çeşit kullanımı temel koruyucu önlemlerdir.</div>
+      </section>
+
+      <section class="worksheet-box" id="hafta8">
+        <div class="chapter-title"><h2>8. Hafta — Protozoonlar ve Algler</h2><small>Protista + hareket organelleri + pigment</small></div>
+        <h3>Protozoonlar</h3>
+        <p>Protozoonlar Protista aleminde değerlendirilen, tek hücreli, çekirdekli ve çoğunlukla mikroskobik ökaryotik canlılardır. Tek hücreli olmalarına rağmen beslenme, hareket, boşaltım ve üreme gibi canlılık fonksiyonlarını bağımsız olarak yerine getirebilirler.</p>
+        <table><thead><tr><th>Protozoonlarda yapı</th><th>Görev / özellik</th></tr></thead><tbody><tr><td>Sitoplazma</td><td>Ektoplazma ve endoplazma olarak ayrılabilir; beslenme ve üreme fonksiyonları endoplazmada yoğunlaşır.</td></tr><tr><td>Nukleus</td><td>Hayati fonksiyonlar için önemlidir; bazı türlerde makronukleus ve mikronukleus bulunabilir.</td></tr><tr><td>Makronukleus</td><td>Beslenme ve metabolizma görevleri.</td></tr><tr><td>Mikronukleus</td><td>Çoğalma görevleri.</td></tr><tr><td>Pulsatif vakuol</td><td>Boşaltım ve osmoz düzenlenmesi; özellikle tatlı suda serbest yaşayanlarda.</td></tr></tbody></table>
+        <h3>Hareket organelleri</h3>
+        <table><thead><tr><th>Organ</th><th>Görüldüğü grup</th><th>Not</th></tr></thead><tbody><tr><td>Pseudopod / yalancı ayak</td><td>Sarcodina / amipler</td><td>Hareket ve besin alımı; lobopodium, filopodium, rhizopodium, axopodium tipleri.</td></tr><tr><td>Flagellum / kamçı</td><td>Flagellata</td><td>Blepharoblasttan çıkar; 1–8 kadar olabilir.</td></tr><tr><td>Cilia / sil</td><td>Ciliata</td><td>Flagellumdan kısa ve çok sayıda; hareket ve beslenmede görevli.</td></tr></tbody></table>
+        <div class="callout"><strong>Protozoa farkları:</strong> Bakterilerden en önemli farkı çekirdek zarının bulunmasıdır. Funguslardan farkı bazı evrelerde hareketli olmaları ve dallanarak çoğalmamalarıdır. Alglerden farkı klorofil taşımamalarıdır.</div>
+        <h3>Algler</h3>
+        <p>Algler klorofil ve çeşitli pigmentlere sahip, fotosentez yapabilen organizmalardır. Sularda, ıslak topraklarda, kaya ve ağaç yüzeylerinde gelişebilirler. Tek hücreli, koloni oluşturan veya filamentöz formları olabilir.</p>
+        <table><thead><tr><th>Alg özelliği</th><th>Sınavlık not</th></tr></thead><tbody><tr><td>Fotosentez</td><td>Aerobik fotosentetik organizmalardır; sucul ortamların birincil üreticilerindendir.</td></tr><tr><td>Pigmentler</td><td>Klorofil a yaygındır; klorofil b yeşil alglerde, klorofil c kahverengi algler/diatomlar/öglena grubunda, klorofil d kırmızı alglerde görülür.</td></tr><tr><td>Tallus</td><td>Vasküler doku taşımayan özelleşmemiş vücut bölümleri.</td></tr><tr><td>Üreme</td><td>Eşeyli veya eşeysiz olabilir; bölünme, tomurcuklanma, spor veya gamet üretimi görülebilir.</td></tr></tbody></table>
+        <h3>Alg gruplarından sınavlık örnekler</h3>
+        <ul class="plain-list"><li><strong>Pyrrophyta/Dinophyta:</strong> İki kamçılı, bazı türlerde theca; aşırı çoğalma kırmızı kuşak/red tide oluşturabilir; bazıları yakamoz görüntüsü oluşturur.</li><li><strong>Chrysophyta/Bacillariophyceae:</strong> Diatomlar; silisli iki kapaklı hücre duvarı karakteristiktir.</li><li><strong>Chromista:</strong> Klorofil-c ve farklı pigmentler; bitkilerle yakın akraba değildir, depo ürünü nişasta değildir.</li></ul>
+      </section>
+
+      <section class="worksheet-box" id="hafta9">
+        <div class="chapter-title"><h2>9. Hafta — Büyüme, Çoğalma, Gelişme Faktörleri, Genetik Farklılık ve Prionlar</h2><small>Fazlar + iç/dış faktörler + gen aktarımı</small></div>
+        <h3>Üreme ve çoğalma</h3>
+        <p>Canlıların nesillerini sürdürmek amacıyla kendilerine benzer yeni canlılar meydana getirmesine üreme denir. Mikroorganizmalar çoğunlukla eşeysiz çoğaldıkları için tek hücrenin sayı artışı “çoğalma” olarak ifade edilir.</p>
+        <table><thead><tr><th>Grup</th><th>Çoğalma şekli</th></tr></thead><tbody><tr><td>Bakteri ve riketsiya</td><td>Genellikle ikiye bölünme.</td></tr><tr><td>Fungus</td><td>Sporulasyon; hif parçalanması; konidi, artrospor, klamidospor gibi yapılar.</td></tr><tr><td>Maya</td><td>Tomurcuklanma; pseudohif/pseudomisel oluşabilir.</td></tr><tr><td>Protozoa</td><td>Basit/çoklu bölünme ve sporulasyon.</td></tr><tr><td>Tek hücreli alg</td><td>Bölünme.</td></tr><tr><td>Virüs</td><td>Konukçu canlı hücreye kendini çoğalttırır.</td></tr></tbody></table>
+        <h3>Bakteriyel büyüme eğrisi</h3>
+        <table><thead><tr><th>Faz</th><th>Ne olur?</th><th>Sınavlık önem</th></tr></thead><tbody><tr><td>Lag / adaptasyon</td><td>Yeni ortama uyum; hücre sayısı belirgin artmaz, metabolik hazırlık vardır.</td><td>Soğutma ve sanitasyonla uzatılabilir.</td></tr><tr><td>Logaritmik gelişme</td><td>Hücre sayısı geometrik artar; bölünme en aktiftir.</td><td>Sanitasyonun etkisi bu fazda önemlidir.</td></tr><tr><td>Duraklama</td><td>Besin azalır, metabolik atık birikir, pH değişir; üreme ve ölüm dengelenir.</td><td>Sayı sabitlenir; 24 saatten 30 günden fazlaya değişebilir.</td></tr><tr><td>Hızlı ölüm</td><td>Olumsuz koşullar nedeniyle ölüm hızlanır.</td><td>Log fazına benzer eğri gösterebilir.</td></tr></tbody></table>
+        <h3>Gelişmeyi etkileyen faktörler</h3>
+        <table><thead><tr><th>İç faktörler</th><th>Dış faktörler</th></tr></thead><tbody><tr><td>Besin maddeleri, pH, su aktivitesi, redoks potansiyeli, antimikrobiyal bileşikler, koruyucu biyolojik yapılar.</td><td>Sıcaklık, nispi nem, çevredeki gazlar ve gaz konsantrasyonları.</td></tr></tbody></table>
+        <div class="info-grid"><div class="info-card"><h3>Su aktivitesi (aw)</h3><p>Mikroorganizmaların kullanabildiği serbest suyun indeksidir. Formül: aw = P / P0. Saf suyun aw değeri 1.00’dır. Bakteriler genelde mayalardan ve küflerden daha yüksek aw ister.</p></div><div class="info-card"><h3>Redoks potansiyeli (Eh)</h3><p>Ortamın elektron alma/verme eğilimini ifade eder. Düşük Eh anaeroblara, yüksek Eh aeroblara daha uygundur.</p></div></div>
+        <table><thead><tr><th>Sıcaklık grubu</th><th>Minimum</th><th>Optimum</th><th>Maksimum</th></tr></thead><tbody><tr><td>Termofiller</td><td>40–45 °C</td><td>55–75 °C</td><td>60–90 °C</td></tr><tr><td>Mezofiller</td><td>5–15 °C</td><td>30–40 °C</td><td>40–47 °C</td></tr><tr><td>Psikrofiller</td><td>-5 – +5 °C</td><td>12–15 °C</td><td>15–20 °C</td></tr><tr><td>Psikrotroflar</td><td>-5 – +5 °C</td><td>25–30 °C</td><td>30–35 °C</td></tr></tbody></table>
+        <h3>Bakteriyel gen aktarımı ve genetik farklılık</h3>
+        <table><thead><tr><th>Mekanizma</th><th>Tanım</th><th>Ezber ipucu</th></tr></thead><tbody><tr><td>Transformasyon</td><td>Serbest DNA’nın bakteri tarafından alınması.</td><td>Ortamdan DNA alma.</td></tr><tr><td>Konjugasyon</td><td>Hücre teması ve pilus aracılığıyla DNA aktarımı.</td><td>Verici-alıcı hücre teması.</td></tr><tr><td>Transdüksiyon</td><td>DNA’nın bakteriyofajlar aracılığıyla aktarılması.</td><td>Faj aracılığı.</td></tr><tr><td>Rekombinasyon</td><td>Aktarılan genetik materyalin alıcı genomla birleşmesi.</td><td>Çoğalma değil, genetik yeniden düzenlenmedir.</td></tr></tbody></table>
+        <h3>Prionlar</h3>
+        <p>Prion, proteinaceous ve infectious kelimelerinden türetilmiştir. Virüs veya bakteri değildir; sinir sistemi hücrelerinde doğal olarak bulunan normal proteinlerin anormal katlanmış bulaşıcı forma dönüşmesiyle ilişkilidir. Scrapie, BSE ve Creutzfeldt-Jakob gibi hastalıklar prion konusu ile bağlantılıdır.</p>
+      </section>
+
+      <section class="worksheet-box" id="hafta10">
+        <div class="chapter-title"><h2>10. Hafta — Farklı Ekolojilerde Mikroorganizmalar ve Simbiyotik İlişkiler</h2><small>Toprak + su + simbiyoz</small></div>
+        <p>Mikroorganizmalar doğada genellikle tek tür hâlinde değil, karışık popülasyonlar hâlinde bulunur. Toprak ve su gibi ortamlarda fungus, protozoa, alg, bakteri ve virüs türleri birlikte bulunabilir. Çevre şartları mikrobiyal popülasyon üzerinde seçici etkiye sahiptir.</p>
+        <table><thead><tr><th>İlişki tipi</th><th>Tanım</th><th>Örnek / not</th></tr></thead><tbody><tr><td>Nötralizm</td><td>Türlerin birbirini etkilememesi.</td><td>Birlikte bulunurlar ama belirgin etki yoktur.</td></tr><tr><td>Mutualizm</td><td>İki taraf da yarar sağlar; bazen birbirine bağımlıdır.</td><td>Rhizobium-baklagil, mikoriza-bitki, termit-Trichonympha.</td></tr><tr><td>Kommensalizm</td><td>Biri yarar sağlar, diğeri belirgin etkilenmez.</td><td>Bir mikrobun parçalama ürününden diğerinin yararlanması.</td></tr><tr><td>Sinergizm</td><td>İki veya daha fazla mikroorganizma birlikte tek başına oluşturamayacağı etkiyi oluşturur.</td><td>Miks enfeksiyon örnekleri.</td></tr><tr><td>Antagonizm / amensalizm</td><td>Bir türün metabolitleri diğerinin gelişmesini engeller veya öldürür.</td><td>Antibiyotik, bakteriyosin, pH değişimi.</td></tr><tr><td>Parazitizm</td><td>Parazit yararlanır, konak zarar görür.</td><td>Patojen mikroorganizmalar.</td></tr><tr><td>Oportunizm</td><td>Normalde hastalık yapmayan etkenin uygun durumda hastalık yapması.</td><td><em>Candida albicans</em> antibiyotik sonrası fırsatçı olabilir.</td></tr><tr><td>Kompetisyon</td><td>Aynı gıda, reseptör veya substrat için rekabet.</td><td>Ekosistemde baskın türleri belirleyebilir.</td></tr></tbody></table>
+        <h3>Toprak ve rizosfer</h3>
+        <p><strong>Rizosfer</strong>, kök sistemine yapışık veya kök çevresinde bulunan ince toprak tabakasıdır. Kök salgıları nedeniyle mikroorganizma faaliyeti yoğunlaşır. Rizosfer bakterileri bitkilerin mineral madde alımına katkı sağlayabilir; bazıları bitki gelişimini desteklerken bazıları hastalık gelişiminde rol oynayabilir.</p>
+        <div class="info-grid"><div class="info-card"><h3>Mikoriza</h3><p>Bitki kökü ile mantar arasındaki mutualistik ilişkidir. Mantar bitkinin su ve mineral alımını artırır; bitki mantara fotosentez ürünleri sağlar.</p></div><div class="info-card"><h3>Rhizobium</h3><p>Baklagil kök nodüllerinde yaşar; atmosfer azotunu organik bileşiklere bağlayarak bitkiye azot sağlar. Karşılığında bitkiden organik madde alır.</p></div></div>
+        <h3>Su ve hava mikrobiyolojisi</h3>
+        <ul class="plain-list"><li>Sularda virüs, bakteri, alg, protozoa ve fungus bulunabilir.</li><li>Bir kısmı doğal mikrobiyotaya aittir; bir kısmı hava, toprak, endüstri veya konut kaynaklı bulaşır.</li><li>Atmosferik su toz ve mikroorganizmaların tutunduğu parçacıkları yıkayabilir.</li><li>Toprak doğal filtre görevi görebilir; ancak kirlilik yükü arttığında su mikrobiyolojisi halk sağlığı açısından önem kazanır.</li></ul>
+      </section>
+
+      <section class="worksheet-box" id="hafta11">
+        <div class="chapter-title"><h2>11. Hafta — Hastalık, Savunma, Bağışıklık, Mikrobiyal Biyoteknoloji</h2><small>Terminoloji + immünite + uygulama</small></div>
+        <h3>Hastalık ve enfeksiyon terminolojisi</h3>
+        <table><thead><tr><th>Kavram</th><th>Tanım</th></tr></thead><tbody><tr><td>Hastalık</td><td>Normal sağlıklı durumdan sapmadır; bitkide hayat olaylarının zararlı derecede normalden uzaklaşması.</td></tr><tr><td>Parazit</td><td>Konukçu içinde veya üzerinde yaşayan organizma.</td></tr><tr><td>Patojen</td><td>Konukçusunda hastalığa neden olan parazit.</td></tr><tr><td>Enfeksiyon</td><td>Etkenin konukçu içinde veya üzerinde gelişip çoğalması.</td></tr><tr><td>Patojenite</td><td>Hastalık yapma yeteneği.</td></tr><tr><td>Virülens</td><td>Patojenitenin derecesi; şiddetli hastalık oluşturma gücü.</td></tr><tr><td>Avirülent</td><td>Virülent patojenin hastalık yapma yeteneğini kaybetmiş mutantı.</td></tr><tr><td>Fırsatçı patojen</td><td>Normalde patojen olmayan, yanlış yerde veya zayıf konukçuda hastalık yapan etken.</td></tr></tbody></table>
+        <h3>Spesifik olmayan korunma mekanizmaları</h3>
+        <ul class="plain-list"><li><strong>Deri:</strong> Kuru, tuzlu, yağ asitlerince zengin ve az besinli yapısıyla birçok mikrobu sınırlar; normal flora patojenlere antagonisttir.</li><li><strong>Ağız-yutak:</strong> Sürekli sıvı akışı tutunamayan patojenleri mideye taşır.</li><li><strong>Mide:</strong> Asit ve enzimler mikropları öldürebilir veya inaktive eder.</li><li><strong>İnce bağırsak:</strong> Sindirim enzimleri ve hızlı absorbsiyon mikropların aşırı gelişimini sınırlar.</li><li><strong>İdrar yolları:</strong> İdrarın hızla boşaltılması önemli bir engeldir.</li><li><strong>Diğerleri:</strong> Lizozim, demir bağlama, beyaz kan hücreleri, ateş, öksürük, ishal ve burun akıntısı gibi reaksiyonlar.</li></ul>
+        <h3>Bağışıklık sistemi</h3>
+        <p>Bağışıklık sistemi kendinden olanı ve olmayanı ayırt etmeye dayanır. Bu ayrım ligand-reseptör ilişkileri ve moleküller arası tanıma ile gerçekleşir.</p>
+        <table><thead><tr><th>Kavram</th><th>Tanım</th></tr></thead><tbody><tr><td>Antijen / immunojen</td><td>Spesifik bağışıklık reaksiyonunu uyaran, canlı için kendinden olmayan molekül.</td></tr><tr><td>Epitop</td><td>Antijen üzerinde bağışıklık sistemi tarafından tanınan özgül kimyasal bölge.</td></tr><tr><td>Antikor</td><td>Yabancı antijenlere karşı oluşturulan özel çözünür protein.</td></tr><tr><td>Lenfosit</td><td>Spesifik antijenlere reaksiyon gösteren bağışıklık hücresi.</td></tr></tbody></table>
+        <table><thead><tr><th>Bağışıklık türü</th><th>Nasıl kazanılır?</th><th>Süre</th></tr></thead><tbody><tr><td>Aktif doğal</td><td>Hasta olup iyileşme.</td><td>Genellikle uzun süreli.</td></tr><tr><td>Aktif yapay</td><td>Aşı ile antijen verilmesi.</td><td>Genellikle uzun süreli, bazen ömür boyu değildir.</td></tr><tr><td>Pasif doğal</td><td>Anneden geçen antikorlar.</td><td>Kısa süreli.</td></tr><tr><td>Pasif yapay</td><td>Bağışık kişiden alınan serum/antikor verilmesi.</td><td>Kısa süreli; kişi kendi antikorunu üretmez.</td></tr></tbody></table>
+        <table><thead><tr><th>Doğuştan bağışıklık</th><th>Edinilmiş bağışıklık</th></tr></thead><tbody><tr><td>Özgül değildir; hızlı yanıt verir; bağışıklık belleği yoktur; birçok canlıda bulunur.</td><td>Patojen/antijene özgü yanıt verir; yanıt gecikmeli olabilir; bellek oluşturur; omurgalılarda gelişmiştir.</td></tr></tbody></table>
+        <h3>Mikrobiyal biyoteknoloji</h3>
+        <p>Biyoteknoloji, canlı organizmaların, hücrelerin veya biyolojik süreçlerin tarım, gıda, tıp ve endüstride kullanılmasıdır. Mikrobiyal sistemler çok hızlı çoğalmaları, metabolik çeşitlilikleri ve genetik olarak geliştirilebilmeleri nedeniyle biyoteknolojide önemlidir.</p>
+        <table><thead><tr><th>Mikroorganizma / sistem</th><th>Biyoteknolojik önem</th></tr></thead><tbody><tr><td><em>Bacillus subtilis</em></td><td>Endüstriyel amilaz enzimi kaynağı.</td></tr><tr><td><em>Bacillus thuringiensis</em></td><td>Böceklere patojen; biyolojik mücadele ve genetik mühendisliği açısından önemli.</td></tr><tr><td><em>Bacillus anthracis</em></td><td>Şarbon etmeni; aynı cinste yararlı ve zararlı tür bulunabileceğine örnek.</td></tr><tr><td><em>Corynebacterium glutamicum</em></td><td>Amino asit üretiminde geliştirilen türler.</td></tr><tr><td>Rhizobium</td><td>Azot fiksasyonu ve biyogübre bağlantısı.</td></tr><tr><td>Streptomyces</td><td>Antibiyotik üretimi açısından önemli.</td></tr><tr><td>Siyanobakteriler</td><td>Azot fiksasyonu, tek hücre proteini, biyogübre, oksijen/hidrojen üretimi potansiyeli.</td></tr><tr><td>Mayalar</td><td>Ekmek, bira, şarap, farmasötik ürün ve rekombinant protein üretimi.</td></tr><tr><td>Mikroalgler</td><td>Protein, pigment, biyoyakıt, atık su arıtımı, tıp/eczacılık ürünleri.</td></tr><tr><td>Probiyotikler</td><td>Doğal intestinal florayı destekleyen yararlı mikroorganizmalar.</td></tr></tbody></table>
+      </section>
+
+      <section class="worksheet-box" id="son-tekrar">
+        <span class="section-badge danger">Finalden Önce</span>
+        <h2>Son Tekrar: İşaretleme Listesi</h2>
+        <p class="section-intro">Aşağıdaki maddeleri kendine sözlü anlatabiliyorsan konu büyük ölçüde oturmuş demektir.</p>
+        <div class="prompt-grid">
+          <div class="prompt-card"><h3>Mutlaka bil</h3><ul class="plain-list tight"><li>☐ Sterilizasyon, dezenfeksiyon, antisepsi, asepsi farkı.</li><li>☐ Otoklav, kuru ısı, kaynatma, tindalizasyon, UHT süre/sıcaklıkları.</li><li>☐ Prokaryot-ökaryot-virüs farkı.</li><li>☐ Bakteri morfolojileri ve kamçı tipleri.</li><li>☐ Funguslarda hif, miselyum, septalı/septasız hif, maya-küf-dimorfik farkı.</li><li>☐ Virüslerin yapısı, viroid farkı ve bitki virüsü taşınma yolları.</li></ul></div>
+          <div class="prompt-card"><h3>Karıştırılanlar</h3><ul class="plain-list tight"><li>☐ Düşük sıcaklık öldürmekten çok gelişmeyi durdurur; yüksek sıcaklık öldürür.</li><li>☐ Dezenfeksiyon sporu her zaman öldürmez; sterilizasyon sporları da kapsar.</li><li>☐ Rekombinasyon çoğalma şekli değildir, gen aktarımı sonrası genetik birleşmedir.</li><li>☐ Viroid protein kılıf taşımaz; virüs kapsid taşır.</li><li>☐ Antijen bağışıklığı uyaran molekül, antikor ona karşı oluşan proteindir.</li><li>☐ Aktif bağışıklıkta vücut kendi antikorunu üretir; pasif bağışıklıkta hazır antikor alınır.</li></ul></div>
+        </div>
+        <h3>Sayısal mini tablo</h3>
+        <table><thead><tr><th>Bilgi</th><th>Değer</th></tr></thead><tbody><tr><td>Kuru ısı</td><td>180 °C 30 dk; 170 °C 1 saat; 160 °C 2–2.5 saat</td></tr><tr><td>Kaynatma</td><td>100 °C 30 dk; sporlar kalabilir</td></tr><tr><td>Tindalizasyon</td><td>56–100 °C, 3 gün, her gün 30–60 dk</td></tr><tr><td>Otoklav</td><td>120–121 °C, 1 atm, 15–45 dk</td></tr><tr><td>UHT</td><td>135–150 °C, 1–4 saniye</td></tr><tr><td>Virüs boyutu</td><td>Yaklaşık 0.01–0.2 µm</td></tr><tr><td>Termofil optimum</td><td>55–75 °C</td></tr><tr><td>Mezofil optimum</td><td>30–40 °C</td></tr><tr><td>Psikrofil optimum</td><td>12–15 °C</td></tr><tr><td>Psikrotrof optimum</td><td>25–30 °C</td></tr></tbody></table>
+      </section>
+
+      <section class="worksheet-box" id="not-alani">
+        <span class="section-badge">Boş Çalışma Alanı</span>
+        <h2>Kendi Eksik Notlarım</h2>
+        <p class="section-intro">Soru aşamasına geçmeden önce burada eksik kaldığını düşündüğün kavramları yaz.</p>
+        <div class="lined-area tall"></div>
+        <div class="lined-area tall"></div>
+      </section>
+
+      <p class="footer-note">Kaynak akışı: Doç. Dr. H. Diğdem OKSAL Genel Mikrobiyoloji 1–11. hafta slaytları ve çalışma kağıdı taslağı esas alınarak hazırlanmıştır. Bu dosya özet ve ders notu aşamasıdır; çoktan seçmeli/boşluk doldurma/açıklamalı soru seti bir sonraki aşamada aynı kaynak düzeniyle ayrıca hazırlanacaktır.</p>
+      <p class="footer-note"><a href="../dersler/mikrobiyoloji.html">Ders sayfasına dön</a> · <a href="../ornek-sorular/mikrobiyoloji-final-ornek-sorular.html">Örnek sorulara geç</a></p>
+    </article>
+  </div>
+</section>
+</main>
+</body>
+</html>

@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mikrobiyoloji Final Örnek Sorular | Çıkmış Tarzlı Soru Bankası</title>
+<style>
+:root { --bg:#f5f7fb; --card:#ffffff; --ink:#1d2733; --muted:#637083; --primary:#2463eb; --primary-soft:#eaf0ff; --line:#dce3ee; --warm:#fff4e6; --success:#eafaf0; --danger:#fff1f2; --shadow:0 18px 45px rgba(20,40,80,.10); }
+* { box-sizing:border-box; }
+body { margin:0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background:var(--bg); color:var(--ink); line-height:1.6; }
+body::after { content:"Designed by c0v0lk"; position:fixed; right:12px; bottom:10px; z-index:40; padding:5px 9px; color:#475569; background:rgba(255,255,255,.88); border:1px solid rgba(203,213,225,.95); border-radius:999px; box-shadow:0 6px 18px rgba(15,23,42,.08); font-size:11px; font-weight:800; letter-spacing:.02em; pointer-events:none; }
+a { color:inherit; }
+.site-header { position:sticky; top:0; z-index:20; background:rgba(255,255,255,.92); backdrop-filter: blur(10px); border-bottom:1px solid var(--line); }
+.container { width:min(1180px, calc(100% - 32px)); margin:0 auto; }
+.nav-shell { display:flex; align-items:center; justify-content:space-between; padding:14px 0; gap:16px; }
+.brand { display:flex; align-items:center; gap:10px; text-decoration:none; font-weight:800; }
+.brand-mark { width:38px; height:38px; border-radius:12px; display:grid; place-items:center; background:var(--primary); color:#fff; box-shadow:0 8px 20px rgba(36,99,235,.25); }
+.site-nav { display:flex; gap:14px; flex-wrap:wrap; font-size:.94rem; }
+.site-nav a { text-decoration:none; color:var(--muted); font-weight:650; }
+.site-nav a:hover { color:var(--primary); }
+.page-hero { padding:58px 0 34px; background:linear-gradient(135deg,#eef4ff 0%,#fff 55%,#edfdf3 100%); border-bottom:1px solid var(--line); }
+.breadcrumb { display:flex; gap:8px; color:var(--muted); font-size:.9rem; margin-bottom:16px; }
+.eyebrow { color:var(--primary); text-transform:uppercase; letter-spacing:.16em; font-size:.78rem; font-weight:800; margin:0 0 8px; }
+h1 { font-size:clamp(2rem, 5vw, 4rem); line-height:1.05; margin:0 0 16px; max-width:900px; }
+.page-header > p:not(.eyebrow) { color:var(--muted); max-width:860px; font-size:1.08rem; }
+.action-row { display:flex; gap:12px; flex-wrap:wrap; margin-top:22px; }
+.button { border:none; border-radius:14px; padding:12px 16px; font-weight:800; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; gap:8px; }
+.button-primary { background:var(--primary); color:#fff; }
+.button-secondary { background:#fff; color:var(--primary); border:1px solid var(--line); }
+.section { padding:28px 0 60px; }
+.page-layout { display:grid; grid-template-columns: 1fr; gap:22px; }
+.page-card, .question-box { background:var(--card); border:1px solid var(--line); border-radius:24px; padding:22px; box-shadow:var(--shadow); margin-bottom:22px; }
+.meta-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin-bottom:18px; }
+.meta-item { background:#f8fafc; border:1px solid var(--line); border-radius:16px; padding:13px; color:var(--muted); }
+.meta-item strong { display:block; color:var(--ink); margin-bottom:4px; }
+.sheet-topline { background:var(--primary-soft); border:1px solid #c9d8ff; padding:16px; border-radius:18px; margin:18px 0; }
+.info-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+.exam-note, .info-card { border:1px solid var(--line); border-radius:18px; background:#fbfdff; padding:16px; }
+.plain-list { margin:8px 0 0; padding-left:20px; }
+.section-badge { display:inline-flex; border-radius:999px; background:var(--primary-soft); color:var(--primary); font-size:.78rem; font-weight:900; padding:6px 11px; margin-bottom:10px; }
+.section-intro { color:var(--muted); margin-top:0; }
+.question-cluster { display:grid; gap:16px; }
+.mcq-card, .tf-card, .blank-card, .short-card { border:1px solid var(--line); border-radius:20px; background:#fff; padding:18px; box-shadow:0 10px 24px rgba(20,40,80,.05); page-break-inside:avoid; }
+.question-topline { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:10px; }
+.question-tag { background:#101827; color:#fff; padding:5px 9px; border-radius:999px; font-size:.78rem; font-weight:900; }
+.topic-pill { background:#eef2f7; color:#46566b; padding:5px 9px; border-radius:999px; font-size:.78rem; font-weight:800; }
+.difficulty-pill { padding:5px 9px; border-radius:999px; font-size:.78rem; font-weight:900; }
+.easy { background:#e9fbeF; color:#15803d; } .medium { background:#fff7db; color:#a16207; } .hard { background:#fff1f2; color:#be123c; }
+.mcq-card h3, .short-card h3 { margin:6px 0 12px; font-size:1.04rem; }
+.option-list { list-style:none; padding:0; margin:0; display:grid; gap:8px; }
+.option-list li { border:1px solid var(--line); border-radius:14px; padding:10px 12px; background:#fbfdff; }
+.question-solution { margin-top:12px; border-top:1px dashed var(--line); padding-top:10px; }
+.question-solution summary { cursor:pointer; color:var(--primary); font-weight:900; }
+.answer-chip { display:inline-flex; align-items:center; border-radius:999px; background:#dcfce7; color:#166534; font-weight:900; padding:6px 10px; margin:8px 0; }
+.answer-chip.small { padding:4px 8px; margin:0; }
+.answer-key { display:flex; flex-wrap:wrap; gap:7px; margin-top:14px; }
+.answer-key span { min-width:54px; border:1px solid var(--line); border-radius:999px; background:#fff; padding:6px 9px; font-weight:800; text-align:center; }
+.tf-grid, .blank-grid, .short-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+.lined-area { min-height:112px; border-radius:16px; border:1px solid var(--line); background:repeating-linear-gradient(#fff, #fff 30px, #e6edf7 31px); margin-top:10px; }
+.callout { border-left:5px solid var(--primary); background:#f8fbff; padding:15px; border-radius:14px; color:#42526a; }
+.print-note { color:var(--muted); font-size:.92rem; }
+@media (max-width: 760px) { .meta-grid, .info-grid, .tf-grid, .blank-grid, .short-grid { grid-template-columns:1fr; } .site-nav { display:none; } .page-card, .question-box { padding:16px; border-radius:18px; } }
+@media print { body { background:#fff; } .site-header, .action-row, .print-note, body::after { display:none !important; } .page-hero { padding:18px 0; background:#fff; } .question-solution { display:block; } details:not([open]) > *:not(summary) { display:block; } .page-card,.question-box,.mcq-card,.tf-card,.blank-card,.short-card { box-shadow:none; } }
+</style>
+<script>
+function openAllDetails() { document.querySelectorAll('details').forEach(d => d.open = true); }
+function closeAllDetails() { document.querySelectorAll('details').forEach(d => d.open = false); }
+</script>
+</head>
+<body>
+<header class="site-header"><div class="container nav-shell"><a class="brand" href="../dersler/mikrobiyoloji.html"><span class="brand-mark">MB</span><span>Mikrobiyoloji Final</span></a><nav class="site-nav"><a href="../dersler/mikrobiyoloji.html">Ders Sayfası</a><a href="#deneme">Deneme</a><a href="#konu">Konu Soruları</a><a href="#dy">D/Y</a><a href="#bosluk">Boşluk</a><a href="#klasik">Kısa Cevap</a></nav></div></header>
+<main>
+<section class="page-hero"><div class="container page-header"><nav class="breadcrumb"><a href="../index.html">Ana Sayfa</a><span>/</span><a href="../dersler/mikrobiyoloji.html">Genel Mikrobiyoloji</a><span>/</span><span>Örnek Soru</span></nav><p class="eyebrow">Örnek soru dosyası</p><h1>Mikrobiyoloji Final Sınavı İçin Çıkmış Tarzlı Kapsamlı Soru Bankası</h1><p>Bu dosya, örnek soru taslağı mantığıyla hazırlanmıştır. Geçen yıl final ve bütünleme sınavlarında görülen soru tipleri dikkate alınmış, ancak sorular doğrudan kopya değil; aynı sınav mantığını öğretecek şekilde yeniden yazılmıştır.</p><div class="action-row"><button class="button button-primary" onclick="window.print()">Yazdır</button><button class="button button-secondary" onclick="openAllDetails()">Tüm Cevapları Aç</button><button class="button button-secondary" onclick="closeAllDetails()">Tüm Cevapları Kapat</button></div></div></section>
+<section class="section"><div class="container page-layout">
+<article class="page-card">
+<div class="meta-grid"><div class="meta-item"><strong>Ders</strong>Genel Mikrobiyoloji</div><div class="meta-item"><strong>Kapsam</strong>1–11. hafta + çıkmış tarz</div><div class="meta-item"><strong>Soru Sayısı</strong>100 test + 20 D/Y + 20 boşluk + 12 klasik</div><div class="meta-item"><strong>Seviye</strong>Final odaklı yoğun tekrar</div></div>
+<div class="sheet-topline"><strong>Sınav mantığı:</strong> Geçen yılki sorularda özellikle “tanımı ayırt etme”, “hangi seçenek değildir?”, “cihaz-yöntem eşleştirme”, “bağışıklık türünü bulma”, “bakteri/fungus/virüs farkı” ve “gıda mikrobiyolojisindeki gelişme faktörleri” öne çıkmıştır. Bu dosya aynı mantığı genişleterek çalıştırır.</div>
+<div class="info-grid"><div class="exam-note"><h3>Öncelik sırası</h3><ul class="plain-list"><li>Önce ilk 30 soruluk deneme bölümünü çöz.</li><li>Yanlışların hangi konu başlığına ait olduğunu not et.</li><li>Sonra konu taraması, D/Y ve boşluk sorularına geç.</li></ul></div><div class="exam-note"><h3>Çıkmış tarzda kritik kalıplar</h3><ul class="plain-list"><li>“Hangisi değildir?” sorularında normal görev ile patolojik sonucu ayır.</li><li>Sterilizasyon-dezenfeksiyon-antisepsi ayrımını ezberle.</li><li>Bağışıklıkta aktif/pasif ve doğal/yapay ayrımını tablo gibi düşün.</li><li>Virüs-viroid-prion farkını tek cümleyle kur.</li></ul></div></div>
+</article>
+<div id="deneme"></div><div id="konu"></div>
+<div class="question-box"><span class="section-badge">Deneme 1</span><h2>Deneme 1 – Çıkmış Tarza En Yakın 30 Soru</h2><p class="section-intro">Bu bölümde 30 soru vardır. Sorular, doğrudan ezberden ziyade finalde gelen kavram ayrımı mantığını ölçmek için hazırlanmıştır.</p><div class="question-cluster">
+<section class="mcq-card" id="soru-1">
+  <div class="question-topline"><span class="question-tag">Soru 1</span><span class="topic-pill">Genel mikrobiyoloji</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Mikrobiyolojinin en genel tanımı aşağıdakilerden hangisidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Hücre bölünmesini yalnız moleküler düzeyde inceleyen bilim dalıdır.</li><li><strong>B)</strong> Bakteri, virüs, fungus, alg ve protozoa gibi mikroskobik canlıları ve faaliyetlerini inceleyen bilim dalıdır.</li><li><strong>C)</strong> Sadece insanlarda hastalık yapan etmenleri inceleyen klinik bilimdir.</li><li><strong>D)</strong> Yalnızca gıda bozulmalarını inceleyen uygulamalı bilim dalıdır.</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: B</span><p>Mikrobiyoloji; mikroskobik canlıları, onların yapılarını, faaliyetlerini, yayılışlarını, üremelerini ve çevreyle ilişkilerini inceler.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-2">
+  <div class="question-topline"><span class="question-tag">Soru 2</span><span class="topic-pill">Normal mikrobiyota</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Aşağıdakilerden hangisi normal mikrobiyotanın görevlerinden biri değildir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Besinlerin sindirilmesine katkı sağlama</li><li><strong>B)</strong> Vitamin sentezine katkıda bulunma</li><li><strong>C)</strong> Patojenlerin kolonizasyonunu önleme</li><li><strong>D)</strong> Sistemik enfeksiyon oluşturma</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: D</span><p>Normal mikrobiyota sindirim, vitamin sentezi ve kolonizasyon direnci açısından yararlıdır. Sistemik enfeksiyon oluşturma normal görev değil, patolojik bir durumdur.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-3">
+  <div class="question-topline"><span class="question-tag">Soru 3</span><span class="topic-pill">Pastörizasyon</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Pastörizasyon işlemi ile temel olarak ne amaçlanır?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Tüm mikroorganizmaları ve sporları tamamen yok etmek</li><li><strong>B)</strong> Sıvı gıdanın besin değerini koruyarak patojen mikroorganizmaları azaltmak/yok etmek</li><li><strong>C)</strong> DNA zincirini tamamen parçalamak</li><li><strong>D)</strong> Cam ve metal malzemeyi kuru sıcak hava ile steril etmek</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: B</span><p>Pastörizasyon özellikle süt gibi sıvı gıdalarda patojenlerin azaltılması/yok edilmesi için uygulanan fiziksel dezenfeksiyon yöntemidir; tam sterilizasyon değildir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-4">
+  <div class="question-topline"><span class="question-tag">Soru 4</span><span class="topic-pill">Plazmid</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Aşağıdaki özelliklerden hangisi bakterilerde plazmid aracılığıyla kazanılabilir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Ribozomun temel yapısı</li><li><strong>B)</strong> Antibiyotik direnci</li><li><strong>C)</strong> Hücre zarının fosfolipit çift tabaka olması</li><li><strong>D)</strong> Flagellanın protein yapıda olması</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: B</span><p>Plazmidler kromozom dışı genetik yapılardır ve antibiyotik direnci gibi özelliklerin aktarılmasında önemli rol oynayabilir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-5">
+  <div class="question-topline"><span class="question-tag">Soru 5</span><span class="topic-pill">ELISA</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>ELISA testleri mikrobiyolojide en sık neyi ölçmek/saptamak amacıyla kullanılır?</h3>
+  <ul class="option-list"><li><strong>A)</strong> RNA dizilimini doğrudan okumak</li><li><strong>B)</strong> Bakterinin morfolojik şeklini görmek</li><li><strong>C)</strong> Antijen veya antikor varlığını saptamak</li><li><strong>D)</strong> Hücre duvarı kalınlığını ölçmek</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: C</span><p>ELISA, antijen-antikor etkileşimine dayalı bir testtir. Bu nedenle antijen veya antikor tespiti için kullanılır.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-6">
+  <div class="question-topline"><span class="question-tag">Soru 6</span><span class="topic-pill">Prion</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Prionlar temel olarak hangi yapıdan oluşur?</h3>
+  <ul class="option-list"><li><strong>A)</strong> DNA</li><li><strong>B)</strong> RNA</li><li><strong>C)</strong> Protein</li><li><strong>D)</strong> Lipit zar</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: C</span><p>Prionlar nükleik asit içermeyen, yanlış katlanmış protein yapılı enfeksiyöz ajanlardır.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-7">
+  <div class="question-topline"><span class="question-tag">Soru 7</span><span class="topic-pill">Gram boyama</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Gram boyama işlemi bakteriler hakkında temel olarak hangi bilgiyi verir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Hücre zarının varlığını</li><li><strong>B)</strong> Bakterinin Gram-pozitif veya Gram-negatif olduğunu</li><li><strong>C)</strong> Bakterinin spor oluşturup oluşturmadığını kesin olarak</li><li><strong>D)</strong> Bakterinin yaşını</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: B</span><p>Gram boyama, hücre duvarı yapısındaki farklılığa bağlı olarak bakterileri Gram-pozitif ve Gram-negatif şeklinde ayırır.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-8">
+  <div class="question-topline"><span class="question-tag">Soru 8</span><span class="topic-pill">Bakteri çoğalması</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Bakterilerin hızlı çoğalmasında aşağıdaki özelliklerden hangisi önemli bir avantaj sağlar?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Spor oluşturmaları</li><li><strong>B)</strong> Hücre duvarı yokluğu</li><li><strong>C)</strong> Tek hücreli olmaları ve ikiye bölünme ile çoğalmaları</li><li><strong>D)</strong> DNA’ya sahip olmamaları</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: C</span><p>Bakteriler tek hücreli prokaryotlardır ve uygun koşullarda ikiye bölünerek çok hızlı sayı artışı gösterebilirler.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-9">
+  <div class="question-topline"><span class="question-tag">Soru 9</span><span class="topic-pill">Mikroskop</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Aşağıdakilerden hangisi ışık mikroskobunun temel parçalarından biridir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Öze</li><li><strong>B)</strong> Kondansatör</li><li><strong>C)</strong> Otoklav kapağı</li><li><strong>D)</strong> Santrifüj rotoru</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: B</span><p>Kondansatör, ışığı preparat üzerine yoğunlaştırmaya yardım eden ışık mikroskobu parçasıdır.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-10">
+  <div class="question-topline"><span class="question-tag">Soru 10</span><span class="topic-pill">Endospor</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Bir mikroorganizma 121 °C’de 15 dakika işlem görmesine rağmen ölmemişse en olası açıklama hangisidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Gram-negatif olması</li><li><strong>B)</strong> Endospor oluşturmuş olması</li><li><strong>C)</strong> Mikroskobun bozuk olması</li><li><strong>D)</strong> Besiyerinde karbon kaynağı bulunmaması</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: B</span><p>Endosporlar yüksek sıcaklık ve kötü çevre şartlarına dayanıklı yapılardır; bu nedenle sterilizasyon kontrollerinde sporlu bakteriler önemlidir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-11">
+  <div class="question-topline"><span class="question-tag">Soru 11</span><span class="topic-pill">Fastidious</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Bir mikroorganizma yalnızca zengin içerikli özel besiyerinde gelişebiliyorsa bu durum hangi özellikle açıklanır?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Termofilik olması</li><li><strong>B)</strong> Obligat anaerob olması</li><li><strong>C)</strong> Fastidious olması</li><li><strong>D)</strong> Gram-negatif olması</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: C</span><p>Fastidious mikroorganizmalar özel ve zengin besin gereksinimi gösteren, basit ortamda kolay gelişmeyen mikroorganizmalardır.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-12">
+  <div class="question-topline"><span class="question-tag">Soru 12</span><span class="topic-pill">Anaeroblar</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Sadece anaerob koşullarda gelişebilen bir bakteri için bu koşullar sağlanamazsa ne olur?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Hücre duvarı zarar görür</li><li><strong>B)</strong> Bakteri spor oluşturur</li><li><strong>C)</strong> Bakteri çoğalamaz</li><li><strong>D)</strong> Bakteri daha hızlı ürer</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: C</span><p>Zorunlu anaeroblar oksijen varlığında gelişemez; uygun oksijensiz koşullar sağlanmazsa çoğalma olmaz.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-13">
+  <div class="question-topline"><span class="question-tag">Soru 13</span><span class="topic-pill">Denatürasyon</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Proteinleri denatüre eden kimyasal maddeler öncelikle hangi yapıları etkiler?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Hücre çeperinin mineral kısmını</li><li><strong>B)</strong> Ribozomal RNA dizilimini</li><li><strong>C)</strong> Enzim ve protein yapılarını</li><li><strong>D)</strong> DNA’nın tüm nükleotid sırasını doğrudan</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: C</span><p>Denatürasyon proteinlerin üç boyutlu yapısını bozar. Enzimler protein yapıda olduğu için işlevlerini kaybedebilir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-14">
+  <div class="question-topline"><span class="question-tag">Soru 14</span><span class="topic-pill">Adaptasyon</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Aşağıdakilerden hangisi mikroorganizmaların çevresel adaptasyon yeteneğini en iyi gösterir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Her ortamda aynı hızda çoğalmaları</li><li><strong>B)</strong> Değişen şartlara göre metabolizma düzenlerini değiştirebilmeleri</li><li><strong>C)</strong> Hiç spor oluşturmamaları</li><li><strong>D)</strong> Kültür renginin her zaman aynı kalması</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: B</span><p>Mikroorganizmalar metabolizmalarını hızlı değiştirebilir; bu durum farklı çevre şartlarına uyum açısından önemlidir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-15">
+  <div class="question-topline"><span class="question-tag">Soru 15</span><span class="topic-pill">Lag fazı</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Lag fazının uzaması pratikte hangi sonucu doğurur?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Mikroorganizmalar hemen logaritmik çoğalmaya başlar</li><li><strong>B)</strong> Üreme başlangıcı gecikir</li><li><strong>C)</strong> Spor oluşumu zorunlu hale gelir</li><li><strong>D)</strong> Hücre ölümü kesinleşir</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: B</span><p>Lag fazı adaptasyon dönemidir; bu fazın uzaması logaritmik üreme fazına geçişi geciktirir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-16">
+  <div class="question-topline"><span class="question-tag">Soru 16</span><span class="topic-pill">Duraklama fazı</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Besin maddelerinin tükenmesi ve toksik metabolitlerin birikmesi sonucunda çoğalma eğrisinde hangi faza girilir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Logaritmik gelişme fazı</li><li><strong>B)</strong> Lag fazı</li><li><strong>C)</strong> Duraklama fazı</li><li><strong>D)</strong> Hazırlık fazı</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: C</span><p>Besin azalması, pH değişimi ve metabolit birikimi çoğalmanın durmasına; yani duraklama fazına yol açar.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-17">
+  <div class="question-topline"><span class="question-tag">Soru 17</span><span class="topic-pill">Psikrotrof</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Psikrotrof mikroorganizmaların gıdalarda önemli olmasının temel nedeni nedir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Yalnız kaynama sıcaklığında çoğalmaları</li><li><strong>B)</strong> Buzdolabı sıcaklığında gelişebilme yetenekleri</li><li><strong>C)</strong> Antibiyotik üretmeleri</li><li><strong>D)</strong> Spor oluşturmayan virüsler olmaları</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: B</span><p>Psikrotroflar düşük sıcaklıklarda gelişebilir; bu nedenle buzdolabında saklanan gıdaların bozulmasında rol oynayabilirler.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-18">
+  <div class="question-topline"><span class="question-tag">Soru 18</span><span class="topic-pill">Bakteri sınıflandırması</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Aşağıdakilerden hangisi bakterilerin sınıflandırılmasında kullanılan morfolojik kriterlerden biridir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Çekirdek zarı sayısı</li><li><strong>B)</strong> Hücre şekli</li><li><strong>C)</strong> Mitokondri sayısı</li><li><strong>D)</strong> Kloroplast tipi</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: B</span><p>Bakteriler kok, basil, spiral, vibrio gibi hücre şekillerine göre morfolojik olarak sınıflandırılabilir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-19">
+  <div class="question-topline"><span class="question-tag">Soru 19</span><span class="topic-pill">Viroid</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Viroidler ile virüsler arasındaki temel fark aşağıdakilerden hangisidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Viroidlerin protein kılıf taşımadan yalnız bulaşıcı RNA’dan oluşması</li><li><strong>B)</strong> Viroidlerin canlı hücre dışında bağımsız çoğalması</li><li><strong>C)</strong> Virüslerin nükleik asit içermemesi</li><li><strong>D)</strong> Viroidlerin her zaman DNA içermesi</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>Viroidler protein kılıfı olmayan, genellikle yuvarlak tek iplikçikli RNA molekülleridir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-20">
+  <div class="question-topline"><span class="question-tag">Soru 20</span><span class="topic-pill">Bitki virüs belirtileri</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Sistemik virüs enfeksiyonlarında aşağıdakilerden hangisi beklenen genel belirtilerden biri değildir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Mozaik</li><li><strong>B)</strong> Cücelik</li><li><strong>C)</strong> Genel kloroz</li><li><strong>D)</strong> Yalnız sınırlı lokal nekrotik leke</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: D</span><p>Lokal nekrotik lekeler lokal enfeksiyon göstergesidir. Sistemik enfeksiyonlarda mozaik, cücelik, kloroz ve deformasyon gibi tüm bitkiyi etkileyen belirtiler görülür.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-21">
+  <div class="question-topline"><span class="question-tag">Soru 21</span><span class="topic-pill">Fungus hücresi</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Fungusların bakterilerden temel hücresel farkı aşağıdakilerden hangisidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Sitoplazmalarının bulunmaması</li><li><strong>B)</strong> Hücre duvarlarının olmaması</li><li><strong>C)</strong> Çekirdek zarına sahip ökaryotik hücre yapısında olmaları</li><li><strong>D)</strong> Klorofil taşımaları</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: C</span><p>Funguslar ökaryottur; çekirdek zarı ve zarlı organeller taşırlar. Bakteriler ise prokaryottur.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-22">
+  <div class="question-topline"><span class="question-tag">Soru 22</span><span class="topic-pill">Fungus üremesi</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Aşağıdakilerden hangisi funguslarda eşeysiz üremede rol alabilen sporlardan biridir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Zigot</li><li><strong>B)</strong> Askospor</li><li><strong>C)</strong> Sporangiospor</li><li><strong>D)</strong> Bazidiospor</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: C</span><p>Sporangiospor eşeysiz spor tiplerinden biridir. Askospor ve bazidiospor daha çok eşeyli üreme yapılarıyla ilişkilidir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-23">
+  <div class="question-topline"><span class="question-tag">Soru 23</span><span class="topic-pill">Algler</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Alglerin sınıflandırılmasında aşağıdakilerden hangisi esas alınmaz?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Hücre yapısı</li><li><strong>B)</strong> Pigment içerikleri</li><li><strong>C)</strong> Protein sentez hızı</li><li><strong>D)</strong> Morfolojik özellikleri</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: C</span><p>Algler morfolojik yapı, pigmentler ve hücre özelliklerine göre sınıflandırılır; protein sentez hızı temel sınıflandırma ölçütü değildir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-24">
+  <div class="question-topline"><span class="question-tag">Soru 24</span><span class="topic-pill">Protozoa</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Protozoonların sınıflandırılmasında kullanılan temel kriterlerden biri aşağıdakilerden hangisidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Hücre sayısı</li><li><strong>B)</strong> Hareket etme biçimi</li><li><strong>C)</strong> Renk pigmentleri</li><li><strong>D)</strong> Çekirdek büyüklüğünün milimetre ile ölçülmesi</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: B</span><p>Protozoonlar amipler, kamçılılar, silliler ve sporozoonlar gibi hareket organelleri/yaşam biçimleri üzerinden sınıflandırılır.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-25">
+  <div class="question-topline"><span class="question-tag">Soru 25</span><span class="topic-pill">Bağışıklık</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Bağışıklık sisteminin “kendinden olanı” yabancı olandan ayırt etmesi en iyi hangi mekanizmayla açıklanır?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Hücre zarının kalınlaşması</li><li><strong>B)</strong> Antibiyotik üretimi</li><li><strong>C)</strong> Moleküler tanıma, reseptör-ligand ilişkisi ve özgül bağlanma</li><li><strong>D)</strong> Vücut sıcaklığının sürekli düşmesi</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: C</span><p>Bağışıklığın temelinde kendinden olanı ve olmayanı moleküler düzeyde tanıma yeteneği bulunur.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-26">
+  <div class="question-topline"><span class="question-tag">Soru 26</span><span class="topic-pill">Doğuştan/edinilmiş bağışıklık</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Doğuştan gelen bağışıklık ile edinilmiş bağışıklık arasındaki temel fark hangisidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Doğuştan bağışıklık yalnız çocuklukta çalışır</li><li><strong>B)</strong> Edinilmiş bağışıklık özgüldür ve hafıza oluşturabilir</li><li><strong>C)</strong> Edinilmiş bağışıklık sadece cilt yüzeyinde etkilidir</li><li><strong>D)</strong> Doğuştan bağışıklık hastalık geçirmeden kazanılmaz</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: B</span><p>Edinilmiş bağışıklık antijene özgül yanıt verir ve bağışıklık belleği oluşturur. Doğuştan bağışıklık özgül değildir ve hızlıdır.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-27">
+  <div class="question-topline"><span class="question-tag">Soru 27</span><span class="topic-pill">Pasif bağışıklık</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Bir kişiye hastalığa karşı hazır antikor verilmesiyle oluşan bağışıklık türü hangisidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Doğal aktif</li><li><strong>B)</strong> Yapay aktif</li><li><strong>C)</strong> Doğal pasif</li><li><strong>D)</strong> Yapay pasif</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: D</span><p>Hazır antikor verilmesi serum uygulaması gibi yapay pasif bağışıklık örneğidir. Kişi kendi antikorunu üretmez.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-28">
+  <div class="question-topline"><span class="question-tag">Soru 28</span><span class="topic-pill">Humoral bağışıklık</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Humoral bağışıklığın temel etkisi aşağıdakilerden hangisidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> RNA’yı yok etmek</li><li><strong>B)</strong> Enfekte hücreleri doğrudan parçalamak</li><li><strong>C)</strong> Antikor üretimiyle patojenleri etkisizleştirmek</li><li><strong>D)</strong> Aşıya karşı alerjik yanıt oluşturmak</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: C</span><p>Humoral bağışıklık antikorlar gibi çözünür moleküllerin etkisiyle gerçekleşir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-29">
+  <div class="question-topline"><span class="question-tag">Soru 29</span><span class="topic-pill">Pasif bağışıklık</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Aşağıdakilerden hangisi pasif bağışıklığın tipik özelliğidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Vücudun kendi antikorlarını uzun süre üretmesi</li><li><strong>B)</strong> Genellikle kısa süreli olması</li><li><strong>C)</strong> Mutlaka bağışıklık belleği oluşturması</li><li><strong>D)</strong> Sadece aşı ile kazanılması</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: B</span><p>Pasif bağışıklıkta hazır antikor kullanılır; antikorlar zamanla yıkıldığı için etki genellikle kısa sürelidir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-30">
+  <div class="question-topline"><span class="question-tag">Soru 30</span><span class="topic-pill">Mikroskop tipleri</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Ön hazırlık gerektirmeden, ışığın obje üzerinden yansımasıyla yüzey özelliklerini üç boyutlu gösteren mikroskop tipi hangisidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Stereo mikroskop</li><li><strong>B)</strong> Faz kontrast mikroskop</li><li><strong>C)</strong> Elektron mikroskop</li><li><strong>D)</strong> İnverted mikroskop</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>Stereo mikroskopta ışık obje üzerinden yansır; yüzey özellikleri ve üç boyutlu görünüm öne çıkar.</p></div></details>
+</section></div></div><div class="question-box"><span class="section-badge">Konu Taraması</span><h2>Konu Taraması – Taksonomi, Hücre Yapısı ve Bakteriler</h2><p class="section-intro">Bu bölümde 15 soru vardır. Sorular, doğrudan ezberden ziyade finalde gelen kavram ayrımı mantığını ölçmek için hazırlanmıştır.</p><div class="question-cluster">
+<section class="mcq-card" id="soru-31">
+  <div class="question-topline"><span class="question-tag">Soru 31</span><span class="topic-pill">Taksonomi</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Taksonomi için aşağıdakilerden hangisi doğrudur?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Canlıların yalnız hastalık yapma gücünü ölçer.</li><li><strong>B)</strong> Canlıları sınıflandırma, tanılama ve adlandırma ile ilgilenir.</li><li><strong>C)</strong> Sadece virüslerde kullanılır.</li><li><strong>D)</strong> Mikroorganizmaların besiyerindeki rengini değiştiren işlemdir.</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: B</span><p>Taksonomi organizmaları gruplandırır, teşhis kriterleri oluşturur ve adlandırır.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-32">
+  <div class="question-topline"><span class="question-tag">Soru 32</span><span class="topic-pill">Binomial adlandırma</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Binomial isimlendirmede doğru yazım mantığı hangisidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Tür adı tek kelimeyle ve tamamı büyük harfle yazılır.</li><li><strong>B)</strong> İlk kelime cins, ikinci kelime tür epitetidir; cins büyük harfle başlar.</li><li><strong>C)</strong> Familya adı her zaman tür adından sonra parantez içine yazılır.</li><li><strong>D)</strong> Cins ve tür adları Türkçe yazılır.</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: B</span><p>Bacillus subtilis örneğinde Bacillus cins, subtilis tür epitetidir. Bilimsel ad genellikle italik yazılır.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-33">
+  <div class="question-topline"><span class="question-tag">Soru 33</span><span class="topic-pill">Irk-izolat-suş</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>“Aynı tür içinde konukçu bitki reaksiyonuna göre ayrılan fizyolojik alt grup” tanımı hangisine aittir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> İzolat</li><li><strong>B)</strong> Irk</li><li><strong>C)</strong> Suş</li><li><strong>D)</strong> Takson</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: B</span><p>Irk/fizyolojik ırk, patojen tür içinde farklı konukçu çeşitlerinde farklı reaksiyon oluşturan alt gruptur.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-34">
+  <div class="question-topline"><span class="question-tag">Soru 34</span><span class="topic-pill">İzolat</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>“Tek bir enfeksiyon kaynağından elde edilip laboratuvarda ayrı çoğaltılan patojen örneği” aşağıdakilerden hangisidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> İzolat</li><li><strong>B)</strong> Irk</li><li><strong>C)</strong> Familya</li><li><strong>D)</strong> Cins</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>İzolat, belirli bir kaynaktan elde edilmiş patojen örneğini ifade eder; genetik farklılık şart değildir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-35">
+  <div class="question-topline"><span class="question-tag">Soru 35</span><span class="topic-pill">Suş</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>“Genetik olarak ayırt edilebilir ve belirli biyolojik özellikleri olan alt grup” için en uygun terim hangisidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Suş/strain</li><li><strong>B)</strong> İzolat</li><li><strong>C)</strong> Takım</li><li><strong>D)</strong> Şube</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>Suş veya strain genetik/moleküler özelliklerle ayırt edilen alt grubu anlatır.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-36">
+  <div class="question-topline"><span class="question-tag">Soru 36</span><span class="topic-pill">Prokaryot</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Aşağıdakilerden hangisi prokaryot hücre için doğrudur?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Gerçek çekirdek zarı taşır.</li><li><strong>B)</strong> Mitokondri ve kloroplast bulundurur.</li><li><strong>C)</strong> Genetik materyal zarla çevrili çekirdek içinde değildir.</li><li><strong>D)</strong> Zorunlu olarak çok hücrelidir.</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: C</span><p>Prokaryotlarda organize çekirdek yoktur; genetik materyal sitoplazmada belirli bir bölgede bulunur.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-37">
+  <div class="question-topline"><span class="question-tag">Soru 37</span><span class="topic-pill">Bakteri hücre duvarı</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Bakteri hücre duvarının temel yapısal maddesi hangisidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Kitin</li><li><strong>B)</strong> Peptidoglikan</li><li><strong>C)</strong> Selüloz</li><li><strong>D)</strong> Ergosterol</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: B</span><p>Bakteri hücre duvarı esas olarak peptidoglikandan oluşur; mantarlarda kitin, bitkilerde selüloz önemlidir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-38">
+  <div class="question-topline"><span class="question-tag">Soru 38</span><span class="topic-pill">Kapsül</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Bakterilerde kapsülün temel işlevlerinden biri hangisidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Fotosentez yapmak</li><li><strong>B)</strong> Bakteri hücresini korumak ve patojenlerde virülense katkı sağlamak</li><li><strong>C)</strong> Ribozom üretmek</li><li><strong>D)</strong> DNA’yı çekirdek içine almak</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: B</span><p>Kapsül genellikle polisakkarit/protein yapılıdır; koruma, tutunma ve patojenitede rol oynayabilir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-39">
+  <div class="question-topline"><span class="question-tag">Soru 39</span><span class="topic-pill">Pili</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Uzun sex/F pilusunun temel görevi aşağıdakilerden hangisidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Hücreyi hareket ettirmek</li><li><strong>B)</strong> Konjugasyon sırasında genetik madde aktarımına aracılık etmek</li><li><strong>C)</strong> Protein sentezlemek</li><li><strong>D)</strong> Endospor oluşturmak</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: B</span><p>Uzun konjugasyon pili bakteriler arasında genetik madde aktarımında kullanılır.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-40">
+  <div class="question-topline"><span class="question-tag">Soru 40</span><span class="topic-pill">Flagella</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Bakterilerde flagellanın temel görevi nedir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Hareket sağlamak</li><li><strong>B)</strong> Gram boyanmayı engellemek</li><li><strong>C)</strong> Nükleik asit depolamak</li><li><strong>D)</strong> Besiyerini steril etmek</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>Flagella/kamçı flagellin proteininden oluşur ve bakteriye hareket yeteneği kazandırır.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-41">
+  <div class="question-topline"><span class="question-tag">Soru 41</span><span class="topic-pill">Kamçı dizilişi</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Bakterinin her iki ucunda birer kamçı bulunması hangi kamçı dizilişiyle ifade edilir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Monotrik</li><li><strong>B)</strong> Lofotrik</li><li><strong>C)</strong> Amfitrik</li><li><strong>D)</strong> Peritrik</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: C</span><p>Amfitrik bakterilerde her iki uçta birer kamçı bulunur. Peritrik her tarafında kamçı bulunmasıdır.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-42">
+  <div class="question-topline"><span class="question-tag">Soru 42</span><span class="topic-pill">Kamçı dizilişi</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Bir veya iki kutupta birden fazla kamçı taşıyan bakteriler hangi gruptadır?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Atrik</li><li><strong>B)</strong> Monotrik</li><li><strong>C)</strong> Lofotrik</li><li><strong>D)</strong> Diplokok</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: C</span><p>Lofotrik dizilişte kutuplardan birinde veya ikisinde çok sayıda kamçı bulunabilir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-43">
+  <div class="question-topline"><span class="question-tag">Soru 43</span><span class="topic-pill">Morfoloji</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Yuvarlak bakterilerin zincir şeklinde dizilmesi hangi terimle ifade edilir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Streptokok</li><li><strong>B)</strong> Stafilokok</li><li><strong>C)</strong> Vibrio</li><li><strong>D)</strong> Spirillum</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>Streptokok zincir biçiminde dizilmiş kokları; stafilokok üzüm salkımı benzeri dizilişi ifade eder.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-44">
+  <div class="question-topline"><span class="question-tag">Soru 44</span><span class="topic-pill">Siyanobakteriler</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Siyanobakteriler için aşağıdakilerden hangisi doğrudur?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Klorofil içermezler.</li><li><strong>B)</strong> Fotosentetik prokaryotik mikroorganizmalardır.</li><li><strong>C)</strong> Sadece çekirdeği olan ökaryotlardır.</li><li><strong>D)</strong> Hiç çoğalmazlar.</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: B</span><p>Siyanobakteriler klorofil içeren, fotosentez yapabilen prokaryotik mikroorganizmalardır.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-45">
+  <div class="question-topline"><span class="question-tag">Soru 45</span><span class="topic-pill">Arkea</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Arkeler için aşağıdakilerden hangisi özellikle vurgulanır?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Yalnızca ışık mikroskobunda virüs gibi görünmeleri</li><li><strong>B)</strong> Aşırı tuzlu, asitli veya yüksek sıcaklıklı ortamlarda bulunabilen formlarının olması</li><li><strong>C)</strong> Hücre duvarında her zaman selüloz bulunması</li><li><strong>D)</strong> Sadece çok hücreli olmaları</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: B</span><p>Arkeler ekstrem çevre koşullarına uyum sağlayabilen prokaryotik gruplar içerir; metanojenler de önemli örnektir.</p></div></details>
+</section></div></div><div class="question-box"><span class="section-badge">Konu Taraması</span><h2>Konu Taraması – Virüsler, Viroidler ve Bitki Virüsleri</h2><p class="section-intro">Bu bölümde 8 soru vardır. Sorular, doğrudan ezberden ziyade finalde gelen kavram ayrımı mantığını ölçmek için hazırlanmıştır.</p><div class="question-cluster">
+<section class="mcq-card" id="soru-46">
+  <div class="question-topline"><span class="question-tag">Soru 46</span><span class="topic-pill">Virüs</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Virüsler için aşağıdakilerden hangisi doğrudur?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Hücre yapısı gösterirler.</li><li><strong>B)</strong> Canlı hücre dışında bağımsız çoğalabilirler.</li><li><strong>C)</strong> Zorunlu hücre içi parazittirler.</li><li><strong>D)</strong> Hem DNA hem RNA’yı birlikte zorunlu olarak taşırlar.</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: C</span><p>Virüsler hücresel yapıda değildir ve çoğalmak için canlı konukçu hücresine ihtiyaç duyar.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-47">
+  <div class="question-topline"><span class="question-tag">Soru 47</span><span class="topic-pill">Virion</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Bir virüs partikülüne ne ad verilir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Virion</li><li><strong>B)</strong> Misel</li><li><strong>C)</strong> Hif</li><li><strong>D)</strong> Trofozoit</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>Virüsün her bir enfektif partikülü virion olarak adlandırılır.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-48">
+  <div class="question-topline"><span class="question-tag">Soru 48</span><span class="topic-pill">Virüs yapısı</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Virionun iki temel yapı taşı hangisidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Kitin ve selüloz</li><li><strong>B)</strong> Nükleik asit ve protein kılıf</li><li><strong>C)</strong> Peptidoglikan ve ergosterol</li><li><strong>D)</strong> Klorofil ve nişasta</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: B</span><p>Virion genellikle genetik materyal olan nükleik asit ile onu çevreleyen protein kılıftan oluşur.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-49">
+  <div class="question-topline"><span class="question-tag">Soru 49</span><span class="topic-pill">Virüs morfolojisi</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Tütün Mozaik Virüsü (TMV) için klasik olarak verilen şekil örneği hangisidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Çubuk/rijit çubuk</li><li><strong>B)</strong> Üzüm salkımı</li><li><strong>C)</strong> Spiral bakteri</li><li><strong>D)</strong> Bölmesiz hif</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>TMV, çubuk şekilli virüslere verilen klasik örnektir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-50">
+  <div class="question-topline"><span class="question-tag">Soru 50</span><span class="topic-pill">Virüs sınıflandırması</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Virüslerin sınıflandırılmasında özellikle hangi özellik dikkate alınır?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Hiflerinin bölmeli olup olmaması</li><li><strong>B)</strong> Nükleik asit tipi ve yapısı</li><li><strong>C)</strong> Hücre duvarının kitin oranı</li><li><strong>D)</strong> Kamçı dizilişi</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: B</span><p>Virüslerde ds-DNA, ss-DNA, ds-RNA, ss-RNA gibi nükleik asit özellikleri sınıflandırmada önemlidir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-51">
+  <div class="question-topline"><span class="question-tag">Soru 51</span><span class="topic-pill">Konukçuya göre virüsler</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Bakterileri enfekte eden virüslere ne ad verilir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Bakteriyofaj</li><li><strong>B)</strong> Fitofaj</li><li><strong>C)</strong> Zoofaj</li><li><strong>D)</strong> Sporangiofaj</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>Bakteri patojeni virüsler bakteriyofaj olarak adlandırılır.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-52">
+  <div class="question-topline"><span class="question-tag">Soru 52</span><span class="topic-pill">Mekanik taşınma</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Aşağıdaki virüslerden hangisi mekanik taşınmaya örnek olarak sık verilir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Tütün Mozaik Virüsü</li><li><strong>B)</strong> Bacillus subtilis</li><li><strong>C)</strong> Rhizobium leguminosarum</li><li><strong>D)</strong> Candida albicans</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>TMV, özsu ve yaralar yoluyla mekanik taşınabilen bitki virüslerine klasik örnektir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-53">
+  <div class="question-topline"><span class="question-tag">Soru 53</span><span class="topic-pill">Bitki virüs taşınması</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Aşağıdakilerden hangisi bitki patojeni virüslerin taşınma yollarından biri değildir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Aşı ve vejetatif bitki parçaları</li><li><strong>B)</strong> Tohum ve polen</li><li><strong>C)</strong> Vektörler</li><li><strong>D)</strong> Otoklavda sterilizasyon</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: D</span><p>Virüsler mekanik, aşı/vejetatif materyal, tohum-polen ve vektörlerle taşınabilir. Otoklav sterilizasyon yöntemidir.</p></div></details>
+</section></div></div><div class="question-box"><span class="section-badge">Konu Taraması</span><h2>Konu Taraması – Sterilizasyon, Dezenfeksiyon ve Laboratuvar</h2><p class="section-intro">Bu bölümde 11 soru vardır. Sorular, doğrudan ezberden ziyade finalde gelen kavram ayrımı mantığını ölçmek için hazırlanmıştır.</p><div class="question-cluster">
+<section class="mcq-card" id="soru-54">
+  <div class="question-topline"><span class="question-tag">Soru 54</span><span class="topic-pill">Sterilizasyon</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Sterilizasyon için en doğru ifade hangisidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Yalnız patojen vejetatif hücreleri öldürür.</li><li><strong>B)</strong> Bir ortam veya materyali tüm canlı mikroorganizmalardan arındırır.</li><li><strong>C)</strong> Sadece deri üzerine uygulanır.</li><li><strong>D)</strong> Gıdanın tadını artırmak için yapılır.</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: B</span><p>Sterilizasyon, sporlu-sporsuz bakteriler, mantarlar, virüsler ve parazitler dahil tüm canlı mikroorganizmaların yok edilmesini hedefler.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-55">
+  <div class="question-topline"><span class="question-tag">Soru 55</span><span class="topic-pill">Dezenfeksiyon</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Dezenfeksiyon için aşağıdakilerden hangisi daha doğrudur?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Cansız ortamlardaki hastalık yapıcı mikroorganizmaların yok edilmesi/inaktive edilmesi</li><li><strong>B)</strong> Vücut yüzeyindeki mikropların yok edilmesi</li><li><strong>C)</strong> Tüm sporların kesin yok edilmesi</li><li><strong>D)</strong> Yalnız hücre kültürü üretimi</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>Dezenfeksiyon cansız ortamlara uygulanır ve patojenleri hedefler; bazı bakteri sporları canlı kalabilir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-56">
+  <div class="question-topline"><span class="question-tag">Soru 56</span><span class="topic-pill">Antisepsi</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Vücut yüzeyi veya yaralardaki patojen mikroorganizmaların yok edilmesine ne ad verilir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Asepsi</li><li><strong>B)</strong> Antisepsi</li><li><strong>C)</strong> Tindalizasyon</li><li><strong>D)</strong> Filtrasyon</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: B</span><p>Antisepsi vücut yüzeyine uygulanan dezenfeksiyon benzeri işlemdir. El antisepsisi, yara antisepsisi gibi ifadeler doğru kullanımdır.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-57">
+  <div class="question-topline"><span class="question-tag">Soru 57</span><span class="topic-pill">Asepsi</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Asepsi kavramı aşağıdakilerden hangisini ifade eder?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Patojen mikroplardan arındırılmış çalışma/ortam koşulu</li><li><strong>B)</strong> Sıcak hava fırını</li><li><strong>C)</strong> Bakterinin ikiye bölünmesi</li><li><strong>D)</strong> Virüsün konukçuya tutunması</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>Asepsi hastalandırıcı mikroplardan arındırılmış ortam ve bu durumu koruma prensiplerini ifade eder.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-58">
+  <div class="question-topline"><span class="question-tag">Soru 58</span><span class="topic-pill">Kuru ısı</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Kuru sıcak hava sterilizasyonunda cam ve metal malzemeler için verilen klasik uygulamalardan biri hangisidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> 180 °C’de 30 dakika</li><li><strong>B)</strong> 37 °C’de 24 saat</li><li><strong>C)</strong> 4 °C’de 1 hafta</li><li><strong>D)</strong> 56 °C’de 10 saniye</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>Kuru ısıda 180 °C’de 30 dakika; 170 °C’de 1 saat veya 160 °C’de 2-2.5 saat gibi uygulamalar verilir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-59">
+  <div class="question-topline"><span class="question-tag">Soru 59</span><span class="topic-pill">Otoklav</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Mikrobiyoloji laboratuvarında besiyeri ve ısıya dayanıklı sıvıların sterilizasyonunda en yaygın kullanılan cihaz hangisidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Santrifüj</li><li><strong>B)</strong> Otoklav</li><li><strong>C)</strong> Stereo mikroskop</li><li><strong>D)</strong> Pipet pompası</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: B</span><p>Otoklav basınçlı buharla sterilizasyon yapar; besiyerleri ve birçok laboratuvar materyali için temel cihazdır.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-60">
+  <div class="question-topline"><span class="question-tag">Soru 60</span><span class="topic-pill">Otoklav kontrolü</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Otoklavda biyolojik sterilizasyon kontrolünde klasik olarak hangi sporlu bakteri kullanılır?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Bacillus stearothermophilus</li><li><strong>B)</strong> Rhizobium spp.</li><li><strong>C)</strong> Candida utilis</li><li><strong>D)</strong> Euglena gracilis</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>Bacillus stearothermophilus sporları otoklav kontrolünde kullanılır; üreme görülmesi sterilizasyonun yetersizliğini gösterir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-61">
+  <div class="question-topline"><span class="question-tag">Soru 61</span><span class="topic-pill">Tindalizasyon</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Tindalizasyonun üç gün arka arkaya uygulanmasının temel nedeni nedir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Sporların açılıp vejetatif hale geçtikten sonra öldürülmesini sağlamak</li><li><strong>B)</strong> Sıvıyı dondurmak</li><li><strong>C)</strong> Virüsleri çoğaltmak</li><li><strong>D)</strong> Besiyerinin pH’ını yükseltmek</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>İlk işlem vejetatif hücreleri öldürür; bekleme sırasında sporlar açılır, sonraki işlemler bu vejetatif formları öldürür.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-62">
+  <div class="question-topline"><span class="question-tag">Soru 62</span><span class="topic-pill">Filtrasyon</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Isıya dayanıksız sıvıların sterilizasyonunda en uygun yöntem hangisidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Kuru ısı</li><li><strong>B)</strong> Filtrasyon</li><li><strong>C)</strong> Kızıl dereceye kadar yakma</li><li><strong>D)</strong> Alevden geçirme</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: B</span><p>Filtrasyon, ısıya duyarlı sıvılardaki mikroorganizmaları süzme/adsorpsiyonla uzaklaştırır.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-63">
+  <div class="question-topline"><span class="question-tag">Soru 63</span><span class="topic-pill">Kaynatma</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Kaynatma yöntemi neden tam güvenilir sterilizasyon sayılmaz?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Bakteri sporları canlı kalabilir.</li><li><strong>B)</strong> Sıcaklık mikroorganizmaları hiç etkilemez.</li><li><strong>C)</strong> Sadece DNA’yı çoğaltır.</li><li><strong>D)</strong> Yalnız camı steril eder.</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>100 °C’de kaynatma birçok vejetatif hücreyi öldürse de ısıya dayanıklı sporlar canlı kalabilir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-64">
+  <div class="question-topline"><span class="question-tag">Soru 64</span><span class="topic-pill">UV</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Ultraviyole ışınlarıyla sterilizasyonun temel sınırlılığı hangisidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Derinlere nüfuz etme yeteneğinin zayıf olması</li><li><strong>B)</strong> Sadece protein sentezini artırması</li><li><strong>C)</strong> Yalnız otoklav içinde çalışması</li><li><strong>D)</strong> Sporları çoğaltması</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>UV ışınları yüzey ve ortam havası için kullanılabilir; derinlere nüfuz etmez ve insan için zararlıdır.</p></div></details>
+</section></div></div><div class="question-box"><span class="section-badge">Konu Taraması</span><h2>Konu Taraması – Mikrobiyal Gelişme ve Gıda Mikrobiyolojisi</h2><p class="section-intro">Bu bölümde 10 soru vardır. Sorular, doğrudan ezberden ziyade finalde gelen kavram ayrımı mantığını ölçmek için hazırlanmıştır.</p><div class="question-cluster">
+<section class="mcq-card" id="soru-65">
+  <div class="question-topline"><span class="question-tag">Soru 65</span><span class="topic-pill">Düşük sıcaklık</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Düşük sıcaklığın mikroorganizmalar üzerindeki temel etkisi nedir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Her zaman tüm mikroorganizmaları öldürür.</li><li><strong>B)</strong> Gelişmeyi yavaşlatır/durdurur; çoğu canlı kalabilir.</li><li><strong>C)</strong> DNA’yı hemen yok eder.</li><li><strong>D)</strong> Spor oluşumunu imkânsızlaştırır.</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: B</span><p>Soğutma ve dondurma çoğalmayı durdurabilir; ancak ölümle eş anlamlı değildir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-66">
+  <div class="question-topline"><span class="question-tag">Soru 66</span><span class="topic-pill">Yüksek sıcaklık</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Yüksek sıcaklık mikroorganizmaları genellikle hangi mekanizmayla öldürür?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Proteinleri koagüle/denatüre ederek</li><li><strong>B)</strong> Klorofil sentezini hızlandırarak</li><li><strong>C)</strong> Flagella sayısını artırarak</li><li><strong>D)</strong> Hücreyi daha fazla besleyerek</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>Yüksek ısı hücre proteinlerinin koagülasyonuna ve enzimlerin bozulmasına yol açar.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-67">
+  <div class="question-topline"><span class="question-tag">Soru 67</span><span class="topic-pill">Su aktivitesi</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Su aktivitesi (aw) için doğru ifade hangisidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Mikroorganizmaların kullanabildiği serbest suyun indeksidir.</li><li><strong>B)</strong> Gıdadaki toplam protein miktarıdır.</li><li><strong>C)</strong> Sadece bağlı suyu ifade eder.</li><li><strong>D)</strong> Her zaman 2’den büyüktür.</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>Mikroorganizmalar bağlı sudan değil serbest sudan yararlanır; aw kullanılabilir suyu ifade eder ve 0-1 arasında değişir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-68">
+  <div class="question-topline"><span class="question-tag">Soru 68</span><span class="topic-pill">aw formülü</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Su aktivitesi formülü hangisidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> aw = P / P0</li><li><strong>B)</strong> aw = DNA / RNA</li><li><strong>C)</strong> aw = pH × Eh</li><li><strong>D)</strong> aw = N / C</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>aw, gıdadaki suyun buhar basıncının aynı sıcaklıktaki saf suyun buhar basıncına oranıdır.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-69">
+  <div class="question-topline"><span class="question-tag">Soru 69</span><span class="topic-pill">pH</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>pH 7 için doğru ifade hangisidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Kuvvetli asidik durumdur.</li><li><strong>B)</strong> Nötraliteyi ifade eder.</li><li><strong>C)</strong> Mutlaka spor oluşumu demektir.</li><li><strong>D)</strong> Yalnız virüslerde görülür.</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: B</span><p>pH skalasında 7 nötr kabul edilir; 7’den aşağı asitlik, yukarı alkalilik yönündedir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-70">
+  <div class="question-topline"><span class="question-tag">Soru 70</span><span class="topic-pill">Redoks potansiyeli</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Redoks potansiyeli düşük bir ortam genellikle hangi mikroorganizmalar için daha elverişlidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Aerob mikroorganizmalar</li><li><strong>B)</strong> Anaerob mikroorganizmalar</li><li><strong>C)</strong> Sadece algler</li><li><strong>D)</strong> Sadece viroidler</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: B</span><p>Kuvvetli indirgen koşullarda redoks potansiyeli düşer ve anaerob gelişim için uygunluk artar.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-71">
+  <div class="question-topline"><span class="question-tag">Soru 71</span><span class="topic-pill">Büyüme fazları</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Logaritmik gelişme fazı için en doğru ifade hangisidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Hücre sayısında belirgin değişim olmaz.</li><li><strong>B)</strong> Bakteriler geometrik tarzda hızla çoğalır.</li><li><strong>C)</strong> Tüm hücreler ölmeye başlar.</li><li><strong>D)</strong> Besinler tamamen tükenmiştir.</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: B</span><p>Log fazında mikroorganizmalar aktif bölünme gösterir; sayı artışı geometriktir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-72">
+  <div class="question-topline"><span class="question-tag">Soru 72</span><span class="topic-pill">Sıcaklık grupları</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>İnsan vücudu sıcaklığında gelişebilme mezofilik bakteriler açısından neden önemlidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Mezofillerin yüksek sıcaklık volkanlarında yaşaması nedeniyle</li><li><strong>B)</strong> Mezofillerin çoğunun ılık koşullarda, insan vücudu sıcaklığına yakın derecelerde gelişebilmesi nedeniyle</li><li><strong>C)</strong> Mezofillerin hiç çoğalmaması nedeniyle</li><li><strong>D)</strong> Mezofillerin yalnız -5 °C’de yaşaması nedeniyle</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: B</span><p>Mezofiller ılık ortamları tercih eder; birçok patojen insan vücudu sıcaklığında gelişebilir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-73">
+  <div class="question-topline"><span class="question-tag">Soru 73</span><span class="topic-pill">Fakültatif anaerob</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Fakültatif anaerob bakteriler hangi özellikleriyle tanımlanır?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Sadece oksijensiz ortamda yaşarlar.</li><li><strong>B)</strong> Oksijenli ortamda ölürler.</li><li><strong>C)</strong> Hem oksijenli hem oksijensiz ortamda yaşayabilirler.</li><li><strong>D)</strong> Oksijen üretirler.</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: C</span><p>Fakültatif anaeroblar oksijen varlığında da yokluğunda da gelişebilir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-74">
+  <div class="question-topline"><span class="question-tag">Soru 74</span><span class="topic-pill">Antimikrobiyal bileşikler</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Et ürünlerine katılan nitritin önemli etkilerinden biri hangisidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> C. botulinum gelişimini ve toksin oluşumunu engellemeye yardımcı olması</li><li><strong>B)</strong> Alg fotosentezini artırması</li><li><strong>C)</strong> Bakteri sporlarını çoğaltması</li><li><strong>D)</strong> pH’ı kesin 14 yapması</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>Nitrit, özellikle Clostridium botulinum gelişimi ve toksin oluşumunu baskılamada önemlidir.</p></div></details>
+</section></div></div><div class="question-box"><span class="section-badge">Konu Taraması</span><h2>Konu Taraması – Ekoloji, Simbiyoz ve Mikrobiyal İlişkiler</h2><p class="section-intro">Bu bölümde 6 soru vardır. Sorular, doğrudan ezberden ziyade finalde gelen kavram ayrımı mantığını ölçmek için hazırlanmıştır.</p><div class="question-cluster">
+<section class="mcq-card" id="soru-75">
+  <div class="question-topline"><span class="question-tag">Soru 75</span><span class="topic-pill">Simbiyoz</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Birden fazla farklı organizmanın birlikte yaşaması genel olarak hangi kavramla ifade edilir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Simbiyozis</li><li><strong>B)</strong> Sterilizasyon</li><li><strong>C)</strong> Pastörizasyon</li><li><strong>D)</strong> Gram boyama</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>Simbiyozis, farklı organizmaların birlikte yaşamalarını ifade eden genel kavramdır.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-76">
+  <div class="question-topline"><span class="question-tag">Soru 76</span><span class="topic-pill">Mutualizm</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Her iki canlının da ilişkiden yarar sağladığı simbiyotik ilişki tipi hangisidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Mutualizm</li><li><strong>B)</strong> Parazitizm</li><li><strong>C)</strong> Amensalizm</li><li><strong>D)</strong> Nötralizm</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>Mutualizmde iki taraf da fayda sağlar; Rhizobium-baklagil ilişkisi buna örnektir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-77">
+  <div class="question-topline"><span class="question-tag">Soru 77</span><span class="topic-pill">Rhizobium</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Rhizobium-baklagil ilişkisinde bakterinin temel katkısı nedir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Atmosfer azotundan yararlanarak bitkiye azotlu bileşik kazandırmak</li><li><strong>B)</strong> Bitkinin tüm dokularını öldürmek</li><li><strong>C)</strong> Fotosentez pigmentlerini yok etmek</li><li><strong>D)</strong> Toprağı steril hale getirmek</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>Rhizobium kök nodüllerinde yaşar ve azot fiksasyonu ile bitkiye azot kazandırır; bitki de bakteriye organik madde sağlar.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-78">
+  <div class="question-topline"><span class="question-tag">Soru 78</span><span class="topic-pill">Antagonizm</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Bir mikroorganizmanın antibiyotik, bakteriyosin veya pH değişimiyle diğerinin gelişmesini engellemesi hangi ilişki tipidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Antagonizm</li><li><strong>B)</strong> Mutualizm</li><li><strong>C)</strong> Kommensalizm</li><li><strong>D)</strong> Nötralizm</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>Antagonizmde bir organizma diğerinin gelişmesini baskılar veya öldürür; antibiyozis buna örnektir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-79">
+  <div class="question-topline"><span class="question-tag">Soru 79</span><span class="topic-pill">Oportunizm</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Normalde hastalık yapmayan bir mikroorganizmanın konak zayıflayınca hastalık oluşturması hangi kavramla açıklanır?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Oportunizm/fırsatçılık</li><li><strong>B)</strong> Tindalizasyon</li><li><strong>C)</strong> Sporulasyon</li><li><strong>D)</strong> Taksonomi</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>Fırsatçı patojenler normal flora üyesi olabilir; konak savunması bozulduğunda hastalık yapabilir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-80">
+  <div class="question-topline"><span class="question-tag">Soru 80</span><span class="topic-pill">Sinergizm</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>İki veya daha fazla mikroorganizmanın tek başına oluşturamadıkları etkiyi birlikte oluşturması hangi ilişki tipidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Sinergizm</li><li><strong>B)</strong> Asepsi</li><li><strong>C)</strong> Binomial adlandırma</li><li><strong>D)</strong> Fototrofi</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>Sinergizmde etkenler birbirinin etkisini destekler ve birlikte daha güçlü bir durum/enfeksiyon oluşturur.</p></div></details>
+</section></div></div><div class="question-box"><span class="section-badge">Konu Taraması</span><h2>Konu Taraması – Funguslar, Protozoonlar ve Algler</h2><p class="section-intro">Bu bölümde 12 soru vardır. Sorular, doğrudan ezberden ziyade finalde gelen kavram ayrımı mantığını ölçmek için hazırlanmıştır.</p><div class="question-cluster">
+<section class="mcq-card" id="soru-81">
+  <div class="question-topline"><span class="question-tag">Soru 81</span><span class="topic-pill">Fungus</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Funguslar için aşağıdakilerden hangisi doğrudur?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Klorofil taşır ve fotosentez yaparlar.</li><li><strong>B)</strong> Ökaryotik, heterotrof ve klorofilsiz organizmalardır.</li><li><strong>C)</strong> Prokaryotik ve çekirdeksizdirler.</li><li><strong>D)</strong> Hücre duvarları peptidoglikandır.</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: B</span><p>Funguslar ökaryottur; klorofil içermez, fotosentez yapmaz ve organik maddeleri absorpsiyonla kullanır.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-82">
+  <div class="question-topline"><span class="question-tag">Soru 82</span><span class="topic-pill">Fungus hücre duvarı</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Mantar hücre duvarında bakterilerden farklı olarak hangi yapı öne çıkar?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Kitin ve beta-glukanlar</li><li><strong>B)</strong> Peptidoglikan</li><li><strong>C)</strong> Hemoglobin</li><li><strong>D)</strong> Selüloz zorunluluğu</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>Mantar hücre duvarı kitin, mannan ve beta-glukan gibi polisakkaritler içerir; bakteride peptidoglikan esastır.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-83">
+  <div class="question-topline"><span class="question-tag">Soru 83</span><span class="topic-pill">Ergosterol</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Mantar hücre zarında bulunan ve bazı antifungallerin hedefi olan sterol hangisidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Kolesterol</li><li><strong>B)</strong> Ergosterol</li><li><strong>C)</strong> Peptidoglikan</li><li><strong>D)</strong> Klorofil c</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: B</span><p>Mantar hücre zarında ergosterol bulunur; azoller ve amfoterisin B gibi antifungaller bu hedef üzerinden etki gösterebilir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-84">
+  <div class="question-topline"><span class="question-tag">Soru 84</span><span class="topic-pill">Hif-miselyum</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Funguslarda ipliksi yapıların tekil adı ve toplu hali sırasıyla hangisidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Hif - miselyum</li><li><strong>B)</strong> Misel - virion</li><li><strong>C)</strong> Kapsid - hif</li><li><strong>D)</strong> Spor - kapsül</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>Fungus thallusunu oluşturan ipliksi yapılara hif, hiflerin toplu haline miselyum denir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-85">
+  <div class="question-topline"><span class="question-tag">Soru 85</span><span class="topic-pill">Mayalar</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Mayaların tipik çoğalma şekli hangisidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Tomurcuklanma</li><li><strong>B)</strong> Konjugasyonla türleşme</li><li><strong>C)</strong> Viroid üretimi</li><li><strong>D)</strong> Fotosentez</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>Mayalar genellikle tomurcuklanarak çoğalır; uç uca dizilen tomurcuklar psödohif oluşturabilir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-86">
+  <div class="question-topline"><span class="question-tag">Soru 86</span><span class="topic-pill">Mikotoksin</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Aflatoksin üretimiyle en çok ilişkilendirilen fungus aşağıdakilerden hangisidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Aspergillus flavus</li><li><strong>B)</strong> Penicillium roqueforti</li><li><strong>C)</strong> Rhizobium spp.</li><li><strong>D)</strong> Bacillus thuringiensis</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>Aflatoksin, özellikle Aspergillus flavus ile ilişkilendirilen önemli bir mikotoksindir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-87">
+  <div class="question-topline"><span class="question-tag">Soru 87</span><span class="topic-pill">Entomopatojen fungus</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Aşağıdakilerden hangisi bitki zararlılarına karşı biyolojik mücadelede kullanılan entomopatojen fungus örneklerinden biridir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Beauveria bassiana</li><li><strong>B)</strong> Escherichia coli</li><li><strong>C)</strong> Cucumber mosaic virus</li><li><strong>D)</strong> Entamoeba histolytica</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>Beauveria bassiana ve Metarhizium anisopliae gibi funguslar entomopatojen olarak kullanılabilir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-88">
+  <div class="question-topline"><span class="question-tag">Soru 88</span><span class="topic-pill">Protozoa</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Protozoonların bakterilerden en önemli farklarından biri nedir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Çekirdek zarına sahip olmaları</li><li><strong>B)</strong> Peptidoglikan taşımaları</li><li><strong>C)</strong> Hücre yapısı göstermemeleri</li><li><strong>D)</strong> Sadece protein kılıftan oluşmaları</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>Protozoonlar ökaryot tipte tek hücreli canlılardır; çekirdek zarı bulunur.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-89">
+  <div class="question-topline"><span class="question-tag">Soru 89</span><span class="topic-pill">Pseudopodia</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Amiplerde hareket ve besin alımında kullanılan protoplazmik uzantılara ne ad verilir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Pseudopodia</li><li><strong>B)</strong> Cilia</li><li><strong>C)</strong> Kapsid</li><li><strong>D)</strong> Theca</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>Pseudopodia yalancı ayaklardır; amiplerde hareket ve besin alımı için kullanılır.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-90">
+  <div class="question-topline"><span class="question-tag">Soru 90</span><span class="topic-pill">Cilia</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Silli protozoonlarda görülen kısa ve çok sayıdaki hareket organelleri hangisidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Cilia</li><li><strong>B)</strong> Flagellum</li><li><strong>C)</strong> Misel</li><li><strong>D)</strong> Endospor</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>Cilia, flagelluma benzeyen fakat daha kısa ve sınırlı hareketli yapılardır.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-91">
+  <div class="question-topline"><span class="question-tag">Soru 91</span><span class="topic-pill">Alg</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Algler için aşağıdakilerden hangisi doğrudur?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Klorofil ve pigmentler taşıyıp fotosentez yapabilirler.</li><li><strong>B)</strong> Zorunlu olarak protein kılıfsız RNA’dırlar.</li><li><strong>C)</strong> Hücre duvarlarında her zaman peptidoglikan bulunur.</li><li><strong>D)</strong> Tamamı insan patojenidir.</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>Algler klorofil ve başka pigmentlere sahip fotosentetik organizmalardır; sucul ortamlarda önemli üreticilerdir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-92">
+  <div class="question-topline"><span class="question-tag">Soru 92</span><span class="topic-pill">Red tide</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Sularda aşırı çoğalarak “red tide/kırmızı kuşak” olaylarına neden olabilen grup hangisidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Dinoflagellatlar/Pyrrophyta</li><li><strong>B)</strong> Bakteriyofajlar</li><li><strong>C)</strong> Prionlar</li><li><strong>D)</strong> Endosporlar</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>Karotenoid taşıyan bazı dinoflagellat türlerinin aşırı çoğalması kırmızı kuşak olaylarına yol açabilir.</p></div></details>
+</section></div></div><div class="question-box"><span class="section-badge">Konu Taraması</span><h2>Konu Taraması – Laboratuvar Cihazları ve Mikroskoplar</h2><p class="section-intro">Bu bölümde 5 soru vardır. Sorular, doğrudan ezberden ziyade finalde gelen kavram ayrımı mantığını ölçmek için hazırlanmıştır.</p><div class="question-cluster">
+<section class="mcq-card" id="soru-93">
+  <div class="question-topline"><span class="question-tag">Soru 93</span><span class="topic-pill">Araştırma mikroskobu</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Klasik araştırma mikroskobunda görüntü genel olarak nasıl elde edilir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Işığın preparattan geçmesiyle</li><li><strong>B)</strong> Sadece elektron demetiyle</li><li><strong>C)</strong> Örnek yüzeyinden yansıyan ışıkla üç boyutlu olarak</li><li><strong>D)</strong> Basınçlı buharla</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>Araştırma/ışık mikroskobunda materyal lam üzerinde hazırlanır ve ışık geçişiyle görüntü alınır.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-94">
+  <div class="question-topline"><span class="question-tag">Soru 94</span><span class="topic-pill">Faz kontrast</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Boyanmamış canlı hücreleri daha net incelemek için tercih edilen mikroskop tipi hangisidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Faz kontrast mikroskop</li><li><strong>B)</strong> Otoklav</li><li><strong>C)</strong> Hassas terazi</li><li><strong>D)</strong> Koch kazanı</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>Faz kontrast mikroskop, ışığı kırma indislerindeki farklılıktan yararlanır ve canlı/boyanmamış hücreleri incelemede kullanılır.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-95">
+  <div class="question-topline"><span class="question-tag">Soru 95</span><span class="topic-pill">Elektron mikroskobu</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Virüs gibi ışık mikroskobunda görülemeyecek kadar küçük yapıların ayrıntılı incelenmesinde hangi mikroskop kullanılır?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Elektron mikroskobu</li><li><strong>B)</strong> Stereo mikroskop</li><li><strong>C)</strong> Basit büyüteç</li><li><strong>D)</strong> İnkübatör</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>Elektron mikroskobu ışık yerine elektron kullanır ve çok yüksek çözünürlük sağlar.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-96">
+  <div class="question-topline"><span class="question-tag">Soru 96</span><span class="topic-pill">İnkübatör/etüv</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Mikroorganizmaların kültür ortamına ekildikten sonra belirli sıcaklıkta çoğalmasını sağlamak için kullanılan cihaz hangisidir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> İnkübatör/etüv</li><li><strong>B)</strong> Santrifüj</li><li><strong>C)</strong> Pipet</li><li><strong>D)</strong> Mikrotom</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>İnkübatör veya etüv sabit sıcaklık sağlayarak mikroorganizmaların üremesi için uygun koşul oluşturur.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-97">
+  <div class="question-topline"><span class="question-tag">Soru 97</span><span class="topic-pill">Santrifüj</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Santrifüjün temel kullanım amacı nedir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Sıvı içindeki partikül/hücreleri çöktürmek ve ayırmak</li><li><strong>B)</strong> Besiyerini basınçlı buharla steril etmek</li><li><strong>C)</strong> Canlı hücreyi boyamadan görüntülemek</li><li><strong>D)</strong> Gıdanın pH’ını ölçmek</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>Santrifüj, merkezkaç kuvvetiyle hücreleri, partikülleri veya farklı yoğunluktaki sıvı kısımlarını ayırır.</p></div></details>
+</section></div></div><div class="question-box"><span class="section-badge">Konu Taraması</span><h2>Konu Taraması – Hastalık, Savunma ve Bağışıklık</h2><p class="section-intro">Bu bölümde 3 soru vardır. Sorular, doğrudan ezberden ziyade finalde gelen kavram ayrımı mantığını ölçmek için hazırlanmıştır.</p><div class="question-cluster">
+<section class="mcq-card" id="soru-98">
+  <div class="question-topline"><span class="question-tag">Soru 98</span><span class="topic-pill">Terminoloji</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Konukçusunda hastalığa neden olan parazite ne ad verilir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Patojen</li><li><strong>B)</strong> Antijen</li><li><strong>C)</strong> Epitop</li><li><strong>D)</strong> Kommensal</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>Patojen, konukçusunda hastalık oluşturan parazitik mikroorganizma/etmendir.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-99">
+  <div class="question-topline"><span class="question-tag">Soru 99</span><span class="topic-pill">Patojenite-virülens</span><span class="difficulty-pill easy">Kolay</span></div>
+  <h3>Virülens kavramı en doğru nasıl tanımlanır?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Patojenitenin derecesi/şiddeti</li><li><strong>B)</strong> Hücrenin mikroskopla büyütülmesi</li><li><strong>C)</strong> Bir gıdanın su aktivitesi</li><li><strong>D)</strong> Virüsün protein kılıfı</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>Patojenite hastalık yapma yeteneğidir; virülens bu yeteneğin derecesini ifade eder.</p></div></details>
+</section>
+<section class="mcq-card" id="soru-100">
+  <div class="question-topline"><span class="question-tag">Soru 100</span><span class="topic-pill">Aktif bağışıklık</span><span class="difficulty-pill medium">Orta</span></div>
+  <h3>Aşı ile antijen verilerek bağışıklığın uyarılması hangi bağışıklık türüne örnektir?</h3>
+  <ul class="option-list"><li><strong>A)</strong> Yapay aktif bağışıklık</li><li><strong>B)</strong> Doğal pasif bağışıklık</li><li><strong>C)</strong> Yapay pasif bağışıklık</li><li><strong>D)</strong> Doğuştan mekanik bariyer</li></ul>
+  <details class="question-solution"><summary>Cevap ve açıklamayı göster</summary><div><span class="answer-chip">Doğru cevap: A</span><p>Aşı ile bireyin kendi bağışıklık sistemi uyarılır ve antikor/hafıza yanıtı oluşabilir; bu yapay aktif bağışıklıktır.</p></div></details>
+</section></div></div>
+<div class="question-box" id="dy"><span class="section-badge">Bölüm 2</span><h2>Doğru / Yanlış Kontrolü</h2><p class="section-intro">Bu bölüm, kavram cümlelerini hızlı kontrol etmek için hazırlanmıştır. D = Doğru, Y = Yanlış.</p><div class="tf-grid">
+<section class="tf-card">
+  <div class="question-topline"><span class="question-tag">D/Y 1</span><span class="answer-chip small">D</span></div>
+  <p>Mikroorganizmalar doğada çoğu zaman saf kültür halinde değil, karışık popülasyonlar halinde bulunur.</p>
+  <details class="question-solution"><summary>Açıklama</summary><p>Toprak ve su gibi ortamlarda bakteri, fungus, alg, protozoa ve virüsler birlikte bulunabilir.</p></details>
+</section>
+<section class="tf-card">
+  <div class="question-topline"><span class="question-tag">D/Y 2</span><span class="answer-chip small">Y</span></div>
+  <p>Sterilizasyon ile bazı sporların canlı kalması normal ve beklenen bir durumdur.</p>
+  <details class="question-solution"><summary>Açıklama</summary><p>Sterilizasyonda hedef tüm canlı mikroorganizmaların yok edilmesidir; spor kalması yetersizliktir.</p></details>
+</section>
+<section class="tf-card">
+  <div class="question-topline"><span class="question-tag">D/Y 3</span><span class="answer-chip small">D</span></div>
+  <p>Dezenfeksiyon cansız ortamlardaki patojen mikroorganizmaları hedefler.</p>
+  <details class="question-solution"><summary>Açıklama</summary><p>Dezenfeksiyon cansız çevreye uygulanır; bazı sporlar kalabilir.</p></details>
+</section>
+<section class="tf-card">
+  <div class="question-topline"><span class="question-tag">D/Y 4</span><span class="answer-chip small">D</span></div>
+  <p>Antisepsi vücut yüzeyi ve yaralara uygulanır.</p>
+  <details class="question-solution"><summary>Açıklama</summary><p>El antisepsisi, yara antisepsisi gibi ifadeler doğru kullanımdır.</p></details>
+</section>
+<section class="tf-card">
+  <div class="question-topline"><span class="question-tag">D/Y 5</span><span class="answer-chip small">Y</span></div>
+  <p>Virüsler normal ışık mikroskobunda rahatlıkla görülebilir.</p>
+  <details class="question-solution"><summary>Açıklama</summary><p>Virüsler elektron mikroskobu ile görülebilecek kadar küçüktür.</p></details>
+</section>
+<section class="tf-card">
+  <div class="question-topline"><span class="question-tag">D/Y 6</span><span class="answer-chip small">D</span></div>
+  <p>Viroidler protein kılıfı olmayan bulaşıcı RNA molekülleridir.</p>
+  <details class="question-solution"><summary>Açıklama</summary><p>Viroidlerin virüslerden önemli farkı kapsid/protein kılıf taşımamalarıdır.</p></details>
+</section>
+<section class="tf-card">
+  <div class="question-topline"><span class="question-tag">D/Y 7</span><span class="answer-chip small">D</span></div>
+  <p>Bakterilerde endospor kötü koşullara dayanıklı bir yapıdır.</p>
+  <details class="question-solution"><summary>Açıklama</summary><p>Endospor uygun koşullarda tekrar vejetatif forma dönebilir.</p></details>
+</section>
+<section class="tf-card">
+  <div class="question-topline"><span class="question-tag">D/Y 8</span><span class="answer-chip small">Y</span></div>
+  <p>Fungus hücre duvarının temel yapısı peptidoglikandır.</p>
+  <details class="question-solution"><summary>Açıklama</summary><p>Funguslarda kitin, mannan ve beta-glukan; bakterilerde peptidoglikan öne çıkar.</p></details>
+</section>
+<section class="tf-card">
+  <div class="question-topline"><span class="question-tag">D/Y 9</span><span class="answer-chip small">D</span></div>
+  <p>Mayalar genellikle tomurcuklanarak çoğalır.</p>
+  <details class="question-solution"><summary>Açıklama</summary><p>Tomurcuklanma mayalar için tipik çoğalma şeklidir.</p></details>
+</section>
+<section class="tf-card">
+  <div class="question-topline"><span class="question-tag">D/Y 10</span><span class="answer-chip small">Y</span></div>
+  <p>Protozoonlar prokaryotik canlılardır ve çekirdek zarı bulunmaz.</p>
+  <details class="question-solution"><summary>Açıklama</summary><p>Protozoonlar ökaryot tipte tek hücreli canlılardır.</p></details>
+</section>
+<section class="tf-card">
+  <div class="question-topline"><span class="question-tag">D/Y 11</span><span class="answer-chip small">D</span></div>
+  <p>Algler fotosentez yapabilen pigmentli organizmalardır.</p>
+  <details class="question-solution"><summary>Açıklama</summary><p>Klorofil ve yardımcı pigmentler taşırlar.</p></details>
+</section>
+<section class="tf-card">
+  <div class="question-topline"><span class="question-tag">D/Y 12</span><span class="answer-chip small">Y</span></div>
+  <p>Lag fazında hücre sayısı belirgin şekilde artar.</p>
+  <details class="question-solution"><summary>Açıklama</summary><p>Lag fazı adaptasyon dönemidir; sayı artışı belirgin değildir.</p></details>
+</section>
+<section class="tf-card">
+  <div class="question-topline"><span class="question-tag">D/Y 13</span><span class="answer-chip small">D</span></div>
+  <p>Logaritmik fazda mikroorganizmalar geometrik biçimde çoğalır.</p>
+  <details class="question-solution"><summary>Açıklama</summary><p>Aktif bölünme ve hızlı sayı artışı bu fazın temelidir.</p></details>
+</section>
+<section class="tf-card">
+  <div class="question-topline"><span class="question-tag">D/Y 14</span><span class="answer-chip small">D</span></div>
+  <p>Düşük sıcaklık mikroorganizmaların gelişmesini durdurabilir fakat her zaman öldürmez.</p>
+  <details class="question-solution"><summary>Açıklama</summary><p>Soğutma koruma sağlar ancak ölümle eş anlamlı değildir.</p></details>
+</section>
+<section class="tf-card">
+  <div class="question-topline"><span class="question-tag">D/Y 15</span><span class="answer-chip small">D</span></div>
+  <p>Fakültatif anaeroblar hem oksijenli hem oksijensiz ortamda gelişebilir.</p>
+  <details class="question-solution"><summary>Açıklama</summary><p>Bu özellik fakültatif anaerobların tanımlayıcı özelliğidir.</p></details>
+</section>
+<section class="tf-card">
+  <div class="question-topline"><span class="question-tag">D/Y 16</span><span class="answer-chip small">D</span></div>
+  <p>Su aktivitesi, mikroorganizmaların kullanabildiği serbest su ile ilgilidir.</p>
+  <details class="question-solution"><summary>Açıklama</summary><p>Bağlı su mikroorganizmalar tarafından kullanılamaz.</p></details>
+</section>
+<section class="tf-card">
+  <div class="question-topline"><span class="question-tag">D/Y 17</span><span class="answer-chip small">Y</span></div>
+  <p>Mutualizmde ilişkideki canlılardan biri yarar görür, diğeri mutlaka zarar görür.</p>
+  <details class="question-solution"><summary>Açıklama</summary><p>Bu parazitizme yakındır; mutualizmde iki taraf da fayda görür.</p></details>
+</section>
+<section class="tf-card">
+  <div class="question-topline"><span class="question-tag">D/Y 18</span><span class="answer-chip small">D</span></div>
+  <p>Rhizobium-baklagil ilişkisi mutualizme örnektir.</p>
+  <details class="question-solution"><summary>Açıklama</summary><p>Bakteri azot sağlar, bitki organik madde sağlar.</p></details>
+</section>
+<section class="tf-card">
+  <div class="question-topline"><span class="question-tag">D/Y 19</span><span class="answer-chip small">D</span></div>
+  <p>Humoral bağışıklık antikorlar gibi çözünür moleküllerin etkisiyle gerçekleşir.</p>
+  <details class="question-solution"><summary>Açıklama</summary><p>Hücresel bağışıklık ise hücre aktiviteleri ile ilişkilidir.</p></details>
+</section>
+<section class="tf-card">
+  <div class="question-topline"><span class="question-tag">D/Y 20</span><span class="answer-chip small">Y</span></div>
+  <p>Pasif bağışıklık genellikle uzun süreli bağışıklık belleği oluşturur.</p>
+  <details class="question-solution"><summary>Açıklama</summary><p>Pasif bağışıklık hazır antikorlarla oluşur ve genellikle kısa sürelidir.</p></details>
+</section></div></div>
+<div class="question-box" id="bosluk"><span class="section-badge">Bölüm 3</span><h2>Boşluk Doldurma</h2><p class="section-intro">Sınav öncesi terim ezberini güçlendirmek için kısa ve doğrudan boşluklar.</p><div class="blank-grid">
+<section class="blank-card"><div class="question-topline"><span class="question-tag">Boşluk 1</span></div><p>Mikroorganizmaları ve faaliyetlerini inceleyen bilim dalına __________ denir.</p><details class="question-solution"><summary>Cevap</summary><span class="answer-chip">mikrobiyoloji</span></details></section>
+<section class="blank-card"><div class="question-topline"><span class="question-tag">Boşluk 2</span></div><p>Bakteri hücre duvarının esas yapısal maddesi __________ olarak adlandırılır.</p><details class="question-solution"><summary>Cevap</summary><span class="answer-chip">peptidoglikan</span></details></section>
+<section class="blank-card"><div class="question-topline"><span class="question-tag">Boşluk 3</span></div><p>Bakterilerde genellikle antibiyotik direnci gibi özellikler kromozom dışı __________ ile taşınabilir.</p><details class="question-solution"><summary>Cevap</summary><span class="answer-chip">plazmidler</span></details></section>
+<section class="blank-card"><div class="question-topline"><span class="question-tag">Boşluk 4</span></div><p>Bir virüs partikülüne __________ adı verilir.</p><details class="question-solution"><summary>Cevap</summary><span class="answer-chip">virion</span></details></section>
+<section class="blank-card"><div class="question-topline"><span class="question-tag">Boşluk 5</span></div><p>Virüslerde nükleik asidi çevreleyen protein kılıfa __________ denir.</p><details class="question-solution"><summary>Cevap</summary><span class="answer-chip">kapsid</span></details></section>
+<section class="blank-card"><div class="question-topline"><span class="question-tag">Boşluk 6</span></div><p>Protein kılıfı olmayan bulaşıcı RNA yapıları __________ olarak adlandırılır.</p><details class="question-solution"><summary>Cevap</summary><span class="answer-chip">viroid</span></details></section>
+<section class="blank-card"><div class="question-topline"><span class="question-tag">Boşluk 7</span></div><p>Tüm canlı mikroorganizmaları yok etmeyi hedefleyen işlem __________ işlemidir.</p><details class="question-solution"><summary>Cevap</summary><span class="answer-chip">sterilizasyon</span></details></section>
+<section class="blank-card"><div class="question-topline"><span class="question-tag">Boşluk 8</span></div><p>Vücut yüzeyindeki patojen mikroorganizmaların yok edilmesi __________ olarak adlandırılır.</p><details class="question-solution"><summary>Cevap</summary><span class="answer-chip">antisepsi</span></details></section>
+<section class="blank-card"><div class="question-topline"><span class="question-tag">Boşluk 9</span></div><p>Basınçlı buharla sterilizasyon yapan cihaz __________tır.</p><details class="question-solution"><summary>Cevap</summary><span class="answer-chip">otoklav</span></details></section>
+<section class="blank-card"><div class="question-topline"><span class="question-tag">Boşluk 10</span></div><p>Isıya dayanıksız sıvıların sterilizasyonunda __________ yöntemi kullanılır.</p><details class="question-solution"><summary>Cevap</summary><span class="answer-chip">filtrasyon</span></details></section>
+<section class="blank-card"><div class="question-topline"><span class="question-tag">Boşluk 11</span></div><p>Büyüme eğrisinde ortama uyum sağlanan ilk dönem __________ fazıdır.</p><details class="question-solution"><summary>Cevap</summary><span class="answer-chip">lag / adaptasyon</span></details></section>
+<section class="blank-card"><div class="question-topline"><span class="question-tag">Boşluk 12</span></div><p>Aktif bölünmenin ve geometrik çoğalmanın görüldüğü faz __________ fazdır.</p><details class="question-solution"><summary>Cevap</summary><span class="answer-chip">logaritmik gelişme</span></details></section>
+<section class="blank-card"><div class="question-topline"><span class="question-tag">Boşluk 13</span></div><p>Mikroorganizmaların kullanabildiği serbest suyun göstergesi __________ değeridir.</p><details class="question-solution"><summary>Cevap</summary><span class="answer-chip">su aktivitesi / aw</span></details></section>
+<section class="blank-card"><div class="question-topline"><span class="question-tag">Boşluk 14</span></div><p>Hem oksijenli hem oksijensiz ortamda gelişebilen bakterilere __________ anaerob denir.</p><details class="question-solution"><summary>Cevap</summary><span class="answer-chip">fakültatif</span></details></section>
+<section class="blank-card"><div class="question-topline"><span class="question-tag">Boşluk 15</span></div><p>Fungusların ipliksi yapılarına __________, bunların toplu haline __________ denir.</p><details class="question-solution"><summary>Cevap</summary><span class="answer-chip">hif; miselyum</span></details></section>
+<section class="blank-card"><div class="question-topline"><span class="question-tag">Boşluk 16</span></div><p>Mantar hücre zarında bulunan ve antifungaller için hedef olan sterol __________dür.</p><details class="question-solution"><summary>Cevap</summary><span class="answer-chip">ergosterol</span></details></section>
+<section class="blank-card"><div class="question-topline"><span class="question-tag">Boşluk 17</span></div><p>Amiplerde hareket ve besin alımında kullanılan yalancı ayaklara __________ denir.</p><details class="question-solution"><summary>Cevap</summary><span class="answer-chip">pseudopodia</span></details></section>
+<section class="blank-card"><div class="question-topline"><span class="question-tag">Boşluk 18</span></div><p>Alglerin sularda aşırı çoğalması sonucu oluşan kırmızı kuşak olayı özellikle __________ ile ilişkilidir.</p><details class="question-solution"><summary>Cevap</summary><span class="answer-chip">dinoflagellatlar / Pyrrophyta</span></details></section>
+<section class="blank-card"><div class="question-topline"><span class="question-tag">Boşluk 19</span></div><p>Antijene karşı oluşturulan özel çözünür proteinlere __________ denir.</p><details class="question-solution"><summary>Cevap</summary><span class="answer-chip">antikor</span></details></section>
+<section class="blank-card"><div class="question-topline"><span class="question-tag">Boşluk 20</span></div><p>Aşı ile kazanılan bağışıklık __________ aktif bağışıklık örneğidir.</p><details class="question-solution"><summary>Cevap</summary><span class="answer-chip">yapay</span></details></section></div></div>
+<div class="question-box" id="klasik"><span class="section-badge">Bölüm 4</span><h2>Kısa Cevap / Klasik Prova</h2><p class="section-intro">Test sınavı olsa bile bu sorular kavramları netleştirir. Her cevap 3–5 cümlelik sınav cevabı olacak şekilde düşünülmelidir.</p><div class="short-grid">
+<section class="short-card"><div class="question-topline"><span class="question-tag">Kısa Cevap 1</span></div><h3>Sterilizasyon, dezenfeksiyon, antisepsi ve asepsi kavramlarını sınavda karıştırmadan açıklayınız.</h3><div class="lined-area"></div><details class="question-solution"><summary>Beklenen cevap çerçevesi</summary><p>Sterilizasyon tüm canlı mikroorganizmaları yok etmeyi hedefler. Dezenfeksiyon cansız ortamdaki patojenleri hedefler. Antisepsi vücut yüzeyi veya yaralara uygulanır. Asepsi ise patojenlerden arındırılmış çalışma/ortam durumudur.</p></details></section>
+<section class="short-card"><div class="question-topline"><span class="question-tag">Kısa Cevap 2</span></div><h3>Bakteri, fungus ve virüsleri hücre yapısı açısından karşılaştırınız.</h3><div class="lined-area"></div><details class="question-solution"><summary>Beklenen cevap çerçevesi</summary><p>Bakteriler prokaryottur, gerçek çekirdek ve zarlı organelleri yoktur. Funguslar ökaryottur, çekirdek zarı ve organelleri vardır. Virüsler hücresel yapıda değildir; nükleik asit ve protein kılıftan oluşur, canlı hücrede çoğalır.</p></details></section>
+<section class="short-card"><div class="question-topline"><span class="question-tag">Kısa Cevap 3</span></div><h3>Lag fazı, logaritmik faz, duraklama fazı ve ölüm fazını kısaca açıklayınız.</h3><div class="lined-area"></div><details class="question-solution"><summary>Beklenen cevap çerçevesi</summary><p>Lag fazı adaptasyon dönemidir. Log fazı aktif ve geometrik çoğalma dönemidir. Duraklama fazında besin azalması ve metabolit birikimi nedeniyle net çoğalma durur. Ölüm fazında canlı hücre sayısı hızla azalır.</p></details></section>
+<section class="short-card"><div class="question-topline"><span class="question-tag">Kısa Cevap 4</span></div><h3>Viroid ile virüs arasındaki temel farkı açıklayınız.</h3><div class="lined-area"></div><details class="question-solution"><summary>Beklenen cevap çerçevesi</summary><p>Virüsler nükleik asit ve protein kılıftan oluşur. Viroidler protein kılıf taşımayan bulaşıcı, yuvarlak tek iplikçikli RNA molekülleridir.</p></details></section>
+<section class="short-card"><div class="question-topline"><span class="question-tag">Kısa Cevap 5</span></div><h3>Gram boyama neden önemlidir?</h3><div class="lined-area"></div><details class="question-solution"><summary>Beklenen cevap çerçevesi</summary><p>Bakterilerin Gram-pozitif veya Gram-negatif olarak ayrılmasını sağlar. Bu ayrım hücre duvarı yapısı, tanılama ve bazı antibiyotik duyarlılıkları açısından önemlidir.</p></details></section>
+<section class="short-card"><div class="question-topline"><span class="question-tag">Kısa Cevap 6</span></div><h3>Mikrobiyal gelişmeyi etkileyen iç ve dış faktörlerden örnekler veriniz.</h3><div class="lined-area"></div><details class="question-solution"><summary>Beklenen cevap çerçevesi</summary><p>İç faktörlere besin maddeleri, pH, su aktivitesi, redoks potansiyeli, antimikrobiyal maddeler ve koruyucu biyolojik yapılar; dış faktörlere sıcaklık, nispi nem ve çevredeki gazlar örnek verilebilir.</p></details></section>
+<section class="short-card"><div class="question-topline"><span class="question-tag">Kısa Cevap 7</span></div><h3>Fungusların yararlı ve zararlı yönlerinden ikişer örnek veriniz.</h3><div class="lined-area"></div><details class="question-solution"><summary>Beklenen cevap çerçevesi</summary><p>Yararlı: fermantasyon, antibiyotik/enzim/organik asit üretimi, ayrıştırma, biyolojik mücadele. Zararlı: bitki-hayvan-insan hastalıkları, gıda bozulması, mikotoksin üretimi, materyal çürütme.</p></details></section>
+<section class="short-card"><div class="question-topline"><span class="question-tag">Kısa Cevap 8</span></div><h3>Normal mikrobiyotanın konak açısından önemini açıklayınız.</h3><div class="lined-area"></div><details class="question-solution"><summary>Beklenen cevap çerçevesi</summary><p>Sindirime katkı sağlar, vitamin sentezleyebilir, bağışıklık sisteminin gelişimine katkıda bulunur ve patojenlerin yerleşmesini kolonizasyon direnciyle engeller.</p></details></section>
+<section class="short-card"><div class="question-topline"><span class="question-tag">Kısa Cevap 9</span></div><h3>Doğuştan ve edinilmiş bağışıklık arasındaki farkları yazınız.</h3><div class="lined-area"></div><details class="question-solution"><summary>Beklenen cevap çerçevesi</summary><p>Doğuştan bağışıklık hızlı ve özgül olmayan yanıttır; hafıza oluşturmaz. Edinilmiş bağışıklık antijene özgüldür, daha geç başlar ve hafıza oluşturabilir.</p></details></section>
+<section class="short-card"><div class="question-topline"><span class="question-tag">Kısa Cevap 10</span></div><h3>Aktif ve pasif bağışıklığı örneklerle açıklayınız.</h3><div class="lined-area"></div><details class="question-solution"><summary>Beklenen cevap çerçevesi</summary><p>Aktif bağışıklıkta kişi kendi bağışıklık yanıtını oluşturur; hastalığı geçirip iyileşme veya aşı buna örnektir. Pasif bağışıklıkta hazır antikor alınır; anneden antikor geçişi veya serum verilmesi örnektir.</p></details></section>
+<section class="short-card"><div class="question-topline"><span class="question-tag">Kısa Cevap 11</span></div><h3>Rhizobium-baklagil ilişkisini simbiyotik ilişki açısından açıklayınız.</h3><div class="lined-area"></div><details class="question-solution"><summary>Beklenen cevap çerçevesi</summary><p>Rhizobium kök nodüllerinde atmosfer azotunu bağlayarak bitkiye azotlu bileşik sağlar; bitki de bakteriye organik madde ve yaşam ortamı sağlar. Bu mutualizmdir.</p></details></section>
+<section class="short-card"><div class="question-topline"><span class="question-tag">Kısa Cevap 12</span></div><h3>Otoklav kullanımında basınç düşmeden kapağın açılmaması neden önemlidir?</h3><div class="lined-area"></div><details class="question-solution"><summary>Beklenen cevap çerçevesi</summary><p>Basınç sıfırlanmadan kapak açılırsa sıvılar kaynayabilir, tıkaçlar fırlayabilir ve güvenlik riski oluşur. Ayrıca sterilizasyon süreci doğru tamamlanmamış olabilir.</p></details></section></div></div>
+<div class="question-box"><span class="section-badge">Cevap Anahtarı</span><h2>Hızlı Test Cevap Anahtarı</h2><p class="section-intro">Aşağıdaki anahtar yalnız çoktan seçmeli sorular içindir.</p><div class="answer-key"><span><strong>1</strong>B</span><span><strong>2</strong>D</span><span><strong>3</strong>B</span><span><strong>4</strong>B</span><span><strong>5</strong>C</span><span><strong>6</strong>C</span><span><strong>7</strong>B</span><span><strong>8</strong>C</span><span><strong>9</strong>B</span><span><strong>10</strong>B</span><span><strong>11</strong>C</span><span><strong>12</strong>C</span><span><strong>13</strong>C</span><span><strong>14</strong>B</span><span><strong>15</strong>B</span><span><strong>16</strong>C</span><span><strong>17</strong>B</span><span><strong>18</strong>B</span><span><strong>19</strong>A</span><span><strong>20</strong>D</span><span><strong>21</strong>C</span><span><strong>22</strong>C</span><span><strong>23</strong>C</span><span><strong>24</strong>B</span><span><strong>25</strong>C</span><span><strong>26</strong>B</span><span><strong>27</strong>D</span><span><strong>28</strong>C</span><span><strong>29</strong>B</span><span><strong>30</strong>A</span><span><strong>31</strong>B</span><span><strong>32</strong>B</span><span><strong>33</strong>B</span><span><strong>34</strong>A</span><span><strong>35</strong>A</span><span><strong>36</strong>C</span><span><strong>37</strong>B</span><span><strong>38</strong>B</span><span><strong>39</strong>B</span><span><strong>40</strong>A</span><span><strong>41</strong>C</span><span><strong>42</strong>C</span><span><strong>43</strong>A</span><span><strong>44</strong>B</span><span><strong>45</strong>B</span><span><strong>46</strong>C</span><span><strong>47</strong>A</span><span><strong>48</strong>B</span><span><strong>49</strong>A</span><span><strong>50</strong>B</span><span><strong>51</strong>A</span><span><strong>52</strong>A</span><span><strong>53</strong>D</span><span><strong>54</strong>B</span><span><strong>55</strong>A</span><span><strong>56</strong>B</span><span><strong>57</strong>A</span><span><strong>58</strong>A</span><span><strong>59</strong>B</span><span><strong>60</strong>A</span><span><strong>61</strong>A</span><span><strong>62</strong>B</span><span><strong>63</strong>A</span><span><strong>64</strong>A</span><span><strong>65</strong>B</span><span><strong>66</strong>A</span><span><strong>67</strong>A</span><span><strong>68</strong>A</span><span><strong>69</strong>B</span><span><strong>70</strong>B</span><span><strong>71</strong>B</span><span><strong>72</strong>B</span><span><strong>73</strong>C</span><span><strong>74</strong>A</span><span><strong>75</strong>A</span><span><strong>76</strong>A</span><span><strong>77</strong>A</span><span><strong>78</strong>A</span><span><strong>79</strong>A</span><span><strong>80</strong>A</span><span><strong>81</strong>B</span><span><strong>82</strong>A</span><span><strong>83</strong>B</span><span><strong>84</strong>A</span><span><strong>85</strong>A</span><span><strong>86</strong>A</span><span><strong>87</strong>A</span><span><strong>88</strong>A</span><span><strong>89</strong>A</span><span><strong>90</strong>A</span><span><strong>91</strong>A</span><span><strong>92</strong>A</span><span><strong>93</strong>A</span><span><strong>94</strong>A</span><span><strong>95</strong>A</span><span><strong>96</strong>A</span><span><strong>97</strong>A</span><span><strong>98</strong>A</span><span><strong>99</strong>A</span><span><strong>100</strong>A</span></div></div>
+<p class="print-note">Not: Yazdırırken cevap açıklamalarını da görmek için önce “Tüm Cevapları Aç” düğmesine basabilirsiniz.</p>
+<p class="print-note"><a href="../dersler/mikrobiyoloji.html">Ders sayfasına dön</a> · <a href="../calisma-kagitlari/mikrobiyoloji-final-calisma-kagidi.html">Çalışma kağıdını aç</a></p>
+</div></section></main>
+</body>
+</html>

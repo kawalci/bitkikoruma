@@ -32,6 +32,24 @@ body {
     line-height: 1.6;
 }
 
+body::after {
+    content: "Designed by c0v0lk";
+    position: fixed;
+    right: 12px;
+    bottom: 10px;
+    z-index: 40;
+    padding: 5px 9px;
+    color: #475569;
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(203, 213, 225, 0.95);
+    border-radius: 999px;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    pointer-events: none;
+}
+
 body.nav-open {
     overflow: hidden;
 }
@@ -980,7 +998,8 @@ p {
     .breadcrumb,
     .sidebar-card,
     .button,
-    .nav-toggle {
+    .nav-toggle,
+    body::after {
         display: none !important;
     }
 

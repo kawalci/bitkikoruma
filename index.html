@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Çalışma kağıtları ve örnek sorular için sade, mobil uyumlu statik ders materyalleri kütüphanesi.">
     <title>Ders Materyalleri Kütüphanesi</title>
-    <link rel="stylesheet" href="style.css?v=20260604-3">
+    <link rel="stylesheet" href="style.css?v=20260604-4">
 </head>
 <body>
     <header class="site-header">
@@ -35,20 +35,20 @@
                 <div class="hero-content">
                     <p class="eyebrow">Statik HTML ders arşivi</p>
                     <h1>Ders çalışma materyallerini tek, sade ve düzenli bir merkezde toplayın.</h1>
-                    <p class="hero-lead">Bu taslak; derslere ait <strong>Çalışma Kağıdı</strong> ve <strong>Örnek Soru</strong> sayfalarını hatasız, mobil uyumlu ve kolay çoğaltılabilir bir mimariyle sunmak için hazırlandı.</p>
+                    <p class="hero-lead">Bu arşiv, derslere ait <strong>Çalışma Kağıdı</strong> ve <strong>Örnek Soru</strong> sayfalarını aynı yapıda sunar. İlk gerçek içerik seti olarak Mikrobiyoloji dersi eklendi.</p>
                     <div class="hero-actions">
-                        <a class="button button-primary" href="#dersler">Ders Alanına Git</a>
+                        <a class="button button-primary" href="dersler/mikrobiyoloji.html">Mikrobiyoloji Dersini Aç</a>
                         <a class="button button-secondary" href="dersler/ders-sablonu.html">Ders Şablonunu İncele</a>
                     </div>
                 </div>
                 <aside class="hero-card" aria-label="Site kapsamı">
                     <div class="stat-card">
-                        <span class="stat-number">2</span>
-                        <span class="stat-label">Sabit içerik başlığı</span>
+                        <span class="stat-number">1</span>
+                        <span class="stat-label">Aktif ders</span>
                     </div>
                     <ul class="check-list">
-                        <li>Çalışma Kağıdı sayfaları</li>
-                        <li>Örnek Soru sayfaları</li>
+                        <li>Mikrobiyoloji final çalışma kağıdı</li>
+                        <li>Mikrobiyoloji final örnek soru seti</li>
                         <li>Tek merkezden erişim</li>
                         <li>Mobil ve yazdırma uyumu</li>
                     </ul>
@@ -60,15 +60,23 @@
             <div class="container">
                 <div class="section-heading">
                     <p class="eyebrow">Dersler</p>
-                    <h2>Dersler buradan listelenecek</h2>
-                    <p>Ders içerikleri sonradan eklenecek. Her ders sayfası yalnızca iki ana başlıkla ilerleyecek: Çalışma Kağıdı ve Örnek Soru.</p>
+                    <h2>Yayındaki ders içerikleri</h2>
+                    <p>Her ders sayfası çalışma kağıdı ve örnek soru bağlantılarını tek merkezde toplar.</p>
                 </div>
 
-                <div class="empty-state">
-                    <div class="empty-icon" aria-hidden="true">＋</div>
-                    <h3>Henüz ders eklenmedi</h3>
-                    <p>Yeni bir ders eklemek için <code>dersler/ders-sablonu.html</code> dosyasını kopyalayıp ders adına göre yeniden adlandırın ve bu alana ders kartı ekleyin.</p>
-                    <a class="button button-secondary" href="dersler/ders-sablonu.html">Ders Sayfası Şablonu</a>
+                <div class="card-grid two-columns">
+                    <article class="feature-card">
+                        <span class="card-icon" aria-hidden="true">MB</span>
+                        <h3>Genel Mikrobiyoloji</h3>
+                        <p>Final sınavı için hazırlanmış yoğun tekrar çalışma kağıdı ve çıkmış tarzlı örnek soru bankası içerir.</p>
+                        <a class="text-link" href="dersler/mikrobiyoloji.html">Ders sayfasını aç</a>
+                    </article>
+                    <article class="feature-card">
+                        <span class="card-icon" aria-hidden="true">DM</span>
+                        <h3>Yeni ders ekleme akışı</h3>
+                        <p>Yeni bir içerik seti geldiğinde ders şablonundan sayfa üretip materyal bağlantılarını aynı düzende ekleyebilirsin.</p>
+                        <a class="text-link" href="dersler/ders-sablonu.html">Ders şablonuna git</a>
+                    </article>
                 </div>
             </div>
         </section>
@@ -83,16 +91,16 @@
 
                 <div class="card-grid two-columns">
                     <article class="feature-card">
-                        <span class="card-icon" aria-hidden="true">📝</span>
+                        <span class="card-icon" aria-hidden="true">CK</span>
                         <h3>Çalışma Kağıdı</h3>
                         <p>Derslere ait uygulama, tekrar ve sınav hazırlık sayfaları için kullanılır. Yazdırılabilir yapıdadır.</p>
-                        <a class="text-link" href="calisma-kagitlari/calisma-kagidi-sablonu.html">Çalışma kağıdı şablonu</a>
+                        <a class="text-link" href="calisma-kagitlari/mikrobiyoloji-final-calisma-kagidi.html">Mikrobiyoloji çalışma kağıdı</a>
                     </article>
                     <article class="feature-card">
-                        <span class="card-icon" aria-hidden="true">❔</span>
+                        <span class="card-icon" aria-hidden="true">OS</span>
                         <h3>Örnek Soru</h3>
                         <p>Derslere ait soru örnekleri, cevap alanları ve açıklama bölümleri için kullanılır.</p>
-                        <a class="text-link" href="ornek-sorular/ornek-soru-sablonu.html">Örnek soru şablonu</a>
+                        <a class="text-link" href="ornek-sorular/mikrobiyoloji-final-ornek-sorular.html">Mikrobiyoloji örnek soruları</a>
                     </article>
                 </div>
             </div>
@@ -134,13 +142,13 @@
                 <p>Çalışma kağıtları ve örnek sorular için statik, sade ve mobil uyumlu kaynak yapısı.</p>
             </div>
             <nav aria-label="Alt menü">
-                <a href="dersler/ders-sablonu.html">Ders Şablonu</a>
-                <a href="calisma-kagitlari/calisma-kagidi-sablonu.html">Çalışma Kağıdı</a>
-                <a href="ornek-sorular/ornek-soru-sablonu.html">Örnek Soru</a>
+                <a href="dersler/mikrobiyoloji.html">Mikrobiyoloji</a>
+                <a href="calisma-kagitlari/calisma-kagidi-sablonu.html">Çalışma Kağıdı Şablonu</a>
+                <a href="ornek-sorular/ornek-soru-sablonu.html">Örnek Soru Şablonu</a>
             </nav>
         </div>
     </footer>
 
-    <script src="script.js?v=20260604-3"></script>
+    <script src="script.js?v=20260604-4"></script>
 </body>
 </html>
