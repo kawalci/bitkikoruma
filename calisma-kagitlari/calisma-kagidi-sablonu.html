@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yazdırılabilir çalışma kağıdı sayfaları için statik HTML şablonu.">
+    <title>Çalışma Kağıdı Şablonu | Ders Materyalleri Kütüphanesi</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav-shell">
+            <a class="brand" href="../index.html" aria-label="Ders Materyalleri Kütüphanesi ana sayfa">
+                <span class="brand-mark" aria-hidden="true">DM</span>
+                <span class="brand-text">Ders Materyalleri</span>
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+                <span class="sr-only">Menüyü aç veya kapat</span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="site-nav" id="site-nav" aria-label="Ana menü">
+                <a href="../index.html">Ana Sayfa</a>
+                <a href="../index.html#dersler">Dersler</a>
+                <a href="../index.html#icerik-turleri">İçerik Türleri</a>
+                <a href="../index.html#kullanim">Kullanım</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container page-header">
+                <nav class="breadcrumb" aria-label="Sayfa yolu">
+                    <a href="../index.html">Ana Sayfa</a>
+                    <span>/</span>
+                    <span>Çalışma Kağıdı Şablonu</span>
+                </nav>
+                <p class="eyebrow">Çalışma kağıdı</p>
+                <h1>Çalışma Kağıdı Başlığı</h1>
+                <p>Bu şablon yazdırılabilir çalışma kağıdı sayfaları için hazırlanmıştır.</p>
+                <div class="action-row">
+                    <button class="button button-primary" type="button" onclick="window.print()">Yazdır</button>
+                    <a class="button button-secondary" href="../dersler/ders-sablonu.html">Ders Şablonuna Dön</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container page-layout">
+                <article class="page-card">
+                    <div class="meta-grid" aria-label="Çalışma kağıdı bilgileri">
+                        <div class="meta-item"><strong>Ders</strong> Ders adı yazılacak</div>
+                        <div class="meta-item"><strong>Konu</strong> Konu adı yazılacak</div>
+                        <div class="meta-item"><strong>Amaç</strong> Hazırlık amacı yazılacak</div>
+                        <div class="meta-item"><strong>Tarih</strong> Tarih yazılacak</div>
+                    </div>
+
+                    <div class="worksheet-box">
+                        <h2>Yönerge</h2>
+                        <p>Bu alana çalışma kağıdı için gerekli yönerge yazılır. Öğrencilerin soruları nasıl cevaplayacağı açıkça belirtilir.</p>
+                    </div>
+
+                    <div class="worksheet-box">
+                        <h2>Sorular</h2>
+                        <ol>
+                            <li>Soru metni buraya yazılacak.</li>
+                            <li>Soru metni buraya yazılacak.</li>
+                            <li>Soru metni buraya yazılacak.</li>
+                        </ol>
+                    </div>
+
+                    <div class="worksheet-box">
+                        <h2>Cevap Alanı</h2>
+                        <p>Gerekirse her soru için ayrı cevap alanı çoğaltılabilir.</p>
+                        <div class="answer-area" aria-label="Boş cevap alanı"></div>
+                    </div>
+                </article>
+
+                <aside class="sidebar-card">
+                    <h2>Şablon notları</h2>
+                    <ul class="template-list">
+                        <li>Gerçek içerik eklendiğinde başlığı değiştirin.</li>
+                        <li>Meta bilgilerini doldurun.</li>
+                        <li>Soru ve cevap alanlarını ihtiyaca göre çoğaltın.</li>
+                        <li>Yazdırma görünümü otomatik desteklenir.</li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <h2>Ders Materyalleri Kütüphanesi</h2>
+                <p>Yazdırılabilir çalışma kağıdı sayfası şablonu.</p>
+            </div>
+            <nav aria-label="Alt menü">
+                <a href="../index.html">Ana Sayfa</a>
+                <a href="../dersler/ders-sablonu.html">Ders Şablonu</a>
+                <a href="../ornek-sorular/ornek-soru-sablonu.html">Örnek Soru</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
