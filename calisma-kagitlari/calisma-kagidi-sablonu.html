@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yazdırılabilir, bölümlü ve gelişmiş çalışma kağıdı sayfaları için statik HTML şablonu.">
+    <title>Çalışma Kağıdı Şablonu | Ders Materyalleri Kütüphanesi</title>
+    <link rel="stylesheet" href="../style.css?v=20260604-2">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav-shell">
+            <a class="brand" href="../index.html" aria-label="Ders Materyalleri Kütüphanesi ana sayfa">
+                <span class="brand-mark" aria-hidden="true">DM</span>
+                <span class="brand-text">Ders Materyalleri</span>
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+                <span class="sr-only">Menüyü aç veya kapat</span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="site-nav" id="site-nav" aria-label="Ana menü">
+                <a href="../index.html">Ana Sayfa</a>
+                <a href="../index.html#dersler">Dersler</a>
+                <a href="../index.html#icerik-turleri">İçerik Türleri</a>
+                <a href="../index.html#kullanim">Kullanım</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero worksheet-hero">
+            <div class="container page-header">
+                <nav class="breadcrumb" aria-label="Sayfa yolu">
+                    <a href="../index.html">Ana Sayfa</a>
+                    <span>/</span>
+                    <span>Çalışma Kağıdı Şablonu</span>
+                </nav>
+                <p class="eyebrow">Gelişmiş çalışma kağıdı</p>
+                <h1>Çalışma Kağıdı Başlığı</h1>
+                <p>Bu şablon; konu tekrarı, kavram haritalama, uygulama soruları ve öz değerlendirme bölümleriyle yazdırılabilir çalışma kağıtları hazırlamak için tasarlanmıştır.</p>
+                <div class="action-row">
+                    <button class="button button-primary" type="button" onclick="window.print()">Yazdır</button>
+                    <a class="button button-secondary" href="../dersler/ders-sablonu.html">Ders Şablonuna Dön</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container page-layout">
+                <article class="page-card worksheet-sheet">
+                    <div class="sheet-topline">
+                        <span>Ad Soyad: ____________________</span>
+                        <span>Sınıf/Grup: __________</span>
+                        <span>Tarih: ____ / ____ / ______</span>
+                    </div>
+
+                    <div class="meta-grid" aria-label="Çalışma kağıdı bilgileri">
+                        <div class="meta-item"><strong>Ders</strong> Ders adı yazılacak</div>
+                        <div class="meta-item"><strong>Konu</strong> Konu adı yazılacak</div>
+                        <div class="meta-item"><strong>Süre</strong> Önerilen süre yazılacak</div>
+                        <div class="meta-item"><strong>Seviye</strong> Temel / Orta / İleri</div>
+                    </div>
+
+                    <section class="worksheet-box accent-box">
+                        <h2>Kazanımlar</h2>
+                        <ul class="compact-list">
+                            <li>Bu çalışma sonunda öğrencinin kazanması beklenen beceri yazılacak.</li>
+                            <li>İkinci kazanım veya ölçülebilir hedef yazılacak.</li>
+                            <li>Gerekirse üçüncü kazanım maddesi eklenecek.</li>
+                        </ul>
+                    </section>
+
+                    <section class="worksheet-box instruction-box">
+                        <h2>Yönerge</h2>
+                        <p>Bu çalışma kağıdını ilgili ders materyallerini inceledikten sonra doldurun. Cevaplarınızı açık, düzenli ve gerekçeli şekilde yazın. Boş alanlar ihtiyaca göre çoğaltılabilir.</p>
+                    </section>
+
+                    <section class="worksheet-section">
+                        <div class="section-label">Bölüm A</div>
+                        <h2>Kısa Hazırlık ve Kavram Kontrolü</h2>
+                        <div class="task-grid">
+                            <article class="task-card">
+                                <h3>1. Anahtar Kavramlar</h3>
+                                <p>Konuya ait temel kavramları kısa açıklamalarıyla yazın.</p>
+                                <div class="lined-area tall" aria-label="Anahtar kavram cevap alanı"></div>
+                            </article>
+                            <article class="task-card">
+                                <h3>2. Kavram Eşleştirme</h3>
+                                <p>Sol sütundaki kavramları sağ sütundaki açıklamalarla eşleştirin.</p>
+                                <div class="match-table" role="table" aria-label="Kavram eşleştirme alanı">
+                                    <div role="row"><span role="cell">1. Kavram</span><span role="cell">A. Açıklama</span></div>
+                                    <div role="row"><span role="cell">2. Kavram</span><span role="cell">B. Açıklama</span></div>
+                                    <div role="row"><span role="cell">3. Kavram</span><span role="cell">C. Açıklama</span></div>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section class="worksheet-section">
+                        <div class="section-label">Bölüm B</div>
+                        <h2>Uygulama Soruları</h2>
+                        <ol class="worksheet-questions">
+                            <li>
+                                <strong>Soru metni buraya yazılacak.</strong>
+                                <p>Öğrenciden beklenen işlem, açıklama veya yorum burada kısaca belirtilebilir.</p>
+                                <div class="lined-area" aria-label="Birinci soru cevap alanı"></div>
+                            </li>
+                            <li>
+                                <strong>Soru metni buraya yazılacak.</strong>
+                                <p>Gerekirse tablo, şema veya karşılaştırma istenebilir.</p>
+                                <div class="answer-grid" aria-label="Karşılaştırmalı cevap alanı">
+                                    <div><span>Başlık 1</span></div>
+                                    <div><span>Başlık 2</span></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong>Soru metni buraya yazılacak.</strong>
+                                <div class="lined-area" aria-label="Üçüncü soru cevap alanı"></div>
+                            </li>
+                        </ol>
+                    </section>
+
+                    <section class="worksheet-section">
+                        <div class="section-label">Bölüm C</div>
+                        <h2>Kısa Özet ve Öz Değerlendirme</h2>
+                        <div class="reflection-box">
+                            <label>Bu konudan aklımda kalan en önemli üç nokta:</label>
+                            <div class="lined-area compact" aria-label="Kısa özet alanı"></div>
+                        </div>
+                        <div class="self-check" aria-label="Öz değerlendirme kontrol listesi">
+                            <label><input type="checkbox"> Konunun temel kavramlarını açıklayabilirim.</label>
+                            <label><input type="checkbox"> Örnek soruları kendi başıma çözebilirim.</label>
+                            <label><input type="checkbox"> Eksik kaldığım noktaları belirledim.</label>
+                        </div>
+                    </section>
+                </article>
+
+                <aside class="sidebar-card">
+                    <h2>Şablon notları</h2>
+                    <ul class="template-list">
+                        <li>Başlığı ve meta bilgilerini gerçek içeriğe göre değiştirin.</li>
+                        <li>Bölümleri ihtiyaca göre çoğaltın veya sadeleştirin.</li>
+                        <li>Boş cevap alanları yazdırma için optimize edilmiştir.</li>
+                        <li>İlgili ders sayfasındaki Çalışma Kağıdı başlığına bağlantı ekleyin.</li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <h2>Ders Materyalleri Kütüphanesi</h2>
+                <p>Yazdırılabilir ve bölümlü çalışma kağıdı sayfası şablonu.</p>
+            </div>
+            <nav aria-label="Alt menü">
+                <a href="../index.html">Ana Sayfa</a>
+                <a href="../dersler/ders-sablonu.html">Ders Şablonu</a>
+                <a href="../ornek-sorular/ornek-soru-sablonu.html">Örnek Soru</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="../script.js?v=20260604-2"></script>
+</body>
+</html>

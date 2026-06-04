@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Çoktan seçmeli, doğru yanlış, kısa cevap ve açıklamalı çözüm alanları içeren gelişmiş örnek soru şablonu.">
+    <title>Örnek Soru Şablonu | Ders Materyalleri Kütüphanesi</title>
+    <link rel="stylesheet" href="../style.css?v=20260604-2">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav-shell">
+            <a class="brand" href="../index.html" aria-label="Ders Materyalleri Kütüphanesi ana sayfa">
+                <span class="brand-mark" aria-hidden="true">DM</span>
+                <span class="brand-text">Ders Materyalleri</span>
+            </a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+                <span class="sr-only">Menüyü aç veya kapat</span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="site-nav" id="site-nav" aria-label="Ana menü">
+                <a href="../index.html">Ana Sayfa</a>
+                <a href="../index.html#dersler">Dersler</a>
+                <a href="../index.html#icerik-turleri">İçerik Türleri</a>
+                <a href="../index.html#kullanim">Kullanım</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero question-hero">
+            <div class="container page-header">
+                <nav class="breadcrumb" aria-label="Sayfa yolu">
+                    <a href="../index.html">Ana Sayfa</a>
+                    <span>/</span>
+                    <span>Örnek Soru Şablonu</span>
+                </nav>
+                <p class="eyebrow">Gelişmiş örnek soru</p>
+                <h1>Örnek Soru Başlığı</h1>
+                <p>Bu şablon; soru kökü, seçenekler, cevap anahtarı, çözüm açıklaması ve öz değerlendirme alanlarıyla daha düzenli örnek soru sayfaları hazırlamak için kullanılır.</p>
+                <div class="action-row">
+                    <button class="button button-primary" type="button" onclick="window.print()">Yazdır</button>
+                    <a class="button button-secondary" href="../dersler/ders-sablonu.html">Ders Şablonuna Dön</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container page-layout">
+                <article class="page-card question-sheet">
+                    <div class="meta-grid" aria-label="Örnek soru bilgileri">
+                        <div class="meta-item"><strong>Ders</strong> Ders adı yazılacak</div>
+                        <div class="meta-item"><strong>Konu</strong> Konu adı yazılacak</div>
+                        <div class="meta-item"><strong>Soru Türleri</strong> Test / Kısa Cevap / Doğru-Yanlış</div>
+                        <div class="meta-item"><strong>Zorluk</strong> Kolay / Orta / Zor</div>
+                    </div>
+
+                    <section class="question-box instruction-box">
+                        <h2>Yönerge</h2>
+                        <p>Soruları önce cevap anahtarına bakmadan çözün. Daha sonra cevaplarınızı kontrol edip açıklama bölümündeki çözüm mantığıyla karşılaştırın.</p>
+                    </section>
+
+                    <section class="question-set" aria-labelledby="test-sorulari">
+                        <div class="section-label">Bölüm A</div>
+                        <h2 id="test-sorulari">Çoktan Seçmeli Sorular</h2>
+
+                        <article class="question-card">
+                            <div class="question-head">
+                                <span class="question-number">Soru 1</span>
+                                <span class="difficulty easy">Kolay</span>
+                            </div>
+                            <p class="question-stem">Soru kökü buraya yazılacak. Öğrencinin hangi bilgiyi kullanması gerektiği açık olmalıdır.</p>
+                            <ol class="options-list" type="A">
+                                <li>Seçenek metni</li>
+                                <li>Seçenek metni</li>
+                                <li>Seçenek metni</li>
+                                <li>Seçenek metni</li>
+                                <li>Seçenek metni</li>
+                            </ol>
+                            <details class="answer-detail">
+                                <summary>Cevap ve açıklamayı göster</summary>
+                                <p><strong>Doğru cevap:</strong> C seçeneği. Açıklama metni buraya yazılacak.</p>
+                            </details>
+                        </article>
+
+                        <article class="question-card">
+                            <div class="question-head">
+                                <span class="question-number">Soru 2</span>
+                                <span class="difficulty medium">Orta</span>
+                            </div>
+                            <p class="question-stem">Soru kökü buraya yazılacak.</p>
+                            <ol class="options-list" type="A">
+                                <li>Seçenek metni</li>
+                                <li>Seçenek metni</li>
+                                <li>Seçenek metni</li>
+                                <li>Seçenek metni</li>
+                            </ol>
+                            <details class="answer-detail">
+                                <summary>Cevap ve açıklamayı göster</summary>
+                                <p><strong>Doğru cevap:</strong> B seçeneği. Kısa çözüm açıklaması buraya yazılacak.</p>
+                            </details>
+                        </article>
+                    </section>
+
+                    <section class="question-set" aria-labelledby="karma-sorular">
+                        <div class="section-label">Bölüm B</div>
+                        <h2 id="karma-sorular">Kısa Cevap ve Doğru-Yanlış</h2>
+
+                        <article class="question-card">
+                            <div class="question-head">
+                                <span class="question-number">Soru 3</span>
+                                <span class="difficulty hard">Zor</span>
+                            </div>
+                            <p class="question-stem">Kısa cevap gerektiren soru metni buraya yazılacak.</p>
+                            <div class="lined-area compact" aria-label="Kısa cevap alanı"></div>
+                            <details class="answer-detail">
+                                <summary>Örnek cevap</summary>
+                                <p>Beklenen cevap veya çözüm yaklaşımı buraya yazılacak.</p>
+                            </details>
+                        </article>
+
+                        <article class="question-card">
+                            <div class="question-head">
+                                <span class="question-number">Soru 4</span>
+                                <span class="difficulty medium">Orta</span>
+                            </div>
+                            <p class="question-stem">Aşağıdaki ifadeleri doğru veya yanlış olarak işaretleyin.</p>
+                            <div class="true-false-list">
+                                <label><span>1. İfade metni buraya yazılacak.</span><strong>D / Y</strong></label>
+                                <label><span>2. İfade metni buraya yazılacak.</span><strong>D / Y</strong></label>
+                                <label><span>3. İfade metni buraya yazılacak.</span><strong>D / Y</strong></label>
+                            </div>
+                            <details class="answer-detail">
+                                <summary>Cevap anahtarı</summary>
+                                <p>1: Doğru, 2: Yanlış, 3: Doğru. Açıklama buraya yazılacak.</p>
+                            </details>
+                        </article>
+                    </section>
+
+                    <section class="answer-key-panel" aria-labelledby="cevap-anahtari">
+                        <h2 id="cevap-anahtari">Hızlı Cevap Anahtarı</h2>
+                        <div class="answer-key-grid">
+                            <span>1</span><strong>C</strong>
+                            <span>2</span><strong>B</strong>
+                            <span>3</span><strong>Kısa cevap</strong>
+                            <span>4</span><strong>D / Y</strong>
+                        </div>
+                    </section>
+                </article>
+
+                <aside class="sidebar-card">
+                    <h2>Şablon notları</h2>
+                    <ul class="template-list">
+                        <li>Soru kartlarını ihtiyaca göre çoğaltın.</li>
+                        <li>Zorluk etiketlerini kolay, orta veya zor olarak güncelleyin.</li>
+                        <li>Cevap açıklamalarını kısa ve öğretici tutun.</li>
+                        <li>Ders sayfasındaki Örnek Soru başlığına bağlantı ekleyin.</li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <h2>Ders Materyalleri Kütüphanesi</h2>
+                <p>Açıklamalı ve bölümlü örnek soru sayfası şablonu.</p>
+            </div>
+            <nav aria-label="Alt menü">
+                <a href="../index.html">Ana Sayfa</a>
+                <a href="../dersler/ders-sablonu.html">Ders Şablonu</a>
+                <a href="../calisma-kagitlari/calisma-kagidi-sablonu.html">Çalışma Kağıdı</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="../script.js?v=20260604-2"></script>
+</body>
+</html>
