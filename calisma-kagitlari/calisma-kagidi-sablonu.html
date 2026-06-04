@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Yazdırılabilir çalışma kağıdı sayfaları için statik HTML şablonu.">
+    <meta name="description" content="Yazdırılabilir ve doldurulabilir çalışma kağıdı sayfaları için gelişmiş statik HTML şablonu.">
     <title>Çalışma Kağıdı Şablonu | Ders Materyalleri Kütüphanesi</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style.css?v=20260604-3">
 </head>
 <body>
     <header class="site-header">
@@ -39,7 +39,7 @@
                 </nav>
                 <p class="eyebrow">Çalışma kağıdı</p>
                 <h1>Çalışma Kağıdı Başlığı</h1>
-                <p>Bu şablon yazdırılabilir çalışma kağıdı sayfaları için hazırlanmıştır.</p>
+                <p>Bu şablon, uzun konu anlatımından özet çıkarma, kavram pekiştirme ve yazılı prova yapma amacıyla daha dolu bir çalışma düzeni sunar.</p>
                 <div class="action-row">
                     <button class="button button-primary" type="button" onclick="window.print()">Yazdır</button>
                     <a class="button button-secondary" href="../dersler/ders-sablonu.html">Ders Şablonuna Dön</a>
@@ -53,39 +53,213 @@
                     <div class="meta-grid" aria-label="Çalışma kağıdı bilgileri">
                         <div class="meta-item"><strong>Ders</strong> Ders adı yazılacak</div>
                         <div class="meta-item"><strong>Konu</strong> Konu adı yazılacak</div>
-                        <div class="meta-item"><strong>Amaç</strong> Hazırlık amacı yazılacak</div>
-                        <div class="meta-item"><strong>Tarih</strong> Tarih yazılacak</div>
+                        <div class="meta-item"><strong>Süre</strong> 20-40 dakika arası önerilen süre</div>
+                        <div class="meta-item"><strong>Seviye</strong> Temel / Orta / Yoğun tekrar</div>
+                    </div>
+
+                    <div class="sheet-student-row" aria-label="Öğrenci bilgi alanı">
+                        <div class="line-field">
+                            <strong>Ad Soyad</strong>
+                            <span class="line-value"></span>
+                        </div>
+                        <div class="line-field">
+                            <strong>Numara / Şube</strong>
+                            <span class="line-value"></span>
+                        </div>
+                        <div class="line-field">
+                            <strong>Tarih</strong>
+                            <span class="line-value"></span>
+                        </div>
+                    </div>
+
+                    <div class="sheet-topline">
+                        <strong>Nasıl kullanılır:</strong> Bu sayfa tek oturumluk tekrar için tasarlanmıştır. Önce kısa hazırlık bölümünü tamamlayın, sonra kavram ve uygulama sorularına geçin, en sonda kendi cevabınızı kontrol edin.
                     </div>
 
                     <div class="worksheet-box">
-                        <h2>Yönerge</h2>
-                        <p>Bu alana çalışma kağıdı için gerekli yönerge yazılır. Öğrencilerin soruları nasıl cevaplayacağı açıkça belirtilir.</p>
+                        <span class="section-badge">Bölüm 1</span>
+                        <h2>Kazanımlar ve Yönerge</h2>
+                        <p class="section-intro">Aşağıdaki alanı ilgili derse göre özelleştir. Bu yapı, uzun notlardan sınava dönük çalışma kağıdı üretmek için hazır tutuldu.</p>
+                        <div class="info-grid">
+                            <div class="info-card">
+                                <h3>Bu sayfadan sonra öğrenci:</h3>
+                                <ul class="plain-list">
+                                    <li>Temel kavramları ayırt eder.</li>
+                                    <li>Süreç basamaklarını doğru sıralar.</li>
+                                    <li>Karşılaştırmalı sorularda kısa ve net cevap üretir.</li>
+                                </ul>
+                            </div>
+                            <div class="info-card">
+                                <h3>Uygulama biçimi</h3>
+                                <ul class="plain-list">
+                                    <li>İlk iki bölümü notlara bakmadan çöz.</li>
+                                    <li>Eksik kaldığın yere kısa not düş.</li>
+                                    <li>Son bölümde kendi cevabını cevap anahtarıyla karşılaştır.</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="worksheet-box">
-                        <h2>Sorular</h2>
-                        <ol>
-                            <li>Soru metni buraya yazılacak.</li>
-                            <li>Soru metni buraya yazılacak.</li>
-                            <li>Soru metni buraya yazılacak.</li>
-                        </ol>
+                        <span class="section-badge warm">Bölüm 2</span>
+                        <h2>Kısa Hazırlık</h2>
+                        <p class="section-intro">Bu blok, `ento uzun part 2` gibi yoğun not sayfalarının giriş mantığını taklit eder: önce çerçeve, sonra ayrıntı.</p>
+                        <div class="prompt-grid">
+                            <div class="prompt-card">
+                                <h3>Konu Çerçevesi</h3>
+                                <ol class="prompt-list">
+                                    <li>Bu dersin ana başlığı nedir?</li>
+                                    <li>Alt başlıklar hangi sırayla işleniyor?</li>
+                                    <li>Hangi kavramlar sınavda tanım sorusuna dönebilir?</li>
+                                </ol>
+                            </div>
+                            <div class="prompt-card">
+                                <h3>Hızlı Not Çıkarma</h3>
+                                <p>Kaynak metni okurken 3 anahtar kelime, 2 kritik ayrım ve 1 tipik soru kalıbı seç.</p>
+                                <div class="lined-area compact" aria-label="Hızlı not alanı"></div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="worksheet-box">
-                        <h2>Cevap Alanı</h2>
-                        <p>Gerekirse her soru için ayrı cevap alanı çoğaltılabilir.</p>
-                        <div class="answer-area" aria-label="Boş cevap alanı"></div>
+                        <span class="section-badge">Bölüm 3</span>
+                        <h2>Kavram Kontrolü</h2>
+                        <p class="section-intro">Tanım, işlev ve örnek bağlantısını kurdurmak için kısa cevaplı bir bölüm.</p>
+                        <div class="prompt-grid">
+                            <div class="prompt-card">
+                                <h3>Boşlukları doldur</h3>
+                                <ol class="prompt-list">
+                                    <li>................................................ kavramı, bu konunun en genel çerçevesini ifade eder.</li>
+                                    <li>................................................ ile ................................................ arasındaki temel fark, işlev veya kapsam düzeyinde ortaya çıkar.</li>
+                                    <li>Bu ünitede özellikle vurgulanan süreç sırası: ................................................</li>
+                                </ol>
+                            </div>
+                            <div class="prompt-card">
+                                <h3>Kısa açıklama</h3>
+                                <p>Aşağıdaki alana üç kavram seçerek her biri için tek cümlelik sınav tanımı yaz.</p>
+                                <div class="lined-area" aria-label="Kısa açıklama alanı"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="worksheet-box">
+                        <span class="section-badge success">Bölüm 4</span>
+                        <h2>Eşleştirme ve Sınıflandırma</h2>
+                        <p class="section-intro">Uzun ders anlatımlarındaki terim kalabalığını yönetmek için tablo formatı daha verimli olur.</p>
+                        <table class="worksheet-table" aria-label="Eşleştirme tablosu">
+                            <thead>
+                                <tr>
+                                    <th>Terim / Başlık</th>
+                                    <th>Kısa Tanım</th>
+                                    <th>Örnek / Not</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>A Kavramı</td>
+                                    <td><span class="cell-line"></span></td>
+                                    <td><span class="cell-line"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>B Süreci</td>
+                                    <td><span class="cell-line"></span></td>
+                                    <td><span class="cell-line"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>C Faktörü</td>
+                                    <td><span class="cell-line"></span></td>
+                                    <td><span class="cell-line"></span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="worksheet-box">
+                        <span class="section-badge">Bölüm 5</span>
+                        <h2>Uygulama Soruları</h2>
+                        <p class="section-intro">Bu kısım artık yalnızca soru listesi değil; farklı soru tiplerini aynı sayfada birleştiren bir prova alanı.</p>
+                        <div class="compare-grid">
+                            <div class="compare-card">
+                                <h3>Soru 1</h3>
+                                <p>Konunun ana fikrini 4-5 cümlede özetle. Gerekirse süreç, neden-sonuç veya sınıflandırma mantığını kullan.</p>
+                                <div class="lined-area tall" aria-label="Soru 1 cevap alanı"></div>
+                            </div>
+                            <div class="compare-card">
+                                <h3>Soru 2</h3>
+                                <p>İki kavramı karşılaştır: benzer yön, farklı yön ve tipik kullanım bağlamı ile açıkla.</p>
+                                <div class="info-grid">
+                                    <div class="info-card">
+                                        <h3>Benzerlik</h3>
+                                        <div class="lined-area compact" aria-label="Benzerlik alanı"></div>
+                                    </div>
+                                    <div class="info-card">
+                                        <h3>Farklılık</h3>
+                                        <div class="lined-area compact" aria-label="Farklılık alanı"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="compare-card">
+                                <h3>Soru 3</h3>
+                                <p>Uzun konu anlatımından çıkarılabilecek bir örnek olay ya da gerçek yaşam bağlantısı kur.</p>
+                                <div class="lined-area" aria-label="Soru 3 cevap alanı"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="worksheet-box">
+                        <span class="section-badge warm">Bölüm 6</span>
+                        <h2>Öz Değerlendirme</h2>
+                        <div class="checklist-grid">
+                            <div class="checklist-item">
+                                <h3>Kendimi kontrol ettim mi?</h3>
+                                <ul class="plain-list">
+                                    <li>Tanım sorularını ezber cümlesiyle değil, anlam kurarak cevapladım.</li>
+                                    <li>Süreç sıralamasını karıştırmadım.</li>
+                                    <li>Örnek verirken konu dışına taşmadım.</li>
+                                </ul>
+                            </div>
+                            <div class="rubric-card">
+                                <h3>Kısa puanlama</h3>
+                                <table class="answer-table" aria-label="Öz değerlendirme tablosu">
+                                    <thead>
+                                        <tr>
+                                            <th>Ölçüt</th>
+                                            <th>Durum</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Kavram bilgisi</td>
+                                            <td>İyi / Orta / Eksik</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Yorumlama</td>
+                                            <td>İyi / Orta / Eksik</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Hız</td>
+                                            <td>İyi / Orta / Eksik</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="print-note">İpucu: Bu sayfayı çoğaltırken yalnızca başlıkları değil, soru tiplerini de koru. Uzun derslerde bölüm çeşitliliği öğrenciyi daha iyi tutar.</div>
                     </div>
                 </article>
 
                 <aside class="sidebar-card">
                     <h2>Şablon notları</h2>
                     <ul class="template-list">
-                        <li>Gerçek içerik eklendiğinde başlığı değiştirin.</li>
-                        <li>Meta bilgilerini doldurun.</li>
-                        <li>Soru ve cevap alanlarını ihtiyaca göre çoğaltın.</li>
-                        <li>Yazdırma görünümü otomatik desteklenir.</li>
+                        <li>Uzun ders notlarını önce 5-7 ana başlığa böl.</li>
+                        <li>Tanım ağırlıklı derslerde eşleştirme tablosunu büyüt.</li>
+                        <li>Yorum sorularında karşılaştırma kartlarını çoğalt.</li>
+                        <li>Yazdırma görünümü için kenar notlarını kısa tut.</li>
                     </ul>
+                    <div class="mini-note">
+                        <h3>İdeal kullanım</h3>
+                        <p>Bu şablon özellikle anlatımı yoğun, kavramı fazla ve sınavda kısa klasik soru gelebilecek dersler için uygundur.</p>
+                    </div>
                 </aside>
             </div>
         </section>
@@ -105,6 +279,6 @@
         </div>
     </footer>
 
-    <script src="../script.js"></script>
+    <script src="../script.js?v=20260604-3"></script>
 </body>
 </html>

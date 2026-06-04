@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Örnek soru sayfaları için cevap ve açıklama alanı içeren statik HTML şablonu.">
+    <meta name="description" content="Çoktan seçmeli, kısa cevaplı ve açıklamalı örnek soru sayfaları için gelişmiş statik HTML şablonu.">
     <title>Örnek Soru Şablonu | Ders Materyalleri Kütüphanesi</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style.css?v=20260604-3">
 </head>
 <body>
     <header class="site-header">
@@ -39,7 +39,7 @@
                 </nav>
                 <p class="eyebrow">Örnek soru</p>
                 <h1>Örnek Soru Başlığı</h1>
-                <p>Bu şablon derslere ait örnek soru sayfalarının aynı düzenle hazırlanması için kullanılır.</p>
+                <p>Bu şablon, yalnızca soru listesi vermek yerine soru tipi, çözüm mantığı ve hızlı cevap anahtarını tek sayfada birleştirir.</p>
             </div>
         </section>
 
@@ -49,33 +49,198 @@
                     <div class="meta-grid" aria-label="Örnek soru bilgileri">
                         <div class="meta-item"><strong>Ders</strong> Ders adı yazılacak</div>
                         <div class="meta-item"><strong>Konu</strong> Konu adı yazılacak</div>
-                        <div class="meta-item"><strong>Soru Türü</strong> Klasik / Test / Karma</div>
+                        <div class="meta-item"><strong>Soru Türü</strong> Test / Kısa cevap / Karma</div>
                         <div class="meta-item"><strong>Zorluk</strong> Kolay / Orta / Zor</div>
                     </div>
 
-                    <div class="question-box">
-                        <h2>Sorular</h2>
-                        <ol>
-                            <li>Soru metni buraya yazılacak.</li>
-                            <li>Soru metni buraya yazılacak.</li>
-                            <li>Soru metni buraya yazılacak.</li>
-                        </ol>
+                    <div class="sheet-topline">
+                        <strong>Sınav mantığı:</strong> Bu sayfayı doldururken her sorunun yalnız doğru cevabını değil, neden doğru olduğunu da görünür tut. Referans aldığımız örnekteki soru mantığı bu ayrımı güçlendiriyor.
                     </div>
 
                     <div class="question-box">
-                        <h2>Cevap / Açıklama</h2>
-                        <p>Gerekirse doğru cevap, çözüm yolu veya kısa açıklama bu alana yazılır.</p>
+                        <span class="section-badge">Bölüm 1</span>
+                        <h2>Soru Öncesi Yönerge</h2>
+                        <div class="info-grid">
+                            <div class="exam-note">
+                                <h3>Uygulama düzeni</h3>
+                                <ul class="plain-list">
+                                    <li>Önce tüm soruları hızlıca tara.</li>
+                                    <li>Zor soruları işaretle, ilk turda takılma.</li>
+                                    <li>Çözüm alanlarını yalnız cevap değil gerekçe için de kullan.</li>
+                                </ul>
+                            </div>
+                            <div class="exam-note">
+                                <h3>Bu sayfadaki soru türleri</h3>
+                                <ul class="plain-list">
+                                    <li>Çoktan seçmeli</li>
+                                    <li>Kısa cevap</li>
+                                    <li>Doğru / yanlış</li>
+                                    <li>Hızlı cevap anahtarı</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-box">
+                        <span class="section-badge warm">Bölüm 2</span>
+                        <h2>Çoktan Seçmeli Sorular</h2>
+                        <p class="section-intro">Buradaki yapı, örnek dosyadaki soru-akış mantığını daha ileri taşıyacak şekilde soru kartı + seçenek + açılır çözüm biçiminde kuruldu.</p>
+
+                        <div class="question-cluster">
+                            <section class="mcq-card">
+                                <div class="question-topline">
+                                    <span class="question-tag">Soru 1</span>
+                                    <span class="difficulty-pill easy">Kolay</span>
+                                </div>
+                                <h3>Aşağıdakilerden hangisi konunun temel tanımını en doğru biçimde verir?</h3>
+                                <ul class="option-list">
+                                    <li>A) Seçenek metni buraya yazılacak.</li>
+                                    <li>B) Seçenek metni buraya yazılacak.</li>
+                                    <li>C) Seçenek metni buraya yazılacak.</li>
+                                    <li>D) Seçenek metni buraya yazılacak.</li>
+                                </ul>
+                                <details class="question-solution">
+                                    <summary>Cevap ve açıklamayı göster</summary>
+                                    <div>
+                                        <span class="answer-chip">Doğru cevap: B</span>
+                                        <p>Buraya yalnız doğru seçeneği değil, diğer seçeneklerin neden elendiğini de yaz. Bu alan hızlı tekrar için en değerli bölüm olur.</p>
+                                    </div>
+                                </details>
+                            </section>
+
+                            <section class="mcq-card">
+                                <div class="question-topline">
+                                    <span class="question-tag">Soru 2</span>
+                                    <span class="difficulty-pill medium">Orta</span>
+                                </div>
+                                <h3>Bir süreç sıralaması sorulduğunda aşağıdaki seçeneklerden hangisi doğru dizilimi verir?</h3>
+                                <ul class="option-list">
+                                    <li>A) Seçenek metni buraya yazılacak.</li>
+                                    <li>B) Seçenek metni buraya yazılacak.</li>
+                                    <li>C) Seçenek metni buraya yazılacak.</li>
+                                    <li>D) Seçenek metni buraya yazılacak.</li>
+                                </ul>
+                                <details class="question-solution">
+                                    <summary>Cevap ve açıklamayı göster</summary>
+                                    <div>
+                                        <span class="answer-chip">Doğru cevap: C</span>
+                                        <p>Özellikle sıralama sorularında yanlış seçenekler hangi iki basamağı karıştırıyor, bunu kısaca not etmek yararlıdır.</p>
+                                    </div>
+                                </details>
+                            </section>
+
+                            <section class="mcq-card">
+                                <div class="question-topline">
+                                    <span class="question-tag">Soru 3</span>
+                                    <span class="difficulty-pill hard">Zor</span>
+                                </div>
+                                <h3>Bir kavramın kullanım alanı sorulduğunda aşağıdaki yorumlardan hangisi en isabetlidir?</h3>
+                                <ul class="option-list">
+                                    <li>A) Seçenek metni buraya yazılacak.</li>
+                                    <li>B) Seçenek metni buraya yazılacak.</li>
+                                    <li>C) Seçenek metni buraya yazılacak.</li>
+                                    <li>D) Seçenek metni buraya yazılacak.</li>
+                                </ul>
+                                <details class="question-solution">
+                                    <summary>Cevap ve açıklamayı göster</summary>
+                                    <div>
+                                        <span class="answer-chip">Doğru cevap: A</span>
+                                        <p>Yorum sorularında anahtar kelimeye değil bağlama odaklan. Açıklama kısmında bunu görünür kılmak sonraki denemelerde hata oranını düşürür.</p>
+                                    </div>
+                                </details>
+                            </section>
+                        </div>
+                    </div>
+
+                    <div class="question-box">
+                        <span class="section-badge success">Bölüm 3</span>
+                        <h2>Kısa Cevap ve Açıklama</h2>
+                        <div class="prompt-grid">
+                            <div class="prompt-card">
+                                <h3>Kısa cevap sorusu</h3>
+                                <p>Bu konunun ana fikrini, sınavda 3-4 cümlelik klasik soru gelmiş gibi cevapla.</p>
+                                <div class="lined-area" aria-label="Kısa cevap alanı"></div>
+                            </div>
+                            <div class="prompt-card">
+                                <h3>Beklenen cevap çerçevesi</h3>
+                                <ol class="prompt-list">
+                                    <li>Tanımı ver.</li>
+                                    <li>Ayırt edici özelliği ekle.</li>
+                                    <li>Gerekirse örnek ya da alt başlıkla tamamla.</li>
+                                </ol>
+                                <details class="question-solution">
+                                    <summary>Örnek çözüm mantığını göster</summary>
+                                    <div>
+                                        <p>Buraya tam cevabı yazmak yerine, cevabın hangi üç unsurdan kurulması gerektiğini yazmak daha öğretici olur.</p>
+                                    </div>
+                                </details>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-box">
+                        <span class="section-badge">Bölüm 4</span>
+                        <h2>Doğru / Yanlış Kontrolü</h2>
+                        <div class="truefalse-grid">
+                            <div class="truefalse-card">
+                                <h3>Madde 1</h3>
+                                <p>Bu ifade ilgili ders içeriğine göre doğru mudur, yanlış mıdır?</p>
+                                <div class="lined-area compact" aria-label="Doğru yanlış madde 1"></div>
+                            </div>
+                            <div class="truefalse-card">
+                                <h3>Madde 2</h3>
+                                <p>Bu ifade kavramların kapsamını doğru yansıtıyor mu?</p>
+                                <div class="lined-area compact" aria-label="Doğru yanlış madde 2"></div>
+                            </div>
+                            <div class="truefalse-card">
+                                <h3>Madde 3</h3>
+                                <p>Bu ifade süreç sırasını doğru kuruyor mu?</p>
+                                <div class="lined-area compact" aria-label="Doğru yanlış madde 3"></div>
+                            </div>
+                            <div class="truefalse-card">
+                                <h3>Madde 4</h3>
+                                <p>Bu ifade örnek ve tanım ilişkisinde hata içeriyor mu?</p>
+                                <div class="lined-area compact" aria-label="Doğru yanlış madde 4"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="question-box">
+                        <span class="section-badge warm">Bölüm 5</span>
+                        <h2>Hızlı Cevap Anahtarı</h2>
+                        <div class="quick-answer-grid">
+                            <div class="answer-key">
+                                <h3>Test Bölümü</h3>
+                                <ol>
+                                    <li>Soru 1: B</li>
+                                    <li>Soru 2: C</li>
+                                    <li>Soru 3: A</li>
+                                </ol>
+                            </div>
+                            <div class="answer-key">
+                                <h3>Kısa Hatırlatma</h3>
+                                <ul class="plain-list">
+                                    <li>Doğru cevap kadar gerekçe de yazılmalı.</li>
+                                    <li>Tanım sorularında ezber cümle yerine ana özellik kullanılmalı.</li>
+                                    <li>Karıştırılan çift kavramlar ayrıca not edilmeli.</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </article>
 
                 <aside class="sidebar-card">
                     <h2>Şablon notları</h2>
                     <ul class="template-list">
-                        <li>Gerçek içerik eklendiğinde başlığı değiştirin.</li>
-                        <li>Ders ve konu bilgilerini doldurun.</li>
-                        <li>Soru sayısını ihtiyaca göre artırın.</li>
-                        <li>Ders sayfasındaki Örnek Soru başlığına bağlantı ekleyin.</li>
+                        <li>Her soru kartında tek beceriyi hedefle.</li>
+                        <li>Açıklama alanını boş bırakma; asıl öğrenme orada olur.</li>
+                        <li>Zorluk etiketlerini gerçekten ayır.</li>
+                        <li>Kısa cevap bölümünü dersin klasik soru tarzına göre özelleştir.</li>
                     </ul>
+                    <div class="mini-note">
+                        <h3>İdeal kullanım</h3>
+                        <p>Bu şablon, test ve klasik sorunun birlikte geldiği sınavlar için daha uygundur; yalnızca test çözümü için gereğinden zengindir.</p>
+                    </div>
                 </aside>
             </div>
         </section>
@@ -95,6 +260,6 @@
         </div>
     </footer>
 
-    <script src="../script.js"></script>
+    <script src="../script.js?v=20260604-3"></script>
 </body>
 </html>
